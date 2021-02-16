@@ -1,0 +1,2 @@
+#! /bin/bash
+cd ../writer && npx chatito chatito_model.chatito --format=rasa --defaultDistribution=even

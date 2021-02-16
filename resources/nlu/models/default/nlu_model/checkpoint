@@ -1,0 +1,2 @@
+model_checkpoint_path: "c:\\Users\\dnota\\Documents\\tesi-bot\\sherbot\\resources\\nlu\\models\\default\\nlu_model\\component_5_EmbeddingIntentClassifier.ckpt"
+all_model_checkpoint_paths: "c:\\Users\\dnota\\Documents\\tesi-bot\\sherbot\\resources\\nlu\\models\\default\\nlu_model\\component_5_EmbeddingIntentClassifier.ckpt"

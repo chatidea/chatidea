@@ -1,0 +1,265 @@
+[
+  {
+    "element_name": "teacher",
+    "aliases": [
+      "teachers",
+      "professor",
+      "professors"
+    ],
+    "type": "primary",
+    "table_name": "Teacher",
+    "show_columns": [
+      {
+        "keyword": "",
+        "columns": [
+          "name",
+          "surname"
+        ]
+      }
+    ],
+    "attributes": [
+      {
+        "keyword": "",
+        "type": "word",
+        "columns": ["name", "surname"]
+      },
+      {
+        "keyword": "with name",
+        "type": "word",
+        "columns": [
+          "name"
+        ]
+      },
+      {
+        "keyword": "with surname",
+        "type": "word",
+        "columns": [
+          "surname"
+        ]
+      },
+      {
+        "keyword": "of lesson",
+        "type": "word",
+        "columns": ["name"],
+        "by": [
+          {
+            "from_table_name": "Teacher",
+            "from_columns": ["id"],
+            "to_table_name": "Lesson",
+            "to_columns": ["teacher_id"]
+          }
+        ]
+      },
+      {
+        "keyword": "of class",
+        "type": "word",
+        "columns": ["name"],
+        "by": [
+          {
+            "from_table_name": "Teacher",
+            "from_columns": ["id"],
+            "to_table_name": "Lesson",
+            "to_columns": ["teacher_id"]
+          },
+          {
+            "from_table_name": "Lesson",
+            "from_columns": ["class_id"],
+            "to_table_name": "Class",
+            "to_columns": ["id"]
+          }
+        ]
+      }
+    ],
+    "relations": [
+      {
+        "keyword": "related lessons",
+        "element_name": "lesson",
+        "by": [
+          {
+            "from_table_name": "Teacher",
+            "from_columns": ["id"],
+            "to_table_name": "Lesson",
+            "to_columns": ["teacher_id"]
+          }
+        ]
+      },
+      {
+        "keyword": "related classes",
+        "element_name": "class",
+        "by": [
+          {
+            "from_table_name": "Teacher",
+            "from_columns": ["id"],
+            "to_table_name": "Lesson",
+            "to_columns": ["teacher_id"]
+          },
+          {
+            "from_table_name": "Lesson",
+            "from_columns": ["class_id"],
+            "to_table_name": "Class",
+            "to_columns": ["id"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "element_name": "lesson",
+    "aliases": [
+      "lessons"
+    ],
+    "type": "primary",
+    "table_name": "Lesson",
+    "show_columns": [
+      {
+        "keyword": "",
+        "columns": [
+          "name"
+        ]
+      }
+    ],
+    "attributes": [
+      {
+        "keyword": "",
+        "type": "word",
+        "columns": ["name"]
+      },
+      {
+        "keyword": "of teacher",
+        "type": "word",
+        "columns": ["name"],
+        "by": [
+          {
+            "from_table_name": "Lesson",
+            "from_columns": ["teacher_id"],
+            "to_table_name": "Teacher",
+            "to_columns": ["id"]
+          }
+        ]
+      },
+      {
+        "keyword": "of class",
+        "type": "word",
+        "columns": ["name"],
+        "by": [
+          {
+            "from_table_name": "Lesson",
+            "from_columns": ["class_id"],
+            "to_table_name": "Class",
+            "to_columns": ["id"]
+          }
+        ]
+      }
+    ],
+    "relations": [
+      {
+        "keyword": "related teachers",
+        "element_name": "teacher",
+        "by": [
+          {
+            "from_table_name": "Lesson",
+            "from_columns": ["teacher_id"],
+            "to_table_name": "Teacher",
+            "to_columns": ["id"]
+          }
+        ]
+      },
+      {
+        "keyword": "related class",
+        "element_name": "class",
+        "by": [
+          {
+            "from_table_name": "Lesson",
+            "from_columns": ["teacher_id"],
+            "to_table_name": "Class",
+            "to_columns": ["id"]
+          }
+        ]
+      },
+      {
+        "keyword": "timetables",
+        "element_name": "timetable",
+        "by": [
+          {
+            "from_table_name": "Lesson",
+            "from_columns": ["id"],
+            "to_table_name": "Timetable",
+            "to_columns": ["lesson_id"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "element_name": "class",
+    "aliases": [
+      "classes"
+    ],
+    "type": "primary",
+    "table_name": "Class",
+    "show_columns": [
+      {
+        "keyword": "",
+        "columns": [
+          "name"
+        ]
+      }
+    ],
+    "attributes": [
+      {
+        "keyword": "",
+        "type": "word",
+        "columns": [
+          "name"
+        ]
+      },
+      {
+        "keyword": "of lesson",
+        "type": "word",
+        "columns": ["name"],
+        "by": [
+          {
+            "from_table_name": "Class",
+            "from_columns": ["id"],
+            "to_table_name": "Lesson",
+            "to_columns": ["class_id"]
+          }
+        ]
+      }
+    ],
+    "relations": [
+      {
+        "keyword": "related lesson",
+        "element_name": "lesson",
+        "by": [
+          {
+            "from_table_name": "Class",
+            "from_columns": ["id"],
+            "to_table_name": "Lesson",
+            "to_columns": ["class_id"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "element_name":"timetable",
+    "aliases": ["timetables"],
+    "type": "secondary",
+    "table_name": "Timetable",
+    "show_columns":[
+      {
+        "keyword": "day",
+        "columns": ["day"]
+      },
+      {
+        "keyword": "from",
+        "columns": ["from_time"]
+      },
+      {
+        "keyword": "to",
+        "columns": ["to_time"]
+      }
+    ]
+  }
+]

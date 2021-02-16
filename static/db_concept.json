@@ -1,0 +1,1629 @@
+[{
+        "element_name": "building",
+        "aliases": ["building", "buildings"],
+        "type": "secondary",
+        "table_name": "location_edifici",
+        "show_columns": [{
+                "keyword": "",
+                "columns": ["nome_edificio"]
+        }],
+        "category": [],
+        "attributes": [],
+        "relations": []
+},
+{
+        "element_name": "room",
+        "aliases": ["rooms"],
+        "type": "secondary",
+        "table_name": "location_locali",
+        "show_columns": [{
+                "keyword": "",
+                "columns": ["descrizione"]
+        }],
+        "category": [],
+        "attributes": [{
+                        "keyword": "",
+                        "type": "word",
+                        "columns": ["descrizione"]
+                },
+                {
+                        "keyword": "in building",
+                        "type": "word",
+                        "columns": ["nome_edificio"],
+                        "by": [{
+                                "from_table_name": "location_locali",
+                                "from_columns": ["id_edificio"],
+                                "to_table_name": "location_edifici",
+                                "to_columns": ["id_edificio"]
+                        }]
+                },
+                {
+                        "keyword": "on floor",
+                        "type": "word",
+                        "columns": ["descrizione_short"],
+                        "by": [{
+                                "from_table_name": "location_locali",
+                                "from_columns": ["id_piano"],
+                                "to_table_name": "location_piani",
+                                "to_columns": ["id_piano"]
+                        }]
+                }
+        ],
+        "relations": []
+},
+{
+        "element_name": "floor",
+        "aliases": ["floor", "floors"],
+        "type": "secondary",
+        "table_name": "location_piani",
+        "show_columns": [{
+                "keyword": "",
+                "columns": ["descrizione_short"]
+        }],
+        "category": [],
+        "attributes": [{
+                "keyword": "",
+                "type": "word",
+                "columns": ["descrizione_short", "old_id_piano", "descrizione_piano"]
+        }],
+        "relations": []
+},
+{
+        "element_name": "contact",
+        "aliases": ["contacts"],
+        "type": "secondary",
+        "table_name": "personale_deib_recapiti",
+        "show_columns": [{
+                "keyword": "phone",
+                "columns": ["id_telefono"]
+        }],
+        "category": [],
+        "attributes": [],
+        "relations": []
+},
+{
+        "element_name": "telephone",
+        "aliases": ["phone", "phones", "telephone", "telephones"],
+        "type": "secondary",
+        "table_name": "telefoni",
+        "show_columns": [{
+                "keyword": "",
+                "columns": ["numero"]
+        }],
+        "category": [],
+        "attributes": [{
+                "keyword": "",
+                "type": "word",
+                "columns": ["numero"]
+        }],
+        "relations": []
+},
+{
+        "element_name": "equipment",
+        "aliases": ["equipment", "device", "devices"],
+        "type": "secondary",
+        "table_name": "apparecchiature",
+        "show_columns": [{
+                "keyword": "",
+                "columns": ["nome_eng"]
+        }],
+        "category": [],
+        "attributes": [{
+                        "keyword": "",
+                        "type": "word",
+                        "columns": ["nome_eng", "nome_ita"]
+                },
+                {
+                        "keyword": "in research line",
+                        "type": "word",
+                        "columns": ["nome_sottoarea_eng"],
+                        "by": [{
+                                        "from_table_name": "apparecchiature",
+                                        "from_columns": ["id_elemento"],
+                                        "to_table_name": "apparecchiature_aree",
+                                        "to_columns": ["id_apparecchiatura"]
+                                },
+                                {
+                                        "from_table_name": "apparecchiature_aree",
+                                        "from_columns": ["id_sottoarea"],
+                                        "to_table_name": "sottoaree",
+                                        "to_columns": ["id_sottoarea"]
+                                }
+                        ]
+                },
+                {
+                        "keyword": "in reasearch area",
+                        "type": "word",
+                        "columns": ["nome_sezione_eng", "nome_sezione_ita"],
+                        "by": [{
+                                        "from_table_name": "apparecchiature",
+                                        "from_columns": ["id_elemento"],
+                                        "to_table_name": "apparecchiature_sezione",
+                                        "to_columns": ["id_apparecchiatura"]
+                                },
+                                {
+                                        "from_table_name": "apparecchiature_sezione",
+                                        "from_columns": ["id_sezione"],
+                                        "to_table_name": "sezioni",
+                                        "to_columns": ["id_sezione"]
+                                }
+                        ]
+                }
+        ],
+        "relations": [{
+                        "keyword": "in research line",
+                        "element_name": "research line",
+                        "by": [{
+                                        "from_table_name": "apparecchiature",
+                                        "from_columns": ["id_elemento"],
+                                        "to_table_name": "apparecchiature_aree",
+                                        "to_columns": ["id_apparecchiatura"]
+                                },
+                                {
+                                        "from_table_name": "apparecchiature_aree",
+                                        "from_columns": ["id_sottoarea"],
+                                        "to_table_name": "sottoaree",
+                                        "to_columns": ["id_sottoarea"]
+                                }
+                        ]
+                },
+                {
+                        "keyword": "in laboratory",
+                        "element_name": "laboratory",
+                        "by": [{
+                                        "from_table_name": "apparecchiature",
+                                        "from_columns": ["id_elemento"],
+                                        "to_table_name": "apparecchiature_laboratorio",
+                                        "to_columns": ["id_apparecchiatura"]
+                                },
+                                {
+                                        "from_table_name": "apparecchiature_laboratorio",
+                                        "from_columns": ["id_laboratorio"],
+                                        "to_table_name": "laboratorio",
+                                        "to_columns": ["id_lab"]
+                                }
+                        ]
+                },
+                {
+                        "keyword": "in research area",
+                        "element_name": "research area",
+                        "by": [{
+                                        "from_table_name": "apparecchiature",
+                                        "from_columns": ["id_elemento"],
+                                        "to_table_name": "apparecchiature_sezione",
+                                        "to_columns": ["id_sezione"]
+                                },
+                                {
+                                        "from_table_name": "apparecchiature_sezione",
+                                        "from_columns": ["id_sezione"],
+                                        "to_table_name": "sezioni",
+                                        "to_columns": ["id_sezione"]
+                                }
+                        ]
+                },
+                {
+                        "keyword": "owned by",
+                        "element_name": "person",
+                        "by": [{
+                                        "from_table_name": "apparecchiature",
+                                        "from_columns": ["id_elemento"],
+                                        "to_table_name": "aunica_people_apparecchiature",
+                                        "to_columns": ["id_apparecchiatura"]
+                                },
+                                {
+                                        "from_table_name": "aunica_people_apparecchiature",
+                                        "from_columns": ["id_persona"],
+                                        "to_table_name": "aunica_people_dettagli",
+                                        "to_columns": ["id_persona"]
+                                }
+                        ]
+                }
+        ]
+},
+{
+        "element_name": "equipment area",
+        "type": "crossable",
+        "table_name": "apparecchiature_aree"
+},
+{
+        "element_name": "equipment laboratory",
+        "type": "crossable",
+        "table_name": "apparecchiature_laboratorio"
+},
+{
+        "element_name": "equipment section",
+        "type": "crossable",
+        "table_name": "apparecchiature_sezione"
+},
+{
+        "element_name": "category",
+        "aliases": ["categories"],
+        "type": "secondary",
+        "table_name": "aunica_categorie",
+        "show_columns": [{
+                "keyword": "",
+                "columns": ["nome_eng_categoria"]
+        }],
+        "category": [],
+        "attributes": [{
+                "keyword": "",
+                "type": "word",
+                "columns": ["nome_eng_categoria", "nome_ita_categoria"]
+        }],
+        "relations": [{
+                "keyword": "people in this category",
+                "element_name": "person",
+                "by": [{
+                                "from_table_name": "aunica_categorie",
+                                "from_columns": ["id_categoria"],
+                                "to_table_name": "aunica_people_categorie",
+                                "to_columns": ["id_categoria"]
+                        },
+                        {
+                                "from_table_name": "aunica_people_categorie",
+                                "from_columns": ["id_persona"],
+                                "to_table_name": "aunica_people_dettagli",
+                                "to_columns": ["id_persona"]
+                        }
+                ]
+        }]
+},
+{
+        "element_name": "group",
+        "aliases": ["groups"],
+        "type": "secondary",
+        "table_name": "aunica_gruppi_espliciti",
+        "show_columns": [{
+                "keyword": "",
+                "columns": ["nome_eng"]
+        }],
+        "category": [],
+        "attributes": [{
+                "keyword": "",
+                "type": "word",
+                "columns": ["nome_eng", "nome_ita"]
+        }],
+        "relations": [{
+                "keyword": "people in this group",
+                "element_name": "person",
+                "by": [{
+                        "from_table_name": "aunica_gruppi_espliciti",
+                        "from_columns": ["id_gruppo"],
+                        "to_table_name": "aunica_people_dettagli",
+                        "to_columns": ["id_gruppo_esplicito"]
+                }]
+        }]
+},
+{
+        "element_name": "equipment people",
+        "type": "crossable",
+        "table_name": "aunica_people_apparecchiature"
+},
+{
+        "element_name": "people categories",
+        "type": "crossable",
+        "table_name": "aunica_people_categorie"
+},
+{
+        "element_name": "person",
+        "aliases": ["people", "professor", "professors", "teacher", "teachers"],
+        "type": "primary",
+        "table_name": "aunica_people_dettagli",
+        "show_columns": [{
+                "keyword": "",
+                "columns": ["cognome", "nome"]
+        }],
+        "category": ["id_sezione", "research area", "in research area"],
+        "attributes": [{
+                        "keyword": "",
+                        "type": "word",
+                        "columns": ["cognome", "nome"]
+                },
+                {
+                        "keyword": "in research area",
+                        "type": "word",
+                        "columns": ["nome_sezione_eng", "nome_sezione_ita"],
+                        "by": [{
+                                        "from_table_name": "aunica_people_dettagli",
+                                        "from_columns": ["id_persona"],
+                                        "to_table_name": "aunica_people_sezioni",
+                                        "to_columns": ["id_persona"]
+                                },
+                                {
+                                        "from_table_name": "aunica_people_sezioni",
+                                        "from_columns": ["id_sezione"],
+                                        "to_table_name": "sezioni",
+                                        "to_columns": ["id_sezione"]
+                                }
+                        ]
+                },
+                {
+                        "keyword": "in group",
+                        "type": "word",
+                        "columns": ["nome_eng"],
+                        "by": [{
+                                "from_table_name": "aunica_people_dettagli",
+                                "from_columns": ["id_gruppo_esplicito"],
+                                "to_table_name": "aunica_gruppi_espliciti",
+                                "to_columns": ["id_gruppo"]
+                        }]
+                },
+                {
+                        "keyword": "in category",
+                        "type": "word",
+                        "columns": ["nome_eng_categoria"],
+                        "by": [{
+                                        "from_table_name": "aunica_people_dettagli",
+                                        "from_columns": ["id_persona"],
+                                        "to_table_name": "aunica_people_categorie",
+                                        "to_columns": ["id_persona"]
+                                },
+                                {
+                                        "from_table_name": "aunica_people_categorie",
+                                        "from_columns": ["id_categoria"],
+                                        "to_table_name": "aunica_categorie",
+                                        "to_columns": ["id_categoria"]
+                                }
+                        ]
+                },
+                {
+                        "keyword": "who wrote",
+                        "type": "word",
+                        "columns": ["titolo"],
+                        "by": [{
+                                        "from_table_name": "aunica_people_dettagli",
+                                        "from_columns": ["id_persona"],
+                                        "to_table_name": "aunica_people_libri",
+                                        "to_columns": ["id_persona"]
+                                },
+                                {
+                                        "from_table_name": "aunica_people_libri",
+                                        "from_columns": ["id_libro"],
+                                        "to_table_name": "libri_internazionali",
+                                        "to_columns": ["id_libro"]
+                                }
+                        ]
+                },
+                {
+                        "keyword": "that won",
+                        "type": "word",
+                        "columns": ["nome_ric_eng"],
+                        "by": [{
+                                        "from_table_name": "aunica_people_dettagli",
+                                        "from_columns": ["id_persona"],
+                                        "to_table_name": "aunica_people_riconoscimenti",
+                                        "to_columns": ["id_persona"]
+                                },
+                                {
+                                        "from_table_name": "aunica_people_riconoscimenti",
+                                        "from_columns": ["id_riconoscimento"],
+                                        "to_table_name": "riconoscimento",
+                                        "to_columns": ["id_riconoscimento"]
+                                }
+                        ]
+                }
+        ],
+        "relations": [{
+                        "keyword": "in research area",
+                        "element_name": "research area",
+                        "by": [{
+                                        "from_table_name": "aunica_people_dettagli",
+                                        "from_columns": ["id_persona"],
+                                        "to_table_name": "aunica_people_sezioni",
+                                        "to_columns": ["id_persona"]
+                                },
+                                {
+                                        "from_table_name": "aunica_people_sezioni",
+                                        "from_columns": ["id_sezione"],
+                                        "to_table_name": "sezioni",
+                                        "to_columns": ["id_sezione"]
+                                }
+                        ]
+                },
+                {
+                        "keyword": "in group",
+                        "element_name": "group",
+                        "by": [{
+                                "from_table_name": "aunica_people_dettagli",
+                                "from_columns": ["id_gruppo_esplicito"],
+                                "to_table_name": "aunica_gruppi_espliciti",
+                                "to_columns": ["id_gruppo"]
+                        }]
+                },
+                {
+                        "keyword": "in category",
+                        "element_name": "category",
+                        "by": [{
+                                        "from_table_name": "aunica_people_dettagli",
+                                        "from_columns": ["id_persona"],
+                                        "to_table_name": "aunica_people_categorie",
+                                        "to_columns": ["id_persona"]
+                                },
+                                {
+                                        "from_table_name": "aunica_people_categorie",
+                                        "from_columns": ["id_categoria"],
+                                        "to_table_name": "aunica_categorie",
+                                        "to_columns": ["id_categoria"]
+                                }
+                        ]
+                },
+                {
+                        "keyword": "contacts",
+                        "element_name": "contact",
+                        "by": [{
+                                "from_table_name": "aunica_people_dettagli",
+                                "from_columns": ["id_persona"],
+                                "to_table_name": "personale_deib_recapiti",
+                                "to_columns": ["id_persona"]
+                        }]
+                },
+                {
+                        "keyword": "associated laboratory",
+                        "element_name": "laboratory",
+                        "by": [{
+                                        "from_table_name": "aunica_people_dettagli",
+                                        "from_columns": ["id_persona"],
+                                        "to_table_name": "aunica_people_laboratorio",
+                                        "to_columns": ["id_persona"]
+                                },
+                                {
+                                        "from_table_name": "aunica_people_laboratorio",
+                                        "from_columns": ["id_laboratorio"],
+                                        "to_table_name": "laboratorio",
+                                        "to_columns": ["id_lab"]
+                                }
+                        ]
+                },
+                {
+                        "keyword": "books written",
+                        "element_name": "book",
+                        "by": [{
+                                        "from_table_name": "aunica_people_dettagli",
+                                        "from_columns": ["id_persona"],
+                                        "to_table_name": "aunica_people_libri",
+                                        "to_columns": ["id_persona"]
+                                },
+                                {
+                                        "from_table_name": "aunica_people_libri",
+                                        "from_columns": ["id_libro"],
+                                        "to_table_name": "libri_internazionali",
+                                        "to_columns": ["id_libro"]
+                                }
+                        ]
+                },
+                {
+                        "keyword": "associated projects",
+                        "element_name": "project",
+                        "by": [{
+                                        "from_table_name": "aunica_people_dettagli",
+                                        "from_columns": ["id_persona"],
+                                        "to_table_name": "aunica_people_progetti",
+                                        "to_columns": ["id_persona"]
+                                },
+                                {
+                                        "from_table_name": "aunica_people_progetti",
+                                        "from_columns": ["id_progetto"],
+                                        "to_table_name": "progetto",
+                                        "to_columns": ["id_progetto"]
+                                }
+                        ]
+                },
+                {
+                        "keyword": "awards won",
+                        "element_name": "award",
+                        "by": [{
+                                        "from_table_name": "aunica_people_dettagli",
+                                        "from_columns": ["id_persona"],
+                                        "to_table_name": "aunica_people_riconoscimenti",
+                                        "to_columns": ["id_persona"]
+                                },
+                                {
+                                        "from_table_name": "aunica_people_riconoscimenti",
+                                        "from_columns": ["id_riconoscimento"],
+                                        "to_table_name": "riconoscimento",
+                                        "to_columns": ["id_riconoscimento"]
+                                }
+                        ]
+                }
+        ]
+},
+{
+        "element_name": "people laboratory",
+        "type": "crossable",
+        "table_name": "aunica_people_laboratorio"
+},
+{
+        "element_name": "people books",
+        "type": "crossable",
+        "table_name": "aunica_people_libri"
+},
+{
+        "element_name": "people partnerships",
+        "type": "crossable",
+        "table_name": "aunica_people_partnership"
+},
+{
+        "element_name": "people platforms",
+        "type": "crossable",
+        "table_name": "aunica_people_piattaforme"
+},
+{
+        "element_name": "people projects",
+        "type": "crossable",
+        "table_name": "aunica_people_progetti"
+},
+{
+        "element_name": "people networks",
+        "type": "crossable",
+        "table_name": "aunica_people_reti"
+},
+{
+        "element_name": "people awards",
+        "type": "crossable",
+        "table_name": "aunica_people_riconoscimenti"
+},
+{
+        "element_name": "people sections",
+        "type": "crossable",
+        "table_name": "aunica_people_sezioni"
+},
+{
+        "element_name": "event",
+        "aliases": ["events"],
+        "type": "primary",
+        "table_name": "eventi",
+        "show_columns": [{
+                "keyword": "",
+                "columns": ["titolo_eng"]
+        }],
+        "category": ["id_tipo_evento", "type", "of type"],
+        "attributes": [{
+                        "keyword": "",
+                        "type": "word",
+                        "columns": ["titolo_eng", "titolo_ita"]
+                },
+                {
+                        "keyword": "of type",
+                        "type": "word",
+                        "columns": ["nome_tipo_evento_eng", "nome_tipo_evento_ita"],
+                        "by": [{
+                                "from_table_name": "eventi",
+                                "from_columns": ["id_tipo_evento"],
+                                "to_table_name": "tipo_evento",
+                                "to_columns": ["id_tipo_evento"]
+                        }]
+                }
+        ],
+        "relations": []
+},
+{
+        "element_name": "international program",
+        "aliases": ["international programs", "program", "programs"],
+        "type": "secondary",
+        "table_name": "internazionali_programmi",
+        "show_columns": [{
+                "keyword": "",
+                "columns": ["titolo_eng"]
+        }],
+        "category": [],
+        "attributes": [{
+                "keyword": "",
+                "type": "word",
+                "columns": ["titolo_eng", "titolo_ita"]
+        }],
+        "relations": []
+},
+{
+        "element_name": "network",
+        "aliases": ["networks", "international network", "international networks"],
+        "type": "secondary",
+        "table_name": "internazionali_reti",
+        "show_columns": [{
+                "keyword": "",
+                "columns": ["titolo_eng"]
+        }],
+        "category": ["id_sezione", "research area", "in research area"],
+        "attributes": [{
+                        "keyword": "",
+                        "type": "word",
+                        "columns": ["titolo_eng", "titolo_eng"]
+                },
+                {
+                        "keyword": "in research area",
+                        "type": "word",
+                        "columns": ["nome_sezione_eng", "nome_sezione_ita"],
+                        "by": [{
+                                "from_table_name": "internazionali_reti",
+                                "from_columns": ["id_sezione"],
+                                "to_table_name": "sezioni",
+                                "to_columns": ["id_sezione"]
+                        }]
+                },
+                {
+                        "keyword": "whose person in charge is",
+                        "type": "word",
+                        "columns": ["cognome", "nome"],
+                        "by": [{
+                                        "from_table_name": "internazionali_reti",
+                                        "from_columns": ["id_elemento"],
+                                        "to_table_name": "internazionali_reti_responsabile",
+                                        "to_columns": ["id_rete"]
+                                },
+                                {
+                                        "from_table_name": "internazionali_reti_responsabile",
+                                        "from_columns": ["id_docente"],
+                                        "to_table_name": "aunica_people_dettagli",
+                                        "to_columns": ["old_deib_id_docente"]
+                                }
+                        ]
+                }
+        ],
+        "relations": [{
+                        "keyword": "in research area",
+                        "element_name": "research area",
+                        "by": [{
+                                "from_table_name": "internazionali_reti",
+                                "from_columns": ["id_sezione"],
+                                "to_table_name": "sezioni",
+                                "to_columns": ["id_sezione"]
+                        }]
+                },
+                {
+                        "keyword": "people in this network",
+                        "element_name": "person",
+                        "by": [{
+                                        "from_table_name": "internazionali_reti",
+                                        "from_columns": ["id_elemento"],
+                                        "to_table_name": "aunica_people_reti",
+                                        "to_columns": ["id_rete"]
+                                },
+                                {
+                                        "from_table_name": "aunica_people_reti",
+                                        "from_columns": ["id_persona"],
+                                        "to_table_name": "aunica_people_dettagli",
+                                        "to_columns": ["id_persona"]
+                                }
+                        ]
+                },
+                {
+                        "keyword": "person in charge",
+                        "element_name": "person",
+                        "by": [{
+                                        "from_table_name": "internazionali_reti",
+                                        "from_columns": ["id_elemento"],
+                                        "to_table_name": "internazionali_reti_responsabile",
+                                        "to_columns": ["id_rete"]
+                                },
+                                {
+                                        "from_table_name": "internazionali_reti_responsabile",
+                                        "from_columns": ["id_docente"],
+                                        "to_table_name": "aunica_people_dettagli",
+                                        "to_columns": ["old_deib_id_docente"]
+                                }
+                        ]
+                }
+        ]
+},
+{
+        "element_name": "network person in charge",
+        "type": "crossable",
+        "table_name": "internazionali_reti_responsabile"
+},
+{
+        "element_name": "laboratory",
+        "aliases": ["laboratories", "lab", "labs"],
+        "type": "secondary",
+        "table_name": "laboratorio",
+        "show_columns": [{
+                "keyword": "",
+                "columns": ["nome_lab_eng"]
+        }],
+        "category": ["id_tipo_lab", "lab type", "of type"],
+        "attributes": [{
+                        "keyword": "",
+                        "type": "word",
+                        "columns": ["nome_lab_eng", "nome_lab"]
+                },
+                {
+                        "keyword": "of type",
+                        "type": "word",
+                        "columns": ["tipo_lab"],
+                        "by": [{
+                                "from_table_name": "laboratorio",
+                                "from_columns": ["id_tipo_lab"],
+                                "to_table_name": "tipo_laboratorio",
+                                "to_columns": ["id_tipo_lab"]
+                        }]
+                }
+        ],
+        "relations": [{
+                        "keyword": "people working in this laboratory",
+                        "element_name": "person",
+                        "by": [{
+                                        "from_table_name": "laboratorio",
+                                        "from_columns": ["id_lab"],
+                                        "to_table_name": "aunica_people_laboratorio",
+                                        "to_columns": ["id_laboratorio"]
+                                },
+                                {
+                                        "from_table_name": "aunica_people_laboratorio",
+                                        "from_columns": ["id_persona"],
+                                        "to_table_name": "aunica_people_dettagli",
+                                        "to_columns": ["id_persona"]
+                                }
+                        ]
+                },
+                {
+                        "keyword": "equipment in this laboratory",
+                        "element_name": "equipment",
+                        "by": [{
+                                        "from_table_name": "laboratorio",
+                                        "from_columns": ["id_lab"],
+                                        "to_table_name": "apparecchiature_laboratorio",
+                                        "to_columns": ["id_laboratorio"]
+                                },
+                                {
+                                        "from_table_name": "apparecchiature_laboratorio",
+                                        "from_columns": ["id_apparecchiatura"],
+                                        "to_table_name": "apparecchiature",
+                                        "to_columns": ["id_elemento"]
+                                }
+                        ]
+                }
+        ]
+},
+{
+        "element_name": "book",
+        "aliases": ["books"],
+        "type": "primary",
+        "table_name": "libri_internazionali",
+        "show_columns": [{
+                "keyword": "",
+                "columns": ["titolo"]
+        }],
+        "category": ["id_sezione", "research area", "in research area"],
+        "attributes": [{
+                        "keyword": "",
+                        "type": "word",
+                        "columns": ["titolo"]
+                },
+                {
+                        "keyword": "published in",
+                        "type": "word",
+                        "columns": ["anno_pubblicazione"]
+                },
+                {
+                        "keyword": "by",
+                        "type": "word",
+                        "columns": ["cognome", "nome"],
+                        "by": [{
+                                        "from_table_name": "libri_internazionali",
+                                        "from_columns": ["id_libro"],
+                                        "to_table_name": "aunica_people_libri",
+                                        "to_columns": ["id_libro"]
+                                },
+                                {
+                                        "from_table_name": "aunica_people_libri",
+                                        "from_columns": ["id_persona"],
+                                        "to_table_name": "aunica_people_dettagli",
+                                        "to_columns": ["id_persona"]
+                                }
+                        ]
+                },
+                {
+                        "keyword": "in research area",
+                        "type": "word",
+                        "columns": ["nome_sezione_eng", "nome_sezione_ita"],
+                        "by": [{
+                                "from_table_name": "libri_internazionali",
+                                "from_columns": ["id_sezione"],
+                                "to_table_name": "sezioni",
+                                "to_columns": ["id_sezione"]
+                        }]
+                }
+        ],
+        "relations": [{
+                        "keyword": "written by",
+                        "element_name": "person",
+                        "by": [{
+                                        "from_table_name": "libri_internazionali",
+                                        "from_columns": ["id_libro"],
+                                        "to_table_name": "aunica_people_libri",
+                                        "to_columns": ["id_libro"]
+                                },
+                                {
+                                        "from_table_name": "aunica_people_libri",
+                                        "from_columns": ["id_persona"],
+                                        "to_table_name": "aunica_people_dettagli",
+                                        "to_columns": ["id_persona"]
+                                }
+                        ]
+                },
+                {
+                        "keyword": "in research area",
+                        "element_name": "research area",
+                        "by": [{
+                                "from_table_name": "libri_internazionali",
+                                "from_columns": ["id_sezione"],
+                                "to_table_name": "sezioni",
+                                "to_columns": ["id_sezione"]
+                        }]
+                }
+        ]
+},
+{
+        "element_name": "news",
+        "aliases": [],
+        "type": "secondary",
+        "table_name": "news",
+        "show_columns": [{
+                "keyword": "",
+                "columns": ["titolo_eng"]
+        }],
+        "category": [],
+        "attributes": [{
+                "keyword": "",
+                "type": "word",
+                "columns": ["titolo_eng", "titolo_ita"]
+        }],
+        "relations": []
+},
+{
+        "element_name": "partnership",
+        "aliases": ["partnerships"],
+        "type": "secondary",
+        "table_name": "partnership",
+        "show_columns": [{
+                "keyword": "",
+                "columns": ["titolo_eng"]
+        }],
+        "category": ["id_sezione", "research area", "in research area"],
+        "attributes": [{
+                        "keyword": "",
+                        "type": "word",
+                        "columns": ["titolo_eng", "titolo_ita"]
+                },
+                {
+                        "keyword": "with",
+                        "type": "word",
+                        "columns": ["cognome", "nome"],
+                        "by": [{
+                                        "from_table_name": "partnership",
+                                        "from_columns": ["id_elemento"],
+                                        "to_table_name": "aunica_people_partnership",
+                                        "to_columns": ["id_partnership"]
+                                },
+                                {
+                                        "from_table_name": "aunica_people_partnership",
+                                        "from_columns": ["id_persona"],
+                                        "to_table_name": "aunica_people_dettagli",
+                                        "to_columns": ["id_persona"]
+                                }
+                        ]
+                },
+                {
+                        "keyword": "in research area",
+                        "type": "word",
+                        "columns": ["nome_sezione_eng", "nome_sezione_ita"],
+                        "by": [{
+                                "from_table_name": "partnership",
+                                "from_columns": ["id_sezione"],
+                                "to_table_name": "sezioni",
+                                "to_columns": ["id_sezione"]
+                        }]
+                }
+        ],
+        "relations": [{
+                        "keyword": "associated people",
+                        "element_name": "person",
+                        "by": [{
+                                        "from_table_name": "partnership",
+                                        "from_columns": ["id_elemento"],
+                                        "to_table_name": "aunica_people_partnership",
+                                        "to_columns": ["id_partnership"]
+                                },
+                                {
+                                        "from_table_name": "aunica_people_partnership",
+                                        "from_columns": ["id_persona"],
+                                        "to_table_name": "aunica_people_dettagli",
+                                        "to_columns": ["id_persona"]
+                                }
+                        ]
+                },
+                {
+                        "keyword": "in research area",
+                        "element_name": "research area",
+                        "by": [{
+                                "from_table_name": "partnership",
+                                "from_columns": ["id_sezione"],
+                                "to_table_name": "sezioni",
+                                "to_columns": ["id_sezione"]
+                        }]
+                }
+        ]
+},
+{
+        "element_name": "platform",
+        "aliases": ["platforms", "european platform", "european platforms"],
+        "type": "secondary",
+        "table_name": "piattaforme_europee",
+        "show_columns": [{
+                "keyword": "",
+                "columns": ["titolo_eng"]
+        }],
+        "category": ["id_sezione", "research area", "in research area"],
+        "attributes": [{
+                        "keyword": "",
+                        "type": "word",
+                        "columns": ["titolo_eng", "titolo_ita"]
+                },
+                {
+                        "keyword": "in research area",
+                        "type": "word",
+                        "columns": ["nome_sezione_eng", "nome_sezione_ita"],
+                        "by": [{
+                                "from_table_name": "piattaforme_europee",
+                                "from_columns": ["id_sezione"],
+                                "to_table_name": "sezioni",
+                                "to_columns": ["id_sezione"]
+                        }]
+                },
+                {
+                        "keyword": "in research line",
+                        "type": "word",
+                        "columns": ["nome_sottoarea_eng", "nome_sottoarea_ita"],
+                        "by": [{
+                                        "from_table_name": "piattaforme_europee",
+                                        "from_columns": ["id_elemento"],
+                                        "to_table_name": "piattaforme_europee_sottoaree",
+                                        "to_columns": ["id_elemento"]
+                                },
+                                {
+                                        "from_table_name": "piattaforme_europee_sottoaree",
+                                        "from_columns": ["id_sottoarea"],
+                                        "to_table_name": "sottoaree",
+                                        "to_columns": ["id_sottoarea"]
+                                }
+                        ]
+                }
+        ],
+        "relations": [{
+                        "keyword": "in research area",
+                        "element_name": "research area",
+                        "by": [{
+                                "from_table_name": "piattaforme_europee",
+                                "from_columns": ["id_sezione"],
+                                "to_table_name": "sezioni",
+                                "to_columns": ["id_sezione"]
+                        }]
+                },
+                {
+                        "keyword": "people in this platform",
+                        "element_name": "person",
+                        "by": [{
+                                        "from_table_name": "piattaforme_europee",
+                                        "from_columns": ["id_elemento"],
+                                        "to_table_name": "aunica_people_piattaforme",
+                                        "to_columns": ["id_piattaforma"]
+                                },
+                                {
+                                        "from_table_name": "aunica_people_piattaforme",
+                                        "from_columns": ["id_persona"],
+                                        "to_table_name": "aunica_people_dettagli",
+                                        "to_columns": ["id_persona"]
+                                }
+                        ]
+                }
+        ]
+},
+{
+        "element_name": "platform area",
+        "type": "crossable",
+        "table_name": "piattaforme_europee_sottoaree"
+},
+{
+        "element_name": "project",
+        "aliases": ["projects"],
+        "type": "primary",
+        "table_name": "progetto",
+        "show_columns": [{
+                "keyword": "",
+                "columns": ["nome_prog_eng"]
+        }],
+        "category": ["id_tipo_prog", "type", "of type"],
+        "attributes": [{
+                        "keyword": "",
+                        "type": "word",
+                        "columns": ["nome_prog_eng", "nome_prog_ita"]
+                },
+                {
+                        "keyword": "in research area",
+                        "type": "word",
+                        "columns": ["nome_sezione_eng", "nome_sezione_ita"],
+                        "by": [{
+                                        "from_table_name": "progetto",
+                                        "from_columns": ["id_progetto"],
+                                        "to_table_name": "progetto_sezione",
+                                        "to_columns": ["id_progetto"]
+                                },
+                                {
+                                        "from_table_name": "progetto_sezione",
+                                        "from_columns": ["id_sezione"],
+                                        "to_table_name": "sezioni",
+                                        "to_columns": ["id_sezione"]
+                                }
+                        ]
+                },
+                {
+                        "keyword": "in research line",
+                        "type": "word",
+                        "columns": ["nome_sottoarea_eng", "nome_sottoarea_ita"],
+                        "by": [{
+                                        "from_table_name": "progetto",
+                                        "from_columns": ["id_progetto"],
+                                        "to_table_name": "progetto_settore_sottoaree",
+                                        "to_columns": ["id_progetto"]
+                                },
+                                {
+                                        "from_table_name": "progetto_settore_sottoaree",
+                                        "from_columns": ["id_sottoarea"],
+                                        "to_table_name": "sottoaree",
+                                        "to_columns": ["id_sottoarea"]
+                                }
+                        ]
+                },
+                {
+                        "keyword": "of type",
+                        "type": "word",
+                        "columns": ["tipo_prog"],
+                        "by": [{
+                                "from_table_name": "progetto",
+                                "from_columns": ["id_tipo_prog"],
+                                "to_table_name": "tipo_progetto",
+                                "to_columns": ["id_tipo_prog"]
+                        }]
+                }
+        ],
+        "relations": [{
+                        "keyword": "in research area",
+                        "element_name": "research area",
+                        "by": [{
+                                        "from_table_name": "progetto",
+                                        "from_columns": ["id_progetto"],
+                                        "to_table_name": "progetto_sezione",
+                                        "to_columns": ["id_progetto"]
+                                },
+                                {
+                                        "from_table_name": "progetto_sezione",
+                                        "from_columns": ["id_sezione"],
+                                        "to_table_name": "sezioni",
+                                        "to_columns": ["id_sezione"]
+                                }
+                        ]
+                },
+                {
+                        "keyword": "in research line",
+                        "element_name": "research line",
+                        "by": [{
+                                        "from_table_name": "progetto",
+                                        "from_columns": ["id_progetto"],
+                                        "to_table_name": "progetto_settore_sottoaree",
+                                        "to_columns": ["id_progetto"]
+                                },
+                                {
+                                        "from_table_name": "progetto_settore_sottoaree",
+                                        "from_columns": ["id_sottoarea"],
+                                        "to_table_name": "sottoaree",
+                                        "to_columns": ["id_sottoarea"]
+                                }
+                        ]
+                },
+                {
+                        "keyword": "teachers working on this project",
+                        "element_name": "person",
+                        "by": [{
+                                        "from_table_name": "progetto",
+                                        "from_columns": ["id_progetto"],
+                                        "to_table_name": "progetto_docente",
+                                        "to_columns": ["id_progetto"]
+                                },
+                                {
+                                        "from_table_name": "progetto_docente",
+                                        "from_columns": ["id_docente"],
+                                        "to_table_name": "aunica_people_dettagli",
+                                        "to_columns": ["old_deib_id_docente"]
+                                }
+                        ]
+                }
+        ]
+},
+{
+        "element_name": "project teacher",
+        "type": "crossable",
+        "table_name": "progetto_docente"
+},
+{
+        "element_name": "project people",
+        "type": "crossable",
+        "table_name": "progetto_persona"
+},
+{
+        "element_name": "project area",
+        "type": "crossable",
+        "table_name": "progetto_settore_sottoaree"
+},
+{
+        "element_name": "project section",
+        "type": "crossable",
+        "table_name": "progetto_sezione"
+},
+{
+        "element_name": "award",
+        "aliases": ["awards"],
+        "type": "primary",
+        "table_name": "riconoscimento",
+        "show_columns": [{
+                "keyword": "",
+                "columns": ["nome_ric_eng"]
+        }],
+        "category": ["id_tipo_ric", "type", "of type"],
+        "attributes": [{
+                        "keyword": "",
+                        "type": "word",
+                        "columns": ["nome_ric_eng", "nome_ric_ita"]
+                },
+                {
+                        "keyword": "of type",
+                        "type": "word",
+                        "columns": ["nome_tipo_ric_eng", "nome_tipo_ric_ita"],
+                        "by": [{
+                                "from_table_name": "riconoscimento",
+                                "from_columns": ["id_tipo_ric"],
+                                "to_table_name": "tipo_riconoscimento",
+                                "to_columns": ["id_tipo_ric"]
+                        }]
+                },
+                {
+                        "keyword": "won by",
+                        "type": "word",
+                        "columns": ["cognome", "nome"],
+                        "by": [{
+                                        "from_table_name": "riconoscimento",
+                                        "from_columns": ["id_riconoscimento"],
+                                        "to_table_name": "aunica_people_riconoscimenti",
+                                        "to_columns": ["id_riconoscimento"]
+                                },
+                                {
+                                        "from_table_name": "aunica_people_riconoscimenti",
+                                        "from_columns": ["id_persona"],
+                                        "to_table_name": "aunica_people_dettagli",
+                                        "to_columns": ["id_persona"]
+                                }
+                        ]
+                },
+                {
+                        "keyword": "in research area",
+                        "type": "word",
+                        "columns": ["nome_sezione_eng", "nome_sezione_ita"],
+                        "by": [{
+                                        "from_table_name": "riconoscimento",
+                                        "from_columns": ["id_riconoscimento"],
+                                        "to_table_name": "riconoscimento_sezione",
+                                        "to_columns": ["id_riconoscimento"]
+                                },
+                                {
+                                        "from_table_name": "riconoscimento_sezione",
+                                        "from_columns": ["id_sezione"],
+                                        "to_table_name": "sezioni",
+                                        "to_columns": ["id_sezione"]
+                                }
+                        ]
+                },
+                {
+                        "keyword": "in research line",
+                        "type": "word",
+                        "columns": ["nome_sottoarea_eng", "nome_sottoarea_ita"],
+                        "by": [{
+                                        "from_table_name": "riconoscimento",
+                                        "from_columns": ["id_riconoscimento"],
+                                        "to_table_name": "riconoscimento_settore_sottoarea",
+                                        "to_columns": ["id_riconoscimento"]
+                                },
+                                {
+                                        "from_table_name": "riconoscimento_settore_sottoarea",
+                                        "from_columns": ["id_sottoarea"],
+                                        "to_table_name": "sottoaree",
+                                        "to_columns": ["id_sottoarea"]
+                                }
+                        ]
+                }
+        ],
+        "relations": [{
+                        "keyword": "people that won this award",
+                        "element_name": "person",
+                        "by": [{
+                                        "from_table_name": "riconoscimento",
+                                        "from_columns": ["id_riconoscimento"],
+                                        "to_table_name": "aunica_people_riconoscimenti",
+                                        "to_columns": ["id_riconoscimento"]
+                                },
+                                {
+                                        "from_table_name": "aunica_people_riconoscimenti",
+                                        "from_columns": ["id_persona"],
+                                        "to_table_name": "aunica_people_dettagli",
+                                        "to_columns": ["id_persona"]
+                                }
+                        ]
+                },
+                {
+                        "keyword": "in research area",
+                        "element_name": "research area",
+                        "by": [{
+                                        "from_table_name": "riconoscimento",
+                                        "from_columns": ["id_riconoscimento"],
+                                        "to_table_name": "riconoscimento_sezione",
+                                        "to_columns": ["id_riconoscimento"]
+                                },
+                                {
+                                        "from_table_name": "riconoscimento_sezione",
+                                        "from_columns": ["id_sezione"],
+                                        "to_table_name": "sezioni",
+                                        "to_columns": ["id_sezione"]
+                                }
+                        ]
+                },
+                {
+                        "keyword": "in research line",
+                        "element_name": "research line",
+                        "by": [{
+                                        "from_table_name": "riconoscimento",
+                                        "from_columns": ["id_riconoscimento"],
+                                        "to_table_name": "riconoscimento_settore_sottoarea",
+                                        "to_columns": ["id_riconoscimento"]
+                                },
+                                {
+                                        "from_table_name": "riconoscimento_settore_sottoarea",
+                                        "from_columns": ["id_sottoarea"],
+                                        "to_table_name": "sottoaree",
+                                        "to_columns": ["id_sottoarea"]
+                                }
+                        ]
+                }
+        ]
+},
+{
+        "element_name": "award area",
+        "type": "crossable",
+        "table_name": "riconoscimento_settore_sottoarea"
+},
+{
+        "element_name": "award section",
+        "type": "crossable",
+        "table_name": "riconoscimento_sezione"
+},
+{
+        "element_name": "section area",
+        "type": "crossable",
+        "table_name": "sezione_sottoarea_settore"
+},
+{
+        "element_name": "research area",
+        "aliases": ["research areas", "section", "sections", "department", "departments"],
+        "type": "primary",
+        "table_name": "sezioni",
+        "show_columns": [{
+                "keyword": "",
+                "columns": ["nome_sezione_eng"]
+        }],
+        "category": [],
+        "attributes": [{
+                "keyword": "",
+                "type": "word",
+                "columns": ["nome_sezione_eng", "nome_sezione_ita"]
+        }],
+        "relations": [{
+                        "keyword": "research lines in this area",
+                        "element_name": "research line",
+                        "by": [{
+                                        "from_table_name": "sezioni",
+                                        "from_columns": ["id_sezione"],
+                                        "to_table_name": "sezione_sottoarea_settore",
+                                        "to_columns": ["id_sezione"]
+                                },
+                                {
+                                        "from_table_name": "sezione_sottoarea_settore",
+                                        "from_columns": ["id_sottoarea"],
+                                        "to_table_name": "sottoaree",
+                                        "to_columns": ["id_sottoarea"]
+                                }
+                        ]
+                },
+                {
+                        "keyword": "people working in this area",
+                        "element_name": "person",
+                        "by": [{
+                                        "from_table_name": "sezioni",
+                                        "from_columns": ["id_sezione"],
+                                        "to_table_name": "aunica_people_sezioni",
+                                        "to_columns": ["id_sezione"]
+                                },
+                                {
+                                        "from_table_name": "aunica_people_sezioni",
+                                        "from_columns": ["id_persona"],
+                                        "to_table_name": "aunica_people_dettagli",
+                                        "to_columns": ["id_persona"]
+                                }
+                        ]
+                },
+                {
+                        "keyword": "projects",
+                        "element_name": "project",
+                        "by": [{
+                                        "from_table_name": "sezioni",
+                                        "from_columns": ["id_sezione"],
+                                        "to_table_name": "progetto_sezione",
+                                        "to_columns": ["id_sezione"]
+                                },
+                                {
+                                        "from_table_name": "progetto_sezione",
+                                        "from_columns": ["id_progetto"],
+                                        "to_table_name": "progetto",
+                                        "to_columns": ["id_progetto"]
+                                }
+                        ]
+                },
+                {
+                        "keyword": "books",
+                        "element_name": "book",
+                        "by": [{
+                                "from_table_name": "sezioni",
+                                "from_columns": ["id_sezione"],
+                                "to_table_name": "libri_internazionali",
+                                "to_columns": ["id_sezione"]
+                        }]
+                },
+                {
+                        "keyword": "awards",
+                        "element_name": "award",
+                        "by": [{
+                                        "from_table_name": "sezioni",
+                                        "from_columns": ["id_sezione"],
+                                        "to_table_name": "riconoscimento_sezione",
+                                        "to_columns": ["id_sezione"]
+                                },
+                                {
+                                        "from_table_name": "riconoscimento_sezione",
+                                        "from_columns": ["id_riconoscimento"],
+                                        "to_table_name": "riconoscimento",
+                                        "to_columns": ["id_riconoscimento"]
+                                }
+                        ]
+                },
+                {
+                        "keyword": "equipment",
+                        "element_name": "equipment",
+                        "by": [{
+                                        "from_table_name": "sezioni",
+                                        "from_columns": ["id_sezione"],
+                                        "to_table_name": "apparecchiature_sezione",
+                                        "to_columns": ["id_sezione"]
+                                },
+                                {
+                                        "from_table_name": "apparecchiature_sezione",
+                                        "from_columns": ["id_apparecchiatura"],
+                                        "to_table_name": "apparecchiature",
+                                        "to_columns": ["id_elemento"]
+                                }
+                        ]
+                }
+        ]
+},
+{
+        "element_name": "research line",
+        "aliases": ["research lines", "area", "areas"],
+        "type": "secondary",
+        "table_name": "sottoaree",
+        "show_columns": [{
+                "keyword": "",
+                "columns": ["nome_sottoarea_eng"]
+        }],
+        "category": [],
+        "attributes": [{
+                        "keyword": "",
+                        "type": "word",
+                        "columns": ["nome_sottoarea_eng", "nome_sottoarea_ita"]
+                },
+                {
+                        "keyword": "in research area",
+                        "type": "word",
+                        "columns": ["nome_sezione_eng", "nome_sezione_ita"],
+                        "by": [{
+                                        "from_table_name": "sottoaree",
+                                        "from_columns": ["id_sottoarea"],
+                                        "to_table_name": "sezione_sottoarea_settore",
+                                        "to_columns": ["id_sottoarea"]
+                                },
+                                {
+                                        "from_table_name": "sezione_sottoarea_settore",
+                                        "from_columns": ["id_sezione"],
+                                        "to_table_name": "sezioni",
+                                        "to_columns": ["id_sezione"]
+                                }
+                        ]
+                }
+        ],
+        "relations": [{
+                        "keyword": "in research area",
+                        "element_name": "research area",
+                        "by": [{
+                                        "from_table_name": "sottoaree",
+                                        "from_columns": ["id_sottoarea"],
+                                        "to_table_name": "sezione_sottoarea_settore",
+                                        "to_columns": ["id_sottoarea"]
+                                },
+                                {
+                                        "from_table_name": "sezione_sottoarea_settore",
+                                        "from_columns": ["id_sezione"],
+                                        "to_table_name": "sezioni",
+                                        "to_columns": ["id_sezione"]
+                                }
+                        ]
+                },
+                {
+                        "keyword": "projects",
+                        "element_name": "project",
+                        "by": [{
+                                        "from_table_name": "sottoaree",
+                                        "from_columns": ["id_sottoarea"],
+                                        "to_table_name": "progetto_settore_sottoaree",
+                                        "to_columns": ["id_sottoarea"]
+                                },
+                                {
+                                        "from_table_name": "progetto_settore_sottoaree",
+                                        "from_columns": ["id_progetto"],
+                                        "to_table_name": "progetto",
+                                        "to_columns": ["id_progetto"]
+                                }
+                        ]
+                },
+                {
+                        "keyword": "awards",
+                        "element_name": "award",
+                        "by": [{
+                                        "from_table_name": "sottoaree",
+                                        "from_columns": ["id_sottoarea"],
+                                        "to_table_name": "riconoscimento_settore_sottoarea",
+                                        "to_columns": ["id_sottoarea"]
+                                },
+                                {
+                                        "from_table_name": "riconoscimento_settore_sottoarea",
+                                        "from_columns": ["id_riconoscimento"],
+                                        "to_table_name": "riconoscimento",
+                                        "to_columns": ["id_riconoscimento"]
+                                }
+                        ]
+                },
+                {
+                        "keyword": "equipment",
+                        "element_name": "equipment",
+                        "by": [{
+                                        "from_table_name": "sottoaree",
+                                        "from_columns": ["id_sottoarea"],
+                                        "to_table_name": "apparecchiature_aree",
+                                        "to_columns": ["id_sottoarea"]
+                                },
+                                {
+                                        "from_table_name": "apparecchiature_aree",
+                                        "from_columns": ["id_apparecchiatura"],
+                                        "to_table_name": "apparecchiature",
+                                        "to_columns": ["id_elemento"]
+                                }
+                        ]
+                }
+        ]
+},
+{
+        "element_name": "event type",
+        "aliases": [],
+        "type": "secondary",
+        "table_name": "tipo_evento",
+        "show_columns": [{
+                "keyword": "",
+                "columns": ["nome_tipo_evento_eng"]
+        }],
+        "category": [],
+        "attributes": [{
+                "keyword": "",
+                "type": "word",
+                "columns": ["nome_tipo_evento_eng", "nome_tipo_evento_ita"]
+        }],
+        "relations": [{
+                "keyword": "events of this type",
+                "element_name": "event",
+                "by": [{
+                        "from_table_name": "tipo_evento",
+                        "from_columns": ["id_tipo_evento"],
+                        "to_table_name": "eventi",
+                        "to_columns": ["id_tipo_evento"]
+                }]
+        }]
+},
+{
+        "element_name": "laboratory type",
+        "aliases": ["lab type"],
+        "type": "secondary",
+        "table_name": "tipo_laboratorio",
+        "show_columns": [{
+                "keyword": "",
+                "columns": ["tipo_lab"]
+        }],
+        "category": [],
+        "attributes": [{
+                "keyword": "",
+                "type": "word",
+                "columns": ["tipo_lab"]
+        }],
+        "relations": [{
+                "keyword": "laboratories of this type",
+                "element_name": "laboratory",
+                "by": [{
+                        "from_table_name": "tipo_laboratorio",
+                        "from_columns": ["id_tipo_lab"],
+                        "to_table_name": "laboratorio",
+                        "to_columns": ["id_tipo_lab"]
+                }]
+        }]
+},
+{
+        "element_name": "project type",
+        "aliases": [],
+        "type": "secondary",
+        "table_name": "tipo_progetto",
+        "show_columns": [{
+                "keyword": "",
+                "columns": ["tipo_prog"]
+        }],
+        "category": [],
+        "attributes": [{
+                "keyword": "",
+                "type": "word",
+                "columns": ["tipo_prog"]
+        }],
+        "relations": [{
+                "keyword": "projects of this type",
+                "element_name": "project",
+                "by": [{
+                        "from_table_name": "tipo_progetto",
+                        "from_columns": ["id_tipo_prog"],
+                        "to_table_name": "progetto",
+                        "to_columns": ["id_tipo_prog"]
+                }]
+        }]
+},
+{
+        "element_name": "award type",
+        "aliases": [],
+        "type": "secondary",
+        "table_name": "tipo_riconoscimento",
+        "show_columns": [{
+                "keyword": "",
+                "columns": ["nome_tipo_ric_eng"]
+        }],
+        "category": [],
+        "attributes": [{
+                "keyword": "",
+                "type": "word",
+                "columns": ["nome_tipo_ric_eng", "nome_tipo_ric_ita"]
+        }],
+        "relations": [{
+                "keyword": "awards of this type",
+                "element_name": "award",
+                "by": [{
+                        "from_table_name": "tipo_riconoscimento",
+                        "from_columns": ["id_tipo_ric"],
+                        "to_table_name": "riconoscimento",
+                        "to_columns": ["id_tipo_ric"]
+                }]
+        }]
+}
+]

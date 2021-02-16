@@ -1,0 +1,74 @@
+{
+  "Class": {
+    "column_list": [
+      "id",
+      "name"
+    ],
+    "primary_key_list": [
+      "id"
+    ],
+    "references": {}
+  },
+  "Lesson": {
+    "column_list": [
+      "id",
+      "name",
+      "class_id",
+      "teacher_id"
+    ],
+    "primary_key_list": [
+      "id"
+    ],
+    "references": {
+      "Class": {
+        "foreign_key_list": [
+          "class_id"
+        ],
+        "reference_key_list": [
+          "id"
+        ]
+      },
+      "Teacher": {
+        "foreign_key_list": [
+          "teacher_id"
+        ],
+        "reference_key_list": [
+          "id"
+        ]
+      }
+    }
+  },
+  "Teacher": {
+    "column_list": [
+      "id",
+      "name",
+      "surname"
+    ],
+    "primary_key_list": [
+      "id"
+    ],
+    "references": {}
+  },
+  "Timetable": {
+    "column_list": [
+      "id",
+      "day",
+      "from_time",
+      "to_time",
+      "lesson_id"
+    ],
+    "primary_key_list": [
+      "id"
+    ],
+    "references": {
+      "Lesson": {
+        "foreign_key_list": [
+          "lesson_id"
+        ],
+        "reference_key_list": [
+          "id"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,197 @@
+{
+  "customers": {
+    "column_list": [
+      "customerNumber",
+      "customerName",
+      "contactLastName",
+      "contactFirstName",
+      "phone",
+      "addressLine1",
+      "addressLine2",
+      "city",
+      "state",
+      "postalCode",
+      "country",
+      "salesRepEmployeeNumber",
+      "creditLimit"
+    ],
+    "primary_key_list": [
+      "customerNumber"
+    ],
+    "references": {
+      "employees": {
+        "foreign_key_list": [
+          "salesRepEmployeeNumber"
+        ],
+        "reference_key_list": [
+          "employeeNumber"
+        ]
+      }
+    }
+  },
+  "employees": {
+    "column_list": [
+      "employeeNumber",
+      "lastName",
+      "firstName",
+      "extension",
+      "email",
+      "officeCode",
+      "reportsTo",
+      "jobTitle"
+    ],
+    "primary_key_list": [
+      "employeeNumber"
+    ],
+    "references": {
+      "employees": {
+        "foreign_key_list": [
+          "reportsTo"
+        ],
+        "reference_key_list": [
+          "employeeNumber"
+        ]
+      },
+      "offices": {
+        "foreign_key_list": [
+          "officeCode"
+        ],
+        "reference_key_list": [
+          "officeCode"
+        ]
+      }
+    }
+  },
+  "offices": {
+    "column_list": [
+      "officeCode",
+      "city",
+      "phone",
+      "addressLine1",
+      "addressLine2",
+      "state",
+      "country",
+      "postalCode",
+      "territory"
+    ],
+    "primary_key_list": [
+      "officeCode"
+    ],
+    "references": {}
+  },
+  "orderdetails": {
+    "column_list": [
+      "orderNumber",
+      "productCode",
+      "quantityOrdered",
+      "priceEach",
+      "orderLineNumber"
+    ],
+    "primary_key_list": [
+      "orderNumber",
+      "productCode"
+    ],
+    "references": {
+      "orders": {
+        "foreign_key_list": [
+          "orderNumber"
+        ],
+        "reference_key_list": [
+          "orderNumber"
+        ]
+      },
+      "products": {
+        "foreign_key_list": [
+          "productCode"
+        ],
+        "reference_key_list": [
+          "productCode"
+        ]
+      }
+    }
+  },
+  "orders": {
+    "column_list": [
+      "orderNumber",
+      "orderDate",
+      "requiredDate",
+      "shippedDate",
+      "status",
+      "comments",
+      "customerNumber"
+    ],
+    "primary_key_list": [
+      "orderNumber"
+    ],
+    "references": {
+      "customers": {
+        "foreign_key_list": [
+          "customerNumber"
+        ],
+        "reference_key_list": [
+          "customerNumber"
+        ]
+      }
+    }
+  },
+  "payments": {
+    "column_list": [
+      "customerNumber",
+      "checkNumber",
+      "paymentDate",
+      "amount"
+    ],
+    "primary_key_list": [
+      "customerNumber",
+      "checkNumber"
+    ],
+    "references": {
+      "customers": {
+        "foreign_key_list": [
+          "customerNumber"
+        ],
+        "reference_key_list": [
+          "customerNumber"
+        ]
+      }
+    }
+  },
+  "productlines": {
+    "column_list": [
+      "productLine",
+      "textDescription",
+      "htmlDescription",
+      "image"
+    ],
+    "primary_key_list": [
+      "productLine"
+    ],
+    "references": {}
+  },
+  "products": {
+    "column_list": [
+      "productCode",
+      "productName",
+      "productLine",
+      "productScale",
+      "productVendor",
+      "productDescription",
+      "quantityInStock",
+      "buyPrice",
+      "MSRP"
+    ],
+    "primary_key_list": [
+      "productCode"
+    ],
+    "references": {
+      "productlines": {
+        "foreign_key_list": [
+          "productLine"
+        ],
+        "reference_key_list": [
+          "productLine"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,2573 @@
+// CONTEXT
+
+%[show_context]('training': '20', 'testing': '20')
+    ~[show?] ~[the?] ~[context]
+
+~[show]
+    show
+    view
+    show me
+    tell
+    tell me
+    display
+
+~[the]
+    the
+
+~[context]
+    on history
+    conversation history
+    history
+    context
+    past selections
+
+%[go_back_to_context_pos]('training': '6', 'testing': '2')
+    ~[please?] ~[back]
+    ~[please?] ~[return]
+
+~[back]
+    go back
+    going back
+    on going back
+    on go back
+    back
+    return
+    backward
+
+~[return]
+    return
+    undo
+
+~[please]
+    please
+
+
+// START
+
+%[start]('training': '40', 'testing': '10')
+    ~[hello]
+    ~[hello?] ~[_start]
+
+%[help]('training':'40', 'testing':'10')
+    ~[help]
+
+%[help_elements]('training':'40', 'testing':'10')
+    ~[help] ~[elements]
+
+%[help_history]('training':'40', 'testing':'10')
+    ~[help] ~[history]
+
+%[help_go_back]('training':'40', 'testing':'10')
+    ~[help] ~[back]
+
+~[hello]
+    hi
+    Hi
+    HI
+    hI
+    hello there
+    hello
+    Hello
+    hey there
+    hey
+
+~[help]
+    i need help
+    help me
+    help
+
+~[elements]
+    on elements
+    elements
+    on concepts
+    concepts
+
+~[_start]
+    start now
+    start
+    do something
+
+
+// HELPER
+
+~[find]
+    find
+    are there
+    search
+    look for
+
+~[filter]
+    filter
+    show only
+    give me only
+    only
+
+~[those]
+    those
+    the ones
+
+~[w_question]
+    which
+    which is
+    which are
+    who
+    who is
+    who are
+    when is
+    what
+    what is 
+    what are
+    how 
+    how many
+    how much
+
+//~[that]
+//    that
+//    that have
+//    which
+
+@[op_num]
+    less than
+    more than
+
+//@[op_word]
+//    ~[op_word_ne]
+//    ~[op_word_lk]
+
+//~[op_word_lk] # for the moment not used
+//    like
+//    similar to
+
+//~[op_word_ne]
+//    unlike
+//    different from
+//    distinct
+
+~[more_info_find]
+    more info about
+    about
+    info about
+    more info about
+
+~[more_info_filter]
+    how can I filter
+    how to filter
+    more info on filtering
+    filter
+    to filter
+
+@[order_by]
+    order by
+    ordered by
+    sort by
+    sorted by
+
+~[order_by_clause]
+    @[order_by] @[el_columns]
+@[el_1]
+    person
+    people
+    professor
+    professors
+    teacher
+    teachers
+
+@[el_2]
+    event
+    events
+
+@[el_3]
+    book
+    books
+
+@[el_4]
+    project
+    projects
+
+@[el_5]
+    award
+    awards
+
+@[el_6]
+    research area
+    research areas
+    section
+    sections
+    department
+    departments
+
+
+@[el_columns]
+    id_persona
+    codice_persona
+    cognome
+    nome
+    email
+    id_sezione
+    old_deib_k_docente
+    old_deib_id_docente
+    old_deib_id_persona
+    old_stl_login
+    old_stl_id
+    scheda_ita
+    scheda_eng
+    contatti_ita
+    contatti_eng
+    note_ita
+    note_eng
+    id_gruppo_esplicito
+    id_ciclocorso
+    foto
+    file1
+    file2
+    visibile
+    annotazioni
+    pagina_personale_ita
+    pagina_personale_eng
+    person id
+    person code
+    surname
+    name
+    email
+    section id
+    old deib key
+    old deib teacher id
+    old deib person id
+    old stl login
+    old stl id
+    about (ita)
+    about
+    contacts (ita)
+    contacts
+    notes (ita)
+    notes
+    group
+    course id
+    photo
+    file 1
+    file 2
+    visible
+    annotations
+    personal page (ita)
+    personal page
+    id_elemento
+    stato
+    inhome
+    ordine
+    titolo_ita
+    titolo_eng
+    descrizione_ita
+    descrizione_eng
+    short_bio_ita
+    contatti_ita
+    contatti_eng
+    short_bio_eng
+    link
+    nome_link
+    data_ins_old
+    data_scad
+    data_modifica
+    id_tipo_evento
+    data_ora_ics
+    data_orafine_ics
+    location_ics
+    data_ins
+    id_sezione
+    event id
+    state
+    in home
+    order
+    event title (ita)
+    event title
+    description (ita)
+    description
+    short bio (ita)
+    contacts (ita)
+    contacts
+    short bio
+    link
+    link name
+    old insertion date
+    expiration date
+    edit date
+    event type id
+    start time
+    end time
+    location
+    insertion date
+    section id
+    id_libro
+    titolo
+    altri_autori
+    casa_editrice
+    anno_pubblicazione
+    sitoweb_libro
+    ordine
+    id_sezione
+    book id
+    book title
+    other authors
+    publishing house
+    publication year
+    website
+    order
+    section id
+    id_progetto
+    id_sezione
+    id_tipo_prog
+    nome_prog_ita
+    nome_prog_eng
+    email_prog
+    sito_prog
+    siti_coll_prog
+    acronimo_prog
+    committente_prog
+    data_inizio_prog
+    data_fine_prog
+    ruolo_dei_prog
+    abstract_prog_ita
+    abstract_prog_eng
+    keyword_prog_ita
+    keyword_prog_eng
+    avanzamento_prog_ita
+    avanzamento_prog_eng
+    stato
+    didascalia_prog_ita
+    didascalia_prog_eng
+    featured
+    in_home
+    project id
+    section id
+    project type id
+    project name (ita)
+    project name
+    email
+    website
+    related sites
+    acronym
+    client
+    start date
+    end time
+    dei role
+    abstract (ita)
+    abstract
+    keyword (ita)
+    keyword
+    progress (ita)
+    progress
+    state
+    about (ita)
+    about
+    featured
+    in home
+    id_riconoscimento
+    id_tipo_ric
+    nome_ric_ita
+    data_premiazione
+    descrizione_ric
+    premiante_ric
+    nome_ric_eng
+    descrizione_ric_eng
+    stato
+    award id
+    award type id
+    award name (ita)
+    date
+    description (ita)
+    awarded by
+    award name
+    description
+    state
+    id_sezione
+    id_link_menu_ita
+    id_link_menu_eng
+    nome_sezione_ita
+    nome_sezione_eng
+    descrizione_sezione_ita
+    descrizione_sezione_eng
+    nome_corso_ita
+    nome_corso_eng
+    progetti_sezione_ita
+    progetti_sezione_eng
+    personale_sezione_ita
+    personale_sezione_eng
+    laboratori_sezione_ita
+    laboratori_sezione_eng
+    ordine
+    section id
+    link menu (ita)
+    link menu
+    research area name (ita)
+    research area name
+    description (ita)
+    description
+    course name (ita)
+    course name
+    prejects (ita)
+    projects
+    staff (ita)
+    staff
+    laboratories (ita)
+    laboratories
+    order
+
+@[attr_1_2]
+    in research area
+
+@[attr_1_3]
+    in group
+
+@[attr_1_4]
+    in category
+
+@[attr_1_5]
+    who wrote
+
+@[attr_1_6]
+    that won
+
+@[attr_2_2]
+    of type
+
+@[attr_3_2]
+    published in
+
+@[attr_3_3]
+    by
+
+@[attr_3_4]
+    in research area
+
+@[attr_4_2]
+    in research area
+
+@[attr_4_3]
+    in research line
+
+@[attr_4_4]
+    of type
+
+@[attr_5_2]
+    of type
+
+@[attr_5_3]
+    won by
+
+@[attr_5_4]
+    in research area
+
+@[attr_5_5]
+    in research line
+
+
+@[word_1_1]
+    turrin
+    marfia
+    ghafari
+    arigoni
+    fiorenti
+    triberti
+    belloli
+    giani
+    montemurro
+    beretta
+    sciuto
+    nogarotto
+    de lorenzo
+    bez
+    santomauro
+    gianoli
+    cipolleschi
+    montin
+    manolescu
+    brankovic
+    pignari
+    casalegno
+    rabosio
+    palermo
+    dede
+    ornaghi
+    grillo
+    gelembe
+    ferrucci
+    trecordi
+    vismara
+    nasri
+    vaca ruiz
+    florio
+    garzotto
+    prati
+    picozzi
+    paganelli
+    eynard
+    coronado vargas
+    cogliati
+    brambilla
+    bartolini
+    laghi
+    paolucci
+    cugola
+    schiavina
+    de bellis
+    buizza avanzini
+    schmitt
+    roberto
+    fabio
+    mohammad
+    claudio
+    simone
+    cesare
+    damiano
+    paolo
+    giuseppe vito
+    elisa
+    donatella
+    danilo
+    mauro
+    luca giovanni
+    riccardo
+    eros
+    ioana
+    aida
+    sergio amedeo
+    luigi
+    emanuele
+    salvatore
+    alessio
+    davide
+    samuele
+    erol
+    luca
+    vittorio
+    bayan
+    carmen karina
+    franca
+    claudio maria
+    matteo
+    chiara
+    dianne catherine
+    dario
+    angelo maurizio
+    davide basilio
+    giacomo
+    giovanni maria
+    gianpaolo
+    marcello
+    gianluca
+    giovanni massimo
+    rafael jan pablo
+    rafael jan
+    jan pablo
+    keefe baird
+    andrea
+    vahid
+    marta
+    enrico gianluca
+
+@[word_1_2]
+    systems and control
+    systems and
+    and control
+    electronics
+    computer science and engineering
+    computer science and
+    science and engineering
+    telecommunications
+    bioengineering
+    electrical engineering
+    automatica
+    elettronica
+    informatica
+    telecomunicazioni
+    bioingegneria
+    elettrica
+
+@[word_1_3]
+    research director
+    first researcher
+    researcher
+    technical and administrative staff
+    technical and administrative
+    and administrative staff
+
+@[word_1_4]
+    full professor
+    associate professor
+    assistant professor
+    research assistant
+    phd student
+    technical and administrative staff
+    technical and administrative
+    and administrative staff
+    technical and administrative staff ext
+    technical and administrative staff
+    and administrative staff ext
+    contract professor
+    visiting professor
+    research collaborator
+    guest
+    cnr
+    alumni
+    emeriti professors
+
+@[word_1_5]
+    methodology and tools for data base design
+    methodology and tools for data base
+    and tools for data base design
+    database and xml technologies
+    database and xml
+    and xml technologies
+    mobile information systems
+    mobile information
+    information systems
+    model checking based data retrieval
+    model checking based data
+    checking based data retrieval
+    database support for data mining applications
+    database support for data mining
+    support for data mining applications
+    conceptual database design an entity relationship approach
+    conceptual database design an entity relationship
+    database design an entity relationship approach
+    the art craft of computing
+    the art craft of
+    art craft of computing
+    genetic and evolutionary computation part ii
+    genetic and evolutionary computation part
+    and evolutionary computation part ii
+    advanced database systems
+    advanced database
+    database systems
+    distributed databases
+    active database systems
+    active database
+    database systems
+    genetic and evolutionary computation part i
+    genetic and evolutionary computation part
+    and evolutionary computation part i
+    soft computing applications
+    soft computing
+    computing applications
+    intelligent autonomous systems 8
+    intelligent autonomous systems
+    autonomous systems 8
+    robocup 2003 robot soccer world cup vii
+    robocup 2003 robot soccer world cup
+    2003 robot soccer world cup vii
+    advances in database technology edbt 88
+    advances in database technology edbt
+    in database technology edbt 88
+    designing data intensive web applications
+    designing data intensive web
+    data intensive web applications
+    engineering advanced web applications
+    engineering advanced web
+    advanced web applications
+    deductive and object oriented databases
+    deductive and object oriented
+    and object oriented databases
+    logic programming and databases
+    logic programming and
+    programming and databases
+    designing database applications with objects and rules
+    designing database applications with objects and
+    database applications with objects and rules
+    database systems
+    spatio temporal databases
+    spatio temporal
+    temporal databases
+    advances in learning classifier systems
+    advances in learning classifier
+    in learning classifier systems
+    power estimation and optimization methodologies for vliw based embedded systems
+    power estimation and optimization methodologies for vliw based embedded
+    estimation and optimization methodologies for vliw based embedded systems
+    neural networks for instrumentation measurement and related industrial applications
+    neural networks for instrumentation measurement and related industrial
+    networks for instrumentation measurement and related industrial applications
+    robot shaping
+    ada for multi microprocessors
+    ada for multi
+    for multi microprocessors
+    web engineering
+    web engineering
+    software process
+    process technology
+    esec 91
+    fundamentals of software engineering
+    fundamentals of software
+    of software engineering
+    programming language concepts
+    programming language
+    language concepts
+    theoretical foundations of computer science
+    theoretical foundations of computer
+    foundations of computer science
+    programming languages
+    software process workshop
+    software process
+    process workshop
+    advances in object oriented software engineering
+    advances in object oriented software
+    in object oriented software engineering
+    formal methods for real time computing
+    formal methods for real time
+    methods for real time computing
+    journal on data semantics ix
+    journal on data semantics
+    on data semantics ix
+    office information systems
+    office information
+    information systems
+    web services e business and the semantic web
+    web services e business and the semantic
+    services e business and the semantic web
+    database support for workflow management
+    database support for workflow
+    support for workflow management
+    advanced information systems engineering
+    advanced information systems
+    information systems engineering
+    automatic tools for designing office information systems
+    automatic tools for designing office information
+    tools for designing office information systems
+    journal on data semantics viii
+    journal on data semantics
+    on data semantics viii
+    business process management
+    business process
+    process management
+    information system development process
+    information system development
+    system development process
+    wafer scale integration iii
+    wafer scale integration
+    scale integration iii
+
+@[word_1_6]
+    ieee instrumentation and measurement society young engineer award
+    ieee instrumentation and measurement society young engineer
+    instrumentation and measurement society young engineer award
+    acm sigsoft distinguished service award
+    acm sigsoft distinguished service
+    sigsoft distinguished service award
+    vldb ten years award
+    vldb ten years
+    ten years award
+    ieee instrumentation and measurement society technical award vincenzo piuri
+    ieee instrumentation and measurement society technical award vincenzo
+    instrumentation and measurement society technical award vincenzo piuri
+    2005 chorafas foundation award
+    2005 chorafas foundation
+    chorafas foundation award
+    outstanding achievement award from ieee nuclear and plasma science society
+    outstanding achievement award from ieee nuclear and plasma science
+    achievement award from ieee nuclear and plasma science society
+    honorary membership
+    ieee award in international communications
+    ieee award in international
+    award in international communications
+    ieee third millennium medal award
+    ieee third millennium medal
+    third millennium medal award
+    ieee distinguished lecturer
+    ieee distinguished
+    distinguished lecturer
+    aei award
+    van weelden award of eage
+    van weelden award of
+    weelden award of eage
+    best reviewers award
+    best reviewers
+    reviewers award
+    international award cristoforo colombo for space communications
+    international award cristoforo colombo for space
+    award cristoforo colombo for space communications
+    marisa bellisario award from fondazione marisa bellisario
+    marisa bellisario award from fondazione marisa
+    bellisario award from fondazione marisa bellisario
+    premio 1999 della rhein foundation rft per le tecnologie
+    premio 1999 della rhein foundation rft per le
+    1999 della rhein foundation rft per le tecnologie
+    piero fanti international prize from intelsat telespazio
+    piero fanti international prize from intelsat
+    fanti international prize from intelsat telespazio
+    2004 chorafas foundation award
+    2004 chorafas foundation
+    chorafas foundation award
+    ieee fellowship
+    ieee fellowship vincenzo piuri
+    ieee fellowship vincenzo
+    fellowship vincenzo piuri
+    ieee nuclear and plasma science society graduate scholarship award
+    ieee nuclear and plasma science society graduate scholarship
+    nuclear and plasma science society graduate scholarship award
+    osa fellow
+    acm fellowship
+    certificate of appreciation from ieee
+    certificate of appreciation from
+    of appreciation from ieee
+    membro dell accademia nazionale delle scienze detta dei quaranta
+    membro dell accademia nazionale delle scienze detta dei
+    dell accademia nazionale delle scienze detta dei quaranta
+    invited talk
+    membership
+    membro effettivo dell istituto lombardo di scienze e lettere
+    membro effettivo dell istituto lombardo di scienze e
+    effettivo dell istituto lombardo di scienze e lettere
+    award to young researchers particularly brilliant and active in detection techniques development and contributing by talk or by poster to the scientific program of the conference
+    award to young researchers particularly brilliant and active in detection techniques development and contributing by talk or by poster to the scientific program of the
+    to young researchers particularly brilliant and active in detection techniques development and contributing by talk or by poster to the scientific program of the conference
+    premio di operosita scientifica per la fisica bandito dalla societa italiana di fisica
+    premio di operosita scientifica per la fisica bandito dalla societa italiana di
+    di operosita scientifica per la fisica bandito dalla societa italiana di fisica
+    radiation instrumentation early career award from ieee nuclear and plasma science society
+    radiation instrumentation early career award from ieee nuclear and plasma science
+    instrumentation early career award from ieee nuclear and plasma science society
+    premio philip morris
+    premio philip
+    philip morris
+    premio prof luigi tartufari
+    premio prof luigi
+    prof luigi tartufari
+    best paper award
+    best paper
+    paper award
+    highly commended paper award
+    highly commended paper
+    commended paper award
+    best poster paper award
+    best poster paper
+    poster paper award
+    outstanding paper award
+    outstanding paper
+    paper award
+    symposium paper award
+    symposium paper
+    paper award
+    ieee transactions prize paper award
+    ieee transactions prize paper
+    transactions prize paper award
+    laurea honoris causa
+    laurea honoris
+    honoris causa
+    italgas prize
+    2005 chorafas foundation award fabio martignon
+    2005 chorafas foundation award fabio
+    chorafas foundation award fabio martignon
+    ifip international federation for information processing silver core award
+    ifip international federation for information processing silver core
+    international federation for information processing silver core award
+    membro dell accademia dei lincei di roma
+    membro dell accademia dei lincei di
+    dell accademia dei lincei di roma
+    member of the accademia nazionale delle scienze detta dei quaranta
+    member of the accademia nazionale delle scienze detta dei
+    of the accademia nazionale delle scienze detta dei quaranta
+    highly cited author
+    highly cited
+    cited author
+    highly cited paper
+    highly cited
+    cited paper
+    ifac international federation of automatic control fellow award
+    ifac international federation of automatic control fellow
+    international federation of automatic control fellow award
+    recipient biennial medals iemss on natural systems
+    recipient biennial medals iemss on natural
+    biennial medals iemss on natural systems
+    ibm faculty award
+    ibm faculty
+    faculty award
+
+@[word_2_1]
+    the frontiers of the digital photography and the ict world
+    the frontiers of the digital photography and the ict
+    frontiers of the digital photography and the ict world
+    siemens day
+    nokia siemens trs
+    nokia siemens
+    siemens trs
+    wireless mesh networks technology and business opportunties
+    wireless mesh networks technology and business
+    mesh networks technology and business opportunties
+    dei professors organize the icwe 2007 conference
+    dei professors organize the icwe 2007
+    professors organize the icwe 2007 conference
+    bpm 2008 business process management conference
+    bpm 2008 business process management
+    2008 business process management conference
+    g3ict international forum
+    g3ict international
+    international forum
+    milan in the space technology and science in orbit
+    milan in the space technology and science in
+    in the space technology and science in orbit
+    demo tour bus tektronix
+    demo tour bus
+    tour bus tektronix
+    open source as a business model
+    open source as a business
+    source as a business model
+    peer review timetable
+    peer review
+    review timetable
+    automation the engineer professional profile
+    automation the engineer professional
+    the engineer professional profile
+    flexgala air tour
+    flexgala air
+    air tour
+    asia and innovation ict and design to succeed in global markets
+    asia and innovation ict and design to succeed in global
+    and innovation ict and design to succeed in global markets
+    twole project
+    seminar at the threshold of the 21st century business revolution
+    seminar at the threshold of the 21st century business
+    at the threshold of the 21st century business revolution
+    innovative applications of vision systems in the industrial world
+    innovative applications of vision systems in the industrial
+    applications of vision systems in the industrial world
+    meeting of the pharos project on audiovisual search engine
+    meeting of the pharos project on audiovisual search
+    of the pharos project on audiovisual search engine
+    presented at the politecnico di milano the results of the ict accessible and disability research
+    presented at the politecnico di milano the results of the ict accessible and disability
+    at the politecnico di milano the results of the ict accessible and disability research
+    dnttt 08 developments and new tracks in trace theory the workshop on the foundations of parallel and distributed computation
+    dnttt 08 developments and new tracks in trace theory the workshop on the foundations of parallel and distributed
+    08 developments and new tracks in trace theory the workshop on the foundations of parallel and distributed computation
+    novembre 28th 2008 br hp day visit
+    novembre 28th 2008 br hp day
+    28th 2008 br hp day visit
+    the ict week at dei
+    the ict week at
+    ict week at dei
+    seminar on the road coloring theorem br dominique perrin br universit paris est ligm cnrs france
+    seminar on the road coloring theorem br dominique perrin br universit paris est ligm cnrs
+    on the road coloring theorem br dominique perrin br universit paris est ligm cnrs france
+    seminar on operator precedence grammars are back again br prof dino mandrioli br dean of the school of information engineering
+    seminar on operator precedence grammars are back again br prof dino mandrioli br dean of the school of information
+    on operator precedence grammars are back again br prof dino mandrioli br dean of the school of information engineering
+    seminar on event processing in qos aware service runtime environments br anton michlmayr br vienna university of technology distributed systems group
+    seminar on event processing in qos aware service runtime environments br anton michlmayr br vienna university of technology distributed systems
+    on event processing in qos aware service runtime environments br anton michlmayr br vienna university of technology distributed systems group
+    workshop excellessons talks for extra ideas
+    workshop excellessons talks for extra
+    excellessons talks for extra ideas
+    workshop green ict ict for green communication technologies and environmental sustainability
+    workshop green ict ict for green communication technologies and environmental
+    green ict ict for green communication technologies and environmental sustainability
+    seminars on multicore and manycore architecture at mit
+    seminars on multicore and manycore architecture at
+    on multicore and manycore architecture at mit
+    the most important ict companies meet students at dei
+    the most important ict companies meet students at
+    most important ict companies meet students at dei
+    ieee symposium on computational intelligence and games 2009 at the politecnico di milano
+    ieee symposium on computational intelligence and games 2009 at the politecnico di
+    symposium on computational intelligence and games 2009 at the politecnico di milano
+    politong presentation presentation of the sino italian campus of the politecnico di milano
+    politong presentation presentation of the sino italian campus of the politecnico di
+    presentation presentation of the sino italian campus of the politecnico di milano
+    workshop on the uncertainty of measurement in the electromagnetic compatibility
+    workshop on the uncertainty of measurement in the electromagnetic
+    on the uncertainty of measurement in the electromagnetic compatibility
+    phday 2009
+    video games an in depth look at the technologies and the development process
+    video games an in depth look at the technologies and the development
+    games an in depth look at the technologies and the development process
+    meetings on the design and development of videogames
+    meetings on the design and development of
+    on the design and development of videogames
+    seminar on automated performance assessment for service oriented middleware a case study on bpel engines br mauro luigi drago br dei phd student
+    seminar on automated performance assessment for service oriented middleware a case study on bpel engines br mauro luigi drago br dei phd
+    on automated performance assessment for service oriented middleware a case study on bpel engines br mauro luigi drago br dei phd student
+    seminar on future of wireless experience technologies research br javan erfanian br distinguished lecturer ieee communications society toronto canada
+    seminar on future of wireless experience technologies research br javan erfanian br distinguished lecturer ieee communications society toronto
+    on future of wireless experience technologies research br javan erfanian br distinguished lecturer ieee communications society toronto canada
+    april 14th 2010 br open day phd program in information technology
+    april 14th 2010 br open day phd program in information
+    14th 2010 br open day phd program in information technology
+    indesit exhibition may 11th 2009
+    indesit exhibition may 11th
+    exhibition may 11th 2009
+    design and development of videogames br games itu study development research
+    design and development of videogames br games itu study development
+    and development of videogames br games itu study development research
+    seminar on modelling designing and implementing information technology tools for personalized healthcare br stefano bonacina br dipartimento di bioingegneria politecnico di milano
+    seminar on modelling designing and implementing information technology tools for personalized healthcare br stefano bonacina br dipartimento di bioingegneria politecnico di
+    on modelling designing and implementing information technology tools for personalized healthcare br stefano bonacina br dipartimento di bioingegneria politecnico di milano
+    seminar on classification by means of association rules and frequent itemsets br ing paolo garza br dipartimento di automatica e informatica politecnico di torino
+    seminar on classification by means of association rules and frequent itemsets br ing paolo garza br dipartimento di automatica e informatica politecnico di
+    on classification by means of association rules and frequent itemsets br ing paolo garza br dipartimento di automatica e informatica politecnico di torino
+    studiolab presentation at como campus the first experimental recording studio in italy
+    studiolab presentation at como campus the first experimental recording studio in
+    presentation at como campus the first experimental recording studio in italy
+    seminar on mining twitter hashtags br david laniado br dei phd student
+    seminar on mining twitter hashtags br david laniado br dei phd
+    on mining twitter hashtags br david laniado br dei phd student
+    videogames from symbolic language to the representation of reality june 25th 2009 13 00 educaf
+    videogames from symbolic language to the representation of reality june 25th 2009 13 00
+    from symbolic language to the representation of reality june 25th 2009 13 00 educaf
+    guided tours to the airlab
+    guided tours to the
+    tours to the airlab
+    ubisoft at the politecnico di milano br
+    ubisoft at the politecnico di milano
+    at the politecnico di milano br
+    modelica conference 2009
+    modelica conference
+    conference 2009
+    seminar on methodologies and tools for reducing the energy consumption induced by application level software br eugenio capra br dipartimento di elettronica e informazione politecnico di milano
+    seminar on methodologies and tools for reducing the energy consumption induced by application level software br eugenio capra br dipartimento di elettronica e informazione politecnico di
+    on methodologies and tools for reducing the energy consumption induced by application level software br eugenio capra br dipartimento di elettronica e informazione politecnico di milano
+    le frontiere della fotografia digitale ed il mondo ict
+    le frontiere della fotografia digitale ed il mondo
+    frontiere della fotografia digitale ed il mondo ict
+    siemens day
+    nokia siemens trs
+    nokia siemens
+    siemens trs
+    reti wireless mesh tecnologia applicazioni mercato
+    reti wireless mesh tecnologia applicazioni
+    wireless mesh tecnologia applicazioni mercato
+    docenti del dei organizzano la conferenza icwe 2007
+    docenti del dei organizzano la conferenza icwe
+    del dei organizzano la conferenza icwe 2007
+    bpm 2008 business process management conference
+    bpm 2008 business process management
+    2008 business process management conference
+    ieee expert now tutorial on line presentati da esperti di rilievo internazionale
+    ieee expert now tutorial on line presentati da esperti di rilievo
+    expert now tutorial on line presentati da esperti di rilievo internazionale
+    g3ict international forum
+    g3ict international
+    international forum
+    milano nello spazio tecnologia e scienza in orbita
+    milano nello spazio tecnologia e scienza in
+    nello spazio tecnologia e scienza in orbita
+    automazione la figura professionale dell ingegnere
+    automazione la figura professionale dell
+    la figura professionale dell ingegnere
+    demo tour bus tektronix
+    demo tour bus
+    tour bus tektronix
+    l open source come modello di business
+    l open source come modello di
+    open source come modello di business
+    agenda peer review
+    agenda peer
+    peer review
+    flexgala air tour
+    flexgala air
+    air tour
+    asia and innovation ict and design to succeed in global markets
+    asia and innovation ict and design to succeed in global
+    and innovation ict and design to succeed in global markets
+    progetto twole presentazione dei risultati
+    progetto twole presentazione dei
+    twole presentazione dei risultati
+    seminario at the threshold of the 21st century business revolution
+    seminario at the threshold of the 21st century business
+    at the threshold of the 21st century business revolution
+    applicazioni innovative dei sistemi di visione nel mondo industriale
+    applicazioni innovative dei sistemi di visione nel mondo
+    innovative dei sistemi di visione nel mondo industriale
+    incontro del progetto pharos sui motori di ricerca audiovisuali
+    incontro del progetto pharos sui motori di ricerca
+    del progetto pharos sui motori di ricerca audiovisuali
+    presentati al politecnico i risultati della ricerca ict accessibile e disabilit
+    presentati al politecnico i risultati della ricerca ict accessibile e
+    al politecnico i risultati della ricerca ict accessibile e disabilit
+    dnttt 08 convegno scientifico sui fondamenti dal calcolo distribuito e parallelo
+    dnttt 08 convegno scientifico sui fondamenti dal calcolo distribuito e
+    08 convegno scientifico sui fondamenti dal calcolo distribuito e parallelo
+    28 novembre 2008 br hp day visit
+    28 novembre 2008 br hp day
+    novembre 2008 br hp day visit
+    la settimana dell ict al dei
+    la settimana dell ict al
+    settimana dell ict al dei
+    seminario the road coloring theorem br dominique perrin br universit paris est ligm cnrs france
+    seminario the road coloring theorem br dominique perrin br universit paris est ligm cnrs
+    the road coloring theorem br dominique perrin br universit paris est ligm cnrs france
+    seminario operator precedence grammars are back again br prof dino mandrioli br preside della facolt di ingegneria dell informazione
+    seminario operator precedence grammars are back again br prof dino mandrioli br preside della facolt di ingegneria dell
+    operator precedence grammars are back again br prof dino mandrioli br preside della facolt di ingegneria dell informazione
+    seminario event processing in qos aware service runtime environments br anton michlmayr br vienna university of technology distributed systems group
+    seminario event processing in qos aware service runtime environments br anton michlmayr br vienna university of technology distributed systems
+    event processing in qos aware service runtime environments br anton michlmayr br vienna university of technology distributed systems group
+    workshop excellessons talks for extra ideas
+    workshop excellessons talks for extra
+    excellessons talks for extra ideas
+    workshop green ict ict for green tecnologie delle comunicazione e sostenibilit ambientale
+    workshop green ict ict for green tecnologie delle comunicazione e sostenibilit
+    green ict ict for green tecnologie delle comunicazione e sostenibilit ambientale
+    ciclo di seminari su architetture multicore e manycore al mit
+    ciclo di seminari su architetture multicore e manycore al
+    di seminari su architetture multicore e manycore al mit
+    le grandi aziende ict incontrano gli studenti al dei
+    le grandi aziende ict incontrano gli studenti al
+    grandi aziende ict incontrano gli studenti al dei
+    ieee symposium on computational intelligence and games 2009 al politecnico di milano
+    ieee symposium on computational intelligence and games 2009 al politecnico di
+    symposium on computational intelligence and games 2009 al politecnico di milano
+    presentazione politong presentazione del campus del politecnico di milano a shanghai
+    presentazione politong presentazione del campus del politecnico di milano a
+    politong presentazione del campus del politecnico di milano a shanghai
+    giornata di studio su l incertezza di misura nella compatibilit elettromagnetica
+    giornata di studio su l incertezza di misura nella compatibilit
+    di studio su l incertezza di misura nella compatibilit elettromagnetica
+    phday 2009
+    videogiochi ai raggi x un approfondimento su tecnologie e processo di sviluppo
+    videogiochi ai raggi x un approfondimento su tecnologie e processo di
+    ai raggi x un approfondimento su tecnologie e processo di sviluppo
+    incontri su design progettazione e sviluppo di videogiochi
+    incontri su design progettazione e sviluppo di
+    su design progettazione e sviluppo di videogiochi
+    seminario automated performance assessment for service oriented middleware a case study on bpel engines br mauro luigi drago br dei phd student
+    seminario automated performance assessment for service oriented middleware a case study on bpel engines br mauro luigi drago br dei phd
+    automated performance assessment for service oriented middleware a case study on bpel engines br mauro luigi drago br dei phd student
+    seminario future of wireless experience technologies research br javan erfanian br distinguished lecturer ieee communications society toronto canada
+    seminario future of wireless experience technologies research br javan erfanian br distinguished lecturer ieee communications society toronto
+    future of wireless experience technologies research br javan erfanian br distinguished lecturer ieee communications society toronto canada
+    14 aprile 2010 br open day dottorato di ricerca in ingegneria dell informazione
+    14 aprile 2010 br open day dottorato di ricerca in ingegneria dell
+    aprile 2010 br open day dottorato di ricerca in ingegneria dell informazione
+    11 maggio 2009 indesit si presenta agli studenti
+    11 maggio 2009 indesit si presenta agli
+    maggio 2009 indesit si presenta agli studenti
+    design progettazione e sviluppo di videogiochi br games itu study development research
+    design progettazione e sviluppo di videogiochi br games itu study development
+    progettazione e sviluppo di videogiochi br games itu study development research
+    seminario modelling designing and implementing information technology tools for personalized healthcare br stefano bonacina br dipartimento di bioingegneria politecnico di milano
+    seminario modelling designing and implementing information technology tools for personalized healthcare br stefano bonacina br dipartimento di bioingegneria politecnico di
+    modelling designing and implementing information technology tools for personalized healthcare br stefano bonacina br dipartimento di bioingegneria politecnico di milano
+    seminario classification by means of association rules and frequent itemsets br ing paolo garza br dipartimento di automatica e informatica politecnico di torino
+    seminario classification by means of association rules and frequent itemsets br ing paolo garza br dipartimento di automatica e informatica politecnico di
+    classification by means of association rules and frequent itemsets br ing paolo garza br dipartimento di automatica e informatica politecnico di torino
+    presentazione a como dello studiolab il primo studio di registrazione sperimentale dedicato alla ricerca avanzata per la produzione musicale
+    presentazione a como dello studiolab il primo studio di registrazione sperimentale dedicato alla ricerca avanzata per la produzione
+    a como dello studiolab il primo studio di registrazione sperimentale dedicato alla ricerca avanzata per la produzione musicale
+    seminario mining twitter hashtags br david laniado br dei phd student
+    seminario mining twitter hashtags br david laniado br dei phd
+    mining twitter hashtags br david laniado br dei phd student
+    videogiochi dal linguaggio simbolico alla rappresentazione della realt giovedi 25 giugno 2009 ore 13 00 educaf
+    videogiochi dal linguaggio simbolico alla rappresentazione della realt giovedi 25 giugno 2009 ore 13 00
+    dal linguaggio simbolico alla rappresentazione della realt giovedi 25 giugno 2009 ore 13 00 educaf
+    visite guidate all airlab
+    visite guidate all
+    guidate all airlab
+    ubisoft al politecnico di milano br
+    ubisoft al politecnico di milano
+    al politecnico di milano br
+    modelica conference 2009
+    modelica conference
+    conference 2009
+    seminario methodologies and tools for reducing the energy consumption induced by application level software br eugenio capra br dipartimento di elettronica e informazione politecnico di milano
+    seminario methodologies and tools for reducing the energy consumption induced by application level software br eugenio capra br dipartimento di elettronica e informazione politecnico di
+    methodologies and tools for reducing the energy consumption induced by application level software br eugenio capra br dipartimento di elettronica e informazione politecnico di milano
+
+@[word_2_2]
+    conferences
+    seminars
+    doctoral presentations
+    events
+    workshop
+    tutorials
+    conferenze
+    seminari
+    presentazioni dottorali
+    eventi
+    workshop
+    tutorials
+
+@[word_3_1]
+    methodology and tools for data base design
+    methodology and tools for data base
+    and tools for data base design
+    database and xml technologies
+    database and xml
+    and xml technologies
+    mobile information systems
+    mobile information
+    information systems
+    model checking based data retrieval
+    model checking based data
+    checking based data retrieval
+    database support for data mining applications
+    database support for data mining
+    support for data mining applications
+    conceptual database design an entity relationship approach
+    conceptual database design an entity relationship
+    database design an entity relationship approach
+    the art craft of computing
+    the art craft of
+    art craft of computing
+    genetic and evolutionary computation part ii
+    genetic and evolutionary computation part
+    and evolutionary computation part ii
+    advanced database systems
+    advanced database
+    database systems
+    distributed databases
+    active database systems
+    active database
+    database systems
+    genetic and evolutionary computation part i
+    genetic and evolutionary computation part
+    and evolutionary computation part i
+    soft computing applications
+    soft computing
+    computing applications
+    intelligent autonomous systems 8
+    intelligent autonomous systems
+    autonomous systems 8
+    robocup 2003 robot soccer world cup vii
+    robocup 2003 robot soccer world cup
+    2003 robot soccer world cup vii
+    advances in database technology edbt 88
+    advances in database technology edbt
+    in database technology edbt 88
+    designing data intensive web applications
+    designing data intensive web
+    data intensive web applications
+    engineering advanced web applications
+    engineering advanced web
+    advanced web applications
+    deductive and object oriented databases
+    deductive and object oriented
+    and object oriented databases
+    logic programming and databases
+    logic programming and
+    programming and databases
+    designing database applications with objects and rules
+    designing database applications with objects and
+    database applications with objects and rules
+    database systems
+    spatio temporal databases
+    spatio temporal
+    temporal databases
+    advances in learning classifier systems
+    advances in learning classifier
+    in learning classifier systems
+    power estimation and optimization methodologies for vliw based embedded systems
+    power estimation and optimization methodologies for vliw based embedded
+    estimation and optimization methodologies for vliw based embedded systems
+    neural networks for instrumentation measurement and related industrial applications
+    neural networks for instrumentation measurement and related industrial
+    networks for instrumentation measurement and related industrial applications
+    robot shaping
+    ada for multi microprocessors
+    ada for multi
+    for multi microprocessors
+    web engineering
+    web engineering
+    software process
+    process technology
+    esec 91
+    fundamentals of software engineering
+    fundamentals of software
+    of software engineering
+    programming language concepts
+    programming language
+    language concepts
+    theoretical foundations of computer science
+    theoretical foundations of computer
+    foundations of computer science
+    programming languages
+    software process workshop
+    software process
+    process workshop
+    advances in object oriented software engineering
+    advances in object oriented software
+    in object oriented software engineering
+    formal methods for real time computing
+    formal methods for real time
+    methods for real time computing
+    journal on data semantics ix
+    journal on data semantics
+    on data semantics ix
+    office information systems
+    office information
+    information systems
+    web services e business and the semantic web
+    web services e business and the semantic
+    services e business and the semantic web
+    database support for workflow management
+    database support for workflow
+    support for workflow management
+    advanced information systems engineering
+    advanced information systems
+    information systems engineering
+    automatic tools for designing office information systems
+    automatic tools for designing office information
+    tools for designing office information systems
+    journal on data semantics viii
+    journal on data semantics
+    on data semantics viii
+    business process management
+    business process
+    process management
+    information system development process
+    information system development
+    system development process
+    wafer scale integration iii
+    wafer scale integration
+    scale integration iii
+
+@[word_3_2]
+    1985
+    2005
+    2006
+    2004
+    1992
+    1999
+    1997
+    1984
+    1995
+    2003
+    1988
+    1993
+    1990
+    2002
+    1998
+    2007
+    1996
+    1991
+    2008
+    1989
+    1994
+    2001
+    2009
+    1983
+    2015
+    2000
+    1979
+    2010
+    2011
+    2013
+    1987
+    2014
+    2016
+    2012
+    2017
+    2018
+    2019
+
+@[word_3_3]
+    turrin
+    marfia
+    ghafari
+    arigoni
+    fiorenti
+    triberti
+    belloli
+    giani
+    montemurro
+    beretta
+    sciuto
+    nogarotto
+    de lorenzo
+    bez
+    santomauro
+    gianoli
+    cipolleschi
+    montin
+    manolescu
+    brankovic
+    pignari
+    casalegno
+    rabosio
+    palermo
+    dede
+    ornaghi
+    grillo
+    gelembe
+    ferrucci
+    trecordi
+    vismara
+    nasri
+    vaca ruiz
+    florio
+    garzotto
+    prati
+    picozzi
+    paganelli
+    eynard
+    coronado vargas
+    cogliati
+    brambilla
+    bartolini
+    laghi
+    paolucci
+    cugola
+    schiavina
+    de bellis
+    buizza avanzini
+    schmitt
+    roberto
+    fabio
+    mohammad
+    claudio
+    simone
+    cesare
+    damiano
+    paolo
+    giuseppe vito
+    elisa
+    donatella
+    danilo
+    mauro
+    luca giovanni
+    riccardo
+    eros
+    ioana
+    aida
+    sergio amedeo
+    luigi
+    emanuele
+    salvatore
+    alessio
+    davide
+    samuele
+    erol
+    luca
+    vittorio
+    bayan
+    carmen karina
+    franca
+    claudio maria
+    matteo
+    chiara
+    dianne catherine
+    dario
+    angelo maurizio
+    davide basilio
+    giacomo
+    giovanni maria
+    gianpaolo
+    marcello
+    gianluca
+    giovanni massimo
+    rafael jan pablo
+    rafael jan
+    jan pablo
+    keefe baird
+    andrea
+    vahid
+    marta
+    enrico gianluca
+
+@[word_3_4]
+    systems and control
+    systems and
+    and control
+    electronics
+    computer science and engineering
+    computer science and
+    science and engineering
+    telecommunications
+    bioengineering
+    electrical engineering
+    automatica
+    elettronica
+    informatica
+    telecomunicazioni
+    bioingegneria
+    elettrica
+
+@[word_4_1]
+    smart home appliance by model tuning
+    smart home appliance by model
+    home appliance by model tuning
+    modeling and control of a three generation plant with a gas microturbine and an adsorption refrigerator
+    modeling and control of a three generation plant with a gas microturbine and an adsorption
+    and control of a three generation plant with a gas microturbine and an adsorption refrigerator
+    mechatronic analysis of a large size machine tool
+    mechatronic analysis of a large size machine
+    analysis of a large size machine tool
+    development of a global network for secure communication based on quantum cryptography
+    development of a global network for secure communication based on quantum
+    of a global network for secure communication based on quantum cryptography
+    information security in an acquisition reception data recording and elaboration system
+    information security in an acquisition reception data recording and elaboration
+    security in an acquisition reception data recording and elaboration system
+    mepos optical measurement of position and size of wood panels for intelligent automation of sanding machines
+    mepos optical measurement of position and size of wood panels for intelligent automation of sanding
+    optical measurement of position and size of wood panels for intelligent automation of sanding machines
+    genesis d
+    traffic modelling system development to support the traffic control center of comune di milano
+    traffic modelling system development to support the traffic control center of comune di
+    modelling system development to support the traffic control center of comune di milano
+    wideband wireless lan
+    wideband wireless
+    wireless lan
+    array processing techniques for ieee802 16d wman systems
+    array processing techniques for ieee802 16d wman
+    processing techniques for ieee802 16d wman systems
+    development and implementation of an algorithm for quick look sar surveys
+    development and implementation of an algorithm for quick look sar
+    and implementation of an algorithm for quick look sar surveys
+    gis natura a gis for the nature conservancy in italy
+    gis natura a gis for the nature conservancy in
+    natura a gis for the nature conservancy in italy
+    reconfigurable ka band antenna front end for rain fade compensation propagation modelling
+    reconfigurable ka band antenna front end for rain fade compensation propagation
+    ka band antenna front end for rain fade compensation propagation modelling
+    characterization and modelling of propagation effects in 20 50 ghz band
+    characterization and modelling of propagation effects in 20 50 ghz
+    and modelling of propagation effects in 20 50 ghz band
+    seismic data regularization and infilling by 3d sco as stand alone linux tool
+    seismic data regularization and infilling by 3d sco as stand alone linux
+    data regularization and infilling by 3d sco as stand alone linux tool
+    tai chi tangible acoustic interfaces for computer human interaction
+    tai chi tangible acoustic interfaces for computer human
+    chi tangible acoustic interfaces for computer human interaction
+    image based face recognition systems new perspectives
+    image based face recognition systems new
+    based face recognition systems new perspectives
+    innovative platform with cutting edge technologies for the operations management of advanced networks
+    innovative platform with cutting edge technologies for the operations management of advanced
+    platform with cutting edge technologies for the operations management of advanced networks
+    architectural and performance analisys of ad hoc networks for car to car real time applications
+    architectural and performance analisys of ad hoc networks for car to car real time
+    and performance analisys of ad hoc networks for car to car real time applications
+    fiber optic sensors for the electric network management
+    fiber optic sensors for the electric network
+    optic sensors for the electric network management
+    pabadis based product oriented manufacturing systems for re configurable enterprises
+    pabadis based product oriented manufacturing systems for re configurable
+    based product oriented manufacturing systems for re configurable enterprises
+    van virtual automation network
+    van virtual automation
+    virtual automation network
+    development of active control algorithms for vibration reduction on turbomolecular vacuum pumps
+    development of active control algorithms for vibration reduction on turbomolecular vacuum
+    of active control algorithms for vibration reduction on turbomolecular vacuum pumps
+    control algorithms for semi active suspensions in two wheel vehicles project developed in collaboration with piaggio group s p a
+    control algorithms for semi active suspensions in two wheel vehicles project developed in collaboration with piaggio group s p
+    algorithms for semi active suspensions in two wheel vehicles project developed in collaboration with piaggio group s p a
+    control algorithms for brake by wire electro mechanic braking systems project developed in collaboration with brembo s p a
+    control algorithms for brake by wire electro mechanic braking systems project developed in collaboration with brembo s p
+    algorithms for brake by wire electro mechanic braking systems project developed in collaboration with brembo s p a
+    safespot integrated project
+    safespot integrated
+    integrated project
+    automatic control of the stability for two wheel vehicles project developed within the european interregional regins project named safebike
+    automatic control of the stability for two wheel vehicles project developed within the european interregional regins project named
+    control of the stability for two wheel vehicles project developed within the european interregional regins project named safebike
+    study of control oriented modeling and adaptive control techniques for refrigerators and freezers research contract with whirlpool europe
+    study of control oriented modeling and adaptive control techniques for refrigerators and freezers research contract with whirlpool
+    of control oriented modeling and adaptive control techniques for refrigerators and freezers research contract with whirlpool europe
+    nanospad
+    digitally controlled dc dc converters for distributed power systems
+    digitally controlled dc dc converters for distributed power
+    controlled dc dc converters for distributed power systems
+    camels chalcogenides memories for multilevel storage
+    camels chalcogenides memories for multilevel
+    chalcogenides memories for multilevel storage
+    5 ghz integrated frequency sinthesizer for digital communications
+    5 ghz integrated frequency sinthesizer for digital
+    ghz integrated frequency sinthesizer for digital communications
+    stmicroelectronics reliability characterization of flash memory arrays
+    stmicroelectronics reliability characterization of flash memory
+    reliability characterization of flash memory arrays
+    photon counter arrays for adaptive optics
+    photon counter arrays for adaptive
+    counter arrays for adaptive optics
+    not invasive time resolved testing of ulsi microelectronic chips
+    not invasive time resolved testing of ulsi microelectronic
+    invasive time resolved testing of ulsi microelectronic chips
+    knowledge structuration and implementation of an expert system for diagnosis and support of restoration activities on armed concrete structures suffering from degradation
+    knowledge structuration and implementation of an expert system for diagnosis and support of restoration activities on armed concrete structures suffering from
+    structuration and implementation of an expert system for diagnosis and support of restoration activities on armed concrete structures suffering from degradation
+    milan robocup team
+    milan robocup
+    robocup team
+    webhmi
+    caesar
+    development of environmental modules for evaluation of toxicity of pesticides residues in agriculture demetra eu quality of life
+    development of environmental modules for evaluation of toxicity of pesticides residues in agriculture demetra eu quality of
+    of environmental modules for evaluation of toxicity of pesticides residues in agriculture demetra eu quality of life
+    ion a sequential high throughput ion channel screening system for drug discovery in neurological and psychiatric disorders
+    ion a sequential high throughput ion channel screening system for drug discovery in neurological and psychiatric
+    a sequential high throughput ion channel screening system for drug discovery in neurological and psychiatric disorders
+    rainbow
+    mais multi channel adaptive information systems
+    mais multi channel adaptive information
+    multi channel adaptive information systems
+    cooper cooperative open environment for project centered learning
+    cooper cooperative open environment for project centered
+    cooperative open environment for project centered learning
+    load characterization of a dishwashing machine by artificial intelligence techniques
+    load characterization of a dishwashing machine by artificial intelligence
+    characterization of a dishwashing machine by artificial intelligence techniques
+    ws diamond web serving diagnosability monitoring diagnosis
+    ws diamond web serving diagnosability monitoring
+    diamond web serving diagnosability monitoring diagnosis
+    sar net project terrain motion monitoring network by means of synthetic aperture radar in the framework of the national hydro geological monitoring system
+    sar net project terrain motion monitoring network by means of synthetic aperture radar in the framework of the national hydro geological monitoring
+    net project terrain motion monitoring network by means of synthetic aperture radar in the framework of the national hydro geological monitoring system
+    measurement of natural radar targets displacement from sar surveys to help the analysis of land sliding phenomena
+    measurement of natural radar targets displacement from sar surveys to help the analysis of land sliding
+    of natural radar targets displacement from sar surveys to help the analysis of land sliding phenomena
+    localization in wireless networks
+    localization in wireless
+    in wireless networks
+    multiple antenna techniques for wimax systems based on ieee 802 16d e standard
+    multiple antenna techniques for wimax systems based on ieee 802 16d e
+    antenna techniques for wimax systems based on ieee 802 16d e standard
+    apparecchi elettrodomestici intelligenti mediante sintonizzazione di modello
+    apparecchi elettrodomestici intelligenti mediante sintonizzazione di
+    elettrodomestici intelligenti mediante sintonizzazione di modello
+    modellistica e controllo di un impianto trigenerativo con microturbina a gas e frigorifero ad assorbimento
+    modellistica e controllo di un impianto trigenerativo con microturbina a gas e frigorifero ad
+    e controllo di un impianto trigenerativo con microturbina a gas e frigorifero ad assorbimento
+    analisi meccatronica di una macchina utensile di grandi dimensioni
+    analisi meccatronica di una macchina utensile di grandi
+    meccatronica di una macchina utensile di grandi dimensioni
+    sviluppo di una rete globale per comunicazioni sicure basate sulla crittografia quantistica
+    sviluppo di una rete globale per comunicazioni sicure basate sulla crittografia
+    di una rete globale per comunicazioni sicure basate sulla crittografia quantistica
+    sicurezza delle informazioni in un sistema di acquisizione ricezione archiviazione ed elaborazione di dati
+    sicurezza delle informazioni in un sistema di acquisizione ricezione archiviazione ed elaborazione di
+    delle informazioni in un sistema di acquisizione ricezione archiviazione ed elaborazione di dati
+    mepos misurazione ottica della posizione e della grandezza di pannelli di legno per l automazione intelligente di macchine levigatrici
+    mepos misurazione ottica della posizione e della grandezza di pannelli di legno per l automazione intelligente di macchine
+    misurazione ottica della posizione e della grandezza di pannelli di legno per l automazione intelligente di macchine levigatrici
+    genesis d
+    sviluppo di un sistema modellistico del traffico a supporto del centro di controllo del traffico del comune di milano
+    sviluppo di un sistema modellistico del traffico a supporto del centro di controllo del traffico del comune di
+    di un sistema modellistico del traffico a supporto del centro di controllo del traffico del comune di milano
+    rete locale a banda larga ad accesso rapido wwlan
+    rete locale a banda larga ad accesso rapido
+    locale a banda larga ad accesso rapido wwlan
+    tecniche di array processing per sistema wman basato sullo standard ieee802 16d
+    tecniche di array processing per sistema wman basato sullo standard ieee802
+    di array processing per sistema wman basato sullo standard ieee802 16d
+    problematiche relative alla definizione dell architettura di un sw per quick look sar
+    problematiche relative alla definizione dell architettura di un sw per quick look
+    relative alla definizione dell architettura di un sw per quick look sar
+    gis natura il gis delle conoscenze naturalistiche in italia
+    gis natura il gis delle conoscenze naturalistiche in
+    natura il gis delle conoscenze naturalistiche in italia
+    terminale d antenna riconfigurabile in banda ka per fronteggiare l attenuazione da pioggia modelli propagativi
+    terminale d antenna riconfigurabile in banda ka per fronteggiare l attenuazione da pioggia modelli
+    d antenna riconfigurabile in banda ka per fronteggiare l attenuazione da pioggia modelli propagativi
+    caratterizzazione e modellistica degli effetti di propagazione nella banda 20 50 ghz
+    caratterizzazione e modellistica degli effetti di propagazione nella banda 20 50
+    e modellistica degli effetti di propagazione nella banda 20 50 ghz
+    interpolazione e regolarizzazione di dati sismici 3d mediante il kernel 3d sco
+    interpolazione e regolarizzazione di dati sismici 3d mediante il kernel 3d
+    e regolarizzazione di dati sismici 3d mediante il kernel 3d sco
+    tai chi interfacce acustiche per l interazione tattile uomo macchina
+    tai chi interfacce acustiche per l interazione tattile uomo
+    chi interfacce acustiche per l interazione tattile uomo macchina
+    studio e implementazione di nuovi algoritmi di compressione video
+    studio e implementazione di nuovi algoritmi di compressione
+    e implementazione di nuovi algoritmi di compressione video
+    piattaforma innovativa con tecnologie d avanguardia per la gestione operativa di reti avanzate
+    piattaforma innovativa con tecnologie d avanguardia per la gestione operativa di reti
+    innovativa con tecnologie d avanguardia per la gestione operativa di reti avanzate
+    analisi architetturale e delle prestazioni di reti ad hoc per applicazioni real time car to car
+    analisi architetturale e delle prestazioni di reti ad hoc per applicazioni real time car to
+    architetturale e delle prestazioni di reti ad hoc per applicazioni real time car to car
+    sensori a fibra ottica per la gestione di reti elettriche
+    sensori a fibra ottica per la gestione di reti
+    a fibra ottica per la gestione di reti elettriche
+    pabadis based product oriented manufacturing systems for re configurable enterprises
+    pabadis based product oriented manufacturing systems for re configurable
+    based product oriented manufacturing systems for re configurable enterprises
+    van virtual automation network
+    van virtual automation
+    virtual automation network
+    studio di algoritmi di controllo attivo per l attenuazione di vibrazioni su pompe turbomolecolari
+    studio di algoritmi di controllo attivo per l attenuazione di vibrazioni su pompe
+    di algoritmi di controllo attivo per l attenuazione di vibrazioni su pompe turbomolecolari
+    sviluppo di algoritmi di controllo per sospensioni semi attive in veicoli a due ruote progetto sviluppato in collaborazione con piaggio group s p a
+    sviluppo di algoritmi di controllo per sospensioni semi attive in veicoli a due ruote progetto sviluppato in collaborazione con piaggio group s p
+    di algoritmi di controllo per sospensioni semi attive in veicoli a due ruote progetto sviluppato in collaborazione con piaggio group s p a
+    sviluppo di algoritmi di controllo per freni elettromeccanici brake by wire progetto sviluppato in collaborazione con brembo s p a
+    sviluppo di algoritmi di controllo per freni elettromeccanici brake by wire progetto sviluppato in collaborazione con brembo s p
+    di algoritmi di controllo per freni elettromeccanici brake by wire progetto sviluppato in collaborazione con brembo s p a
+    safespot integrated project
+    safespot integrated
+    integrated project
+    sviluppo di un sistema di controllo di stabilit per veicoli a due ruote progetto sviluppato nell ambito del progetto europeo interregionale regins denominato safebike
+    sviluppo di un sistema di controllo di stabilit per veicoli a due ruote progetto sviluppato nell ambito del progetto europeo interregionale regins denominato
+    di un sistema di controllo di stabilit per veicoli a due ruote progetto sviluppato nell ambito del progetto europeo interregionale regins denominato safebike
+    studio di tecniche di modellistica orientata al controllo e di controllo adattativo per frigoriferi e freezer contratto di ricerca con whirlpool europe
+    studio di tecniche di modellistica orientata al controllo e di controllo adattativo per frigoriferi e freezer contratto di ricerca con whirlpool
+    di tecniche di modellistica orientata al controllo e di controllo adattativo per frigoriferi e freezer contratto di ricerca con whirlpool europe
+    nanospad
+    convertitori dc dc integrati con controllo digitale per sistemi di alimentazione distribuiti
+    convertitori dc dc integrati con controllo digitale per sistemi di alimentazione
+    dc dc integrati con controllo digitale per sistemi di alimentazione distribuiti
+    camels memorie a calcogenuro per immagazzinamento multilivello
+    camels memorie a calcogenuro per immagazzinamento
+    memorie a calcogenuro per immagazzinamento multilivello
+    sintetizzatore di frequenza integrato a 5 ghz per sistemi di comunicazioni digitali
+    sintetizzatore di frequenza integrato a 5 ghz per sistemi di comunicazioni
+    di frequenza integrato a 5 ghz per sistemi di comunicazioni digitali
+    stmicroelectronics caratterizzazioni affidabilistiche di array di memoria flash
+    stmicroelectronics caratterizzazioni affidabilistiche di array di memoria
+    caratterizzazioni affidabilistiche di array di memoria flash
+    matrici di contatori di fotoni per ottica adattiva
+    matrici di contatori di fotoni per ottica
+    di contatori di fotoni per ottica adattiva
+    collaudo non invasivo risolto temporalmente di circuiti microelettronici ulsi
+    collaudo non invasivo risolto temporalmente di circuiti microelettronici
+    non invasivo risolto temporalmente di circuiti microelettronici ulsi
+    strutturazione della conoscenza e implementazione di un sistema esperto per la diagnosi e il supporto di interventi di ripristino di strutture in calcestruzzo armato degradate
+    strutturazione della conoscenza e implementazione di un sistema esperto per la diagnosi e il supporto di interventi di ripristino di strutture in calcestruzzo armato
+    della conoscenza e implementazione di un sistema esperto per la diagnosi e il supporto di interventi di ripristino di strutture in calcestruzzo armato degradate
+    milan robocup team
+    milan robocup
+    robocup team
+    webhmi
+    caesar
+    sviluppo dei moduli ambientali per la valutazione della tossicit dei residui di pesticidi in agricoltura demetra eu qualit della vita
+    sviluppo dei moduli ambientali per la valutazione della tossicit dei residui di pesticidi in agricoltura demetra eu qualit della
+    dei moduli ambientali per la valutazione della tossicit dei residui di pesticidi in agricoltura demetra eu qualit della vita
+    ion sistema sequenziale veloce di analisi del canale ionico per la scoperta di farmaci per i disordini neurologici e psichiatrici
+    ion sistema sequenziale veloce di analisi del canale ionico per la scoperta di farmaci per i disordini neurologici e
+    sistema sequenziale veloce di analisi del canale ionico per la scoperta di farmaci per i disordini neurologici e psichiatrici
+    rainbow
+    mais multi channel adaptive information systems
+    mais multi channel adaptive information
+    multi channel adaptive information systems
+    cooper cooperative open environment for project centered learning
+    cooper cooperative open environment for project centered
+    cooperative open environment for project centered learning
+    caratterizzazione del carico di una lavastoviglie mediante tecniche di intelligenza artificiale
+    caratterizzazione del carico di una lavastoviglie mediante tecniche di intelligenza
+    del carico di una lavastoviglie mediante tecniche di intelligenza artificiale
+    ws diamond web serving diagnosability monitoring diagnosis
+    ws diamond web serving diagnosability monitoring
+    diamond web serving diagnosability monitoring diagnosis
+    progetto sar net
+    progetto sar
+    sar net
+    misura di spostamento di bersagli radar naturali da osservazioni sar per l analisi di fenomeni franosi
+    misura di spostamento di bersagli radar naturali da osservazioni sar per l analisi di fenomeni
+    di spostamento di bersagli radar naturali da osservazioni sar per l analisi di fenomeni franosi
+    radio localizzazione
+    tecniche ad antenne multiple per sistemi wimax basati sullo standard ieee 802 16 d e
+    tecniche ad antenne multiple per sistemi wimax basati sullo standard ieee 802 16 d
+    ad antenne multiple per sistemi wimax basati sullo standard ieee 802 16 d e
+
+@[word_4_2]
+    systems and control
+    systems and
+    and control
+    electronics
+    computer science and engineering
+    computer science and
+    science and engineering
+    telecommunications
+    bioengineering
+    electrical engineering
+    automatica
+    elettronica
+    informatica
+    telecomunicazioni
+    bioingegneria
+    elettrica
+
+@[word_4_3]
+    information systems
+    web multimedia and databases
+    web multimedia and
+    multimedia and databases
+    artificial intelligence robotics and computer vision
+    artificial intelligence robotics and computer
+    intelligence robotics and computer vision
+    advanced software architectures and methodologies
+    advanced software architectures and
+    software architectures and methodologies
+    systems architectures
+    microelectronics and emerging technologies
+    microelectronics and emerging
+    and emerging technologies
+    sensors and instrumentation
+    sensors and
+    and instrumentation
+    circuit and systems theory and applications
+    circuit and systems theory and
+    and systems theory and applications
+    communications
+    networks
+    signals
+    applied systems analysis and operations research
+    applied systems analysis and operations
+    systems analysis and operations research
+    control automation and measurement
+    control automation and
+    automation and measurement
+    sistemi informativi
+    web multimedia e database
+    web multimedia e
+    multimedia e database
+    intelligenza artificiale robotica e computer vision
+    intelligenza artificiale robotica e computer
+    artificiale robotica e computer vision
+    metodologie e architetture software avanzate
+    metodologie e architetture software
+    e architetture software avanzate
+    architetture
+    microelettronica e tecnologie emergenti
+    microelettronica e tecnologie
+    e tecnologie emergenti
+    sensori e strumentazione
+    sensori e
+    e strumentazione
+    teoria dei circuiti e dei sistemi e relative applicazioni
+    teoria dei circuiti e dei sistemi e relative
+    dei circuiti e dei sistemi e relative applicazioni
+    comunicazioni
+    reti
+    segnali
+    analisi applicata dei sistemi e ricerca operativa
+    analisi applicata dei sistemi e ricerca
+    applicata dei sistemi e ricerca operativa
+    controllo automazione e misure
+    controllo automazione e
+    automazione e misure
+
+@[word_4_4]
+    europeo fp v
+    europeo fp
+    fp v
+    europeo fp vi
+    europeo fp
+    fp vi
+    europeo fp vii
+    europeo fp
+    fp vii
+    cofin
+    far
+    firb
+    consulenza
+    didattica
+    ricerca
+    prova su commissione
+    prova su
+    su commissione
+    contributo regione
+    contributo ente privato
+    contributo ente
+    ente privato
+    contributo ente pubblico
+    contributo ente
+    ente pubblico
+    altro
+    h2020
+
+@[word_5_1]
+    ieee instrumentation and measurement society young engineer award
+    ieee instrumentation and measurement society young engineer
+    instrumentation and measurement society young engineer award
+    acm sigsoft distinguished service award
+    acm sigsoft distinguished service
+    sigsoft distinguished service award
+    vldb ten years award
+    vldb ten years
+    ten years award
+    ieee instrumentation and measurement society technical award vincenzo piuri
+    ieee instrumentation and measurement society technical award vincenzo
+    instrumentation and measurement society technical award vincenzo piuri
+    2005 chorafas foundation award
+    2005 chorafas foundation
+    chorafas foundation award
+    outstanding achievement award from ieee nuclear and plasma science society
+    outstanding achievement award from ieee nuclear and plasma science
+    achievement award from ieee nuclear and plasma science society
+    honorary membership
+    ieee award in international communications
+    ieee award in international
+    award in international communications
+    ieee third millennium medal award
+    ieee third millennium medal
+    third millennium medal award
+    ieee distinguished lecturer
+    ieee distinguished
+    distinguished lecturer
+    aei award
+    van weelden award of eage
+    van weelden award of
+    weelden award of eage
+    best reviewers award
+    best reviewers
+    reviewers award
+    international award cristoforo colombo for space communications
+    international award cristoforo colombo for space
+    award cristoforo colombo for space communications
+    marisa bellisario award from fondazione marisa bellisario
+    marisa bellisario award from fondazione marisa
+    bellisario award from fondazione marisa bellisario
+    premio 1999 della rhein foundation rft per le tecnologie
+    premio 1999 della rhein foundation rft per le
+    1999 della rhein foundation rft per le tecnologie
+    piero fanti international prize from intelsat telespazio
+    piero fanti international prize from intelsat
+    fanti international prize from intelsat telespazio
+    2004 chorafas foundation award
+    2004 chorafas foundation
+    chorafas foundation award
+    ieee fellowship
+    ieee fellowship vincenzo piuri
+    ieee fellowship vincenzo
+    fellowship vincenzo piuri
+    ieee nuclear and plasma science society graduate scholarship award
+    ieee nuclear and plasma science society graduate scholarship
+    nuclear and plasma science society graduate scholarship award
+    osa fellow
+    acm fellowship
+    certificate of appreciation from ieee
+    certificate of appreciation from
+    of appreciation from ieee
+    membro dell accademia nazionale delle scienze detta dei quaranta
+    membro dell accademia nazionale delle scienze detta dei
+    dell accademia nazionale delle scienze detta dei quaranta
+    invited talk
+    membership
+    membro effettivo dell istituto lombardo di scienze e lettere
+    membro effettivo dell istituto lombardo di scienze e
+    effettivo dell istituto lombardo di scienze e lettere
+    award to young researchers particularly brilliant and active in detection techniques development and contributing by talk or by poster to the scientific program of the conference
+    award to young researchers particularly brilliant and active in detection techniques development and contributing by talk or by poster to the scientific program of the
+    to young researchers particularly brilliant and active in detection techniques development and contributing by talk or by poster to the scientific program of the conference
+    premio di operosita scientifica per la fisica bandito dalla societa italiana di fisica
+    premio di operosita scientifica per la fisica bandito dalla societa italiana di
+    di operosita scientifica per la fisica bandito dalla societa italiana di fisica
+    radiation instrumentation early career award from ieee nuclear and plasma science society
+    radiation instrumentation early career award from ieee nuclear and plasma science
+    instrumentation early career award from ieee nuclear and plasma science society
+    premio philip morris
+    premio philip
+    philip morris
+    premio prof luigi tartufari
+    premio prof luigi
+    prof luigi tartufari
+    best paper award
+    best paper
+    paper award
+    highly commended paper award
+    highly commended paper
+    commended paper award
+    best poster paper award
+    best poster paper
+    poster paper award
+    outstanding paper award
+    outstanding paper
+    paper award
+    symposium paper award
+    symposium paper
+    paper award
+    ieee transactions prize paper award
+    ieee transactions prize paper
+    transactions prize paper award
+    laurea honoris causa
+    laurea honoris
+    honoris causa
+    italgas prize
+    2005 chorafas foundation award fabio martignon
+    2005 chorafas foundation award fabio
+    chorafas foundation award fabio martignon
+    ifip international federation for information processing silver core award
+    ifip international federation for information processing silver core
+    international federation for information processing silver core award
+    membro dell accademia dei lincei di roma
+    membro dell accademia dei lincei di
+    dell accademia dei lincei di roma
+    member of the accademia nazionale delle scienze detta dei quaranta
+    member of the accademia nazionale delle scienze detta dei
+    of the accademia nazionale delle scienze detta dei quaranta
+    highly cited author
+    highly cited
+    cited author
+    highly cited paper
+    highly cited
+    cited paper
+    ifac international federation of automatic control fellow award
+    ifac international federation of automatic control fellow
+    international federation of automatic control fellow award
+    recipient biennial medals iemss on natural systems
+    recipient biennial medals iemss on natural
+    biennial medals iemss on natural systems
+    ibm faculty award
+    ibm faculty
+    faculty award
+    ieee instrumentation and measurement society young engineer award
+    ieee instrumentation and measurement society young engineer
+    instrumentation and measurement society young engineer award
+    acm sigsoft distinguished service award
+    acm sigsoft distinguished service
+    sigsoft distinguished service award
+    vldb ten years award
+    vldb ten years
+    ten years award
+    ieee instrumentation and measurement society technical award vincenzo piuri
+    ieee instrumentation and measurement society technical award vincenzo
+    instrumentation and measurement society technical award vincenzo piuri
+    2005 chorafas foundation award
+    2005 chorafas foundation
+    chorafas foundation award
+    outstanding achievement award from ieee nuclear and plasma science society
+    outstanding achievement award from ieee nuclear and plasma science
+    achievement award from ieee nuclear and plasma science society
+    honorary membership
+    ieee award in international communications
+    ieee award in international
+    award in international communications
+    ieee third millennium medal award
+    ieee third millennium medal
+    third millennium medal award
+    ieee distinguished lecturer
+    ieee distinguished
+    distinguished lecturer
+    aei award
+    van weelden award of eage
+    van weelden award of
+    weelden award of eage
+    best reviewers award
+    best reviewers
+    reviewers award
+    premio internazionale delle comunicazioni cristoforo colombo
+    premio internazionale delle comunicazioni cristoforo
+    internazionale delle comunicazioni cristoforo colombo
+    marisa bellisario award from fondazione marisa bellisario
+    marisa bellisario award from fondazione marisa
+    bellisario award from fondazione marisa bellisario
+    premio 1999 della rhein foundation rft per le tecnologie
+    premio 1999 della rhein foundation rft per le
+    1999 della rhein foundation rft per le tecnologie
+    piero fanti international prize from intelsat telespazio
+    piero fanti international prize from intelsat
+    fanti international prize from intelsat telespazio
+    2004 chorafas foundation award
+    2004 chorafas foundation
+    chorafas foundation award
+    ieee fellowship
+    ieee fellowship vincenzo piuri
+    ieee fellowship vincenzo
+    fellowship vincenzo piuri
+    ieee nuclear and plasma science society graduate scholarship award
+    ieee nuclear and plasma science society graduate scholarship
+    nuclear and plasma science society graduate scholarship award
+    osa fellow
+    acm fellowship
+    certificate of appreciation from ieee
+    certificate of appreciation from
+    of appreciation from ieee
+    membro dell accademia nazionale delle scienze detta dei quaranta
+    membro dell accademia nazionale delle scienze detta dei
+    dell accademia nazionale delle scienze detta dei quaranta
+    invited talk
+    membership
+    membro effettivo dell istituto lombardo di scienze e lettere
+    membro effettivo dell istituto lombardo di scienze e
+    effettivo dell istituto lombardo di scienze e lettere
+    award to young researchers particularly brilliant and active in detection techniques development and contributing by talk or by poster to the scientific program of the conference
+    award to young researchers particularly brilliant and active in detection techniques development and contributing by talk or by poster to the scientific program of the
+    to young researchers particularly brilliant and active in detection techniques development and contributing by talk or by poster to the scientific program of the conference
+    premio di operosita scientifica per la fisica bandito dalla societa italiana di fisica
+    premio di operosita scientifica per la fisica bandito dalla societa italiana di
+    di operosita scientifica per la fisica bandito dalla societa italiana di fisica
+    radiation instrumentation early career award from ieee nuclear and plasma science society
+    radiation instrumentation early career award from ieee nuclear and plasma science
+    instrumentation early career award from ieee nuclear and plasma science society
+    premio philip morris
+    premio philip
+    philip morris
+    premio prof luigi tartufari
+    premio prof luigi
+    prof luigi tartufari
+    best paper award
+    best paper
+    paper award
+    highly commended paper award
+    highly commended paper
+    commended paper award
+    best poster paper award
+    best poster paper
+    poster paper award
+    outstanding paper award
+    outstanding paper
+    paper award
+    symposium paper award
+    symposium paper
+    paper award
+    ieee transactions prize paper award
+    ieee transactions prize paper
+    transactions prize paper award
+    laurea honoris causa
+    laurea honoris
+    honoris causa
+    premio italgas
+    2005 chorafas foundation award fabio martignon
+    2005 chorafas foundation award fabio
+    chorafas foundation award fabio martignon
+    ifip international federation for information processing silver core award
+    ifip international federation for information processing silver core
+    international federation for information processing silver core award
+    membro dell accademia dei lincei di roma
+    membro dell accademia dei lincei di
+    dell accademia dei lincei di roma
+    autore pi citato
+    autore pi
+    pi citato
+    articolo pi citato
+    articolo pi
+    pi citato
+    ifac international federation of automatic control fellow award
+    ifac international federation of automatic control fellow
+    international federation of automatic control fellow award
+    recipient biennial medals iemss on natural systems
+    recipient biennial medals iemss on natural
+    biennial medals iemss on natural systems
+    ibm faculty award
+    ibm faculty
+    faculty award
+    best student paper award daniela donno
+    best student paper award daniela
+    student paper award daniela donno
+
+@[word_5_2]
+    best paper awards
+    best paper
+    paper awards
+    other recognitions
+    international recognitions
+    highly cited authors and papers
+    highly cited authors and
+    cited authors and papers
+    recognitions to phd students
+    recognitions to phd
+    to phd students
+    fellowships
+    recognitions of italian academies and associations
+    recognitions of italian academies and
+    of italian academies and associations
+    invited papers
+    invited talks
+    distinguished lecturers
+    recognitions of distinguished services
+    recognitions of distinguished
+    of distinguished services
+    migliore articolo
+    altri riconoscimenti
+    riconoscimenti internazionali
+    autore o articolo pi citato
+    autore o articolo pi
+    o articolo pi citato
+    riconoscimenti a studenti di dottorato
+    riconoscimenti a studenti di
+    a studenti di dottorato
+    fellowships
+    riconoscimenti di accademie e associazioni italiane
+    riconoscimenti di accademie e associazioni
+    di accademie e associazioni italiane
+    invited papers
+    invited talks
+    distinguished lecturers
+    recognitions of distinguished services
+    recognitions of distinguished
+    of distinguished services
+
+@[word_5_3]
+    turrin
+    marfia
+    ghafari
+    arigoni
+    fiorenti
+    triberti
+    belloli
+    giani
+    montemurro
+    beretta
+    sciuto
+    nogarotto
+    de lorenzo
+    bez
+    santomauro
+    gianoli
+    cipolleschi
+    montin
+    manolescu
+    brankovic
+    pignari
+    casalegno
+    rabosio
+    palermo
+    dede
+    ornaghi
+    grillo
+    gelembe
+    ferrucci
+    trecordi
+    vismara
+    nasri
+    vaca ruiz
+    florio
+    garzotto
+    prati
+    picozzi
+    paganelli
+    eynard
+    coronado vargas
+    cogliati
+    brambilla
+    bartolini
+    laghi
+    paolucci
+    cugola
+    schiavina
+    de bellis
+    buizza avanzini
+    schmitt
+    roberto
+    fabio
+    mohammad
+    claudio
+    simone
+    cesare
+    damiano
+    paolo
+    giuseppe vito
+    elisa
+    donatella
+    danilo
+    mauro
+    luca giovanni
+    riccardo
+    eros
+    ioana
+    aida
+    sergio amedeo
+    luigi
+    emanuele
+    salvatore
+    alessio
+    davide
+    samuele
+    erol
+    luca
+    vittorio
+    bayan
+    carmen karina
+    franca
+    claudio maria
+    matteo
+    chiara
+    dianne catherine
+    dario
+    angelo maurizio
+    davide basilio
+    giacomo
+    giovanni maria
+    gianpaolo
+    marcello
+    gianluca
+    giovanni massimo
+    rafael jan pablo
+    rafael jan
+    jan pablo
+    keefe baird
+    andrea
+    vahid
+    marta
+    enrico gianluca
+
+@[word_5_4]
+    systems and control
+    systems and
+    and control
+    electronics
+    computer science and engineering
+    computer science and
+    science and engineering
+    telecommunications
+    bioengineering
+    electrical engineering
+    automatica
+    elettronica
+    informatica
+    telecomunicazioni
+    bioingegneria
+    elettrica
+
+@[word_5_5]
+    information systems
+    web multimedia and databases
+    web multimedia and
+    multimedia and databases
+    artificial intelligence robotics and computer vision
+    artificial intelligence robotics and computer
+    intelligence robotics and computer vision
+    advanced software architectures and methodologies
+    advanced software architectures and
+    software architectures and methodologies
+    systems architectures
+    microelectronics and emerging technologies
+    microelectronics and emerging
+    and emerging technologies
+    sensors and instrumentation
+    sensors and
+    and instrumentation
+    circuit and systems theory and applications
+    circuit and systems theory and
+    and systems theory and applications
+    communications
+    networks
+    signals
+    applied systems analysis and operations research
+    applied systems analysis and operations
+    systems analysis and operations research
+    control automation and measurement
+    control automation and
+    automation and measurement
+    sistemi informativi
+    web multimedia e database
+    web multimedia e
+    multimedia e database
+    intelligenza artificiale robotica e computer vision
+    intelligenza artificiale robotica e computer
+    artificiale robotica e computer vision
+    metodologie e architetture software avanzate
+    metodologie e architetture software
+    e architetture software avanzate
+    architetture
+    microelettronica e tecnologie emergenti
+    microelettronica e tecnologie
+    e tecnologie emergenti
+    sensori e strumentazione
+    sensori e
+    e strumentazione
+    teoria dei circuiti e dei sistemi e relative applicazioni
+    teoria dei circuiti e dei sistemi e relative
+    dei circuiti e dei sistemi e relative applicazioni
+    comunicazioni
+    reti
+    segnali
+    analisi applicata dei sistemi e ricerca operativa
+    analisi applicata dei sistemi e ricerca
+    applicata dei sistemi e ricerca operativa
+    controllo automazione e misure
+    controllo automazione e
+    automazione e misure
+
+@[word_6_1]
+    systems and control
+    systems and
+    and control
+    electronics
+    computer science and engineering
+    computer science and
+    science and engineering
+    telecommunications
+    bioengineering
+    electrical engineering
+    automatica
+    elettronica
+    informatica
+    telecomunicazioni
+    bioingegneria
+    elettrica
+
+
+%[find_el_by_attr]('training': '815', 'testing': '203')
+    ~[find] @[el_1] @[word_1_1] ~[and_or_clause_el_1?] ~[order_by_clause?]
+    ~[find] @[el_1] @[attr_1_2] @[word_1_2] ~[and_or_clause_el_1?] ~[order_by_clause?]
+    ~[find] @[el_1] @[attr_1_3] @[word_1_3] ~[and_or_clause_el_1?] ~[order_by_clause?]
+    ~[find] @[el_1] @[attr_1_4] @[word_1_4] ~[and_or_clause_el_1?] ~[order_by_clause?]
+    ~[find] @[el_1] @[attr_1_5] @[word_1_5] ~[and_or_clause_el_1?] ~[order_by_clause?]
+    ~[find] @[el_1] @[attr_1_6] @[word_1_6] ~[and_or_clause_el_1?] ~[order_by_clause?]
+    ~[find] @[el_2] @[word_2_1] ~[and_or_clause_el_2?] ~[order_by_clause?]
+    ~[find] @[el_2] @[attr_2_2] @[word_2_2] ~[and_or_clause_el_2?] ~[order_by_clause?]
+    ~[find] @[el_3] @[word_3_1] ~[and_or_clause_el_3?] ~[order_by_clause?]
+    ~[find] @[el_3] @[attr_3_2] @[word_3_2] ~[and_or_clause_el_3?] ~[order_by_clause?]
+    ~[find] @[el_3] @[attr_3_3] @[word_3_3] ~[and_or_clause_el_3?] ~[order_by_clause?]
+    ~[find] @[el_3] @[attr_3_4] @[word_3_4] ~[and_or_clause_el_3?] ~[order_by_clause?]
+    ~[find] @[el_4] @[word_4_1] ~[and_or_clause_el_4?] ~[order_by_clause?]
+    ~[find] @[el_4] @[attr_4_2] @[word_4_2] ~[and_or_clause_el_4?] ~[order_by_clause?]
+    ~[find] @[el_4] @[attr_4_3] @[word_4_3] ~[and_or_clause_el_4?] ~[order_by_clause?]
+    ~[find] @[el_4] @[attr_4_4] @[word_4_4] ~[and_or_clause_el_4?] ~[order_by_clause?]
+    ~[find] @[el_5] @[word_5_1] ~[and_or_clause_el_5?] ~[order_by_clause?]
+    ~[find] @[el_5] @[attr_5_2] @[word_5_2] ~[and_or_clause_el_5?] ~[order_by_clause?]
+    ~[find] @[el_5] @[attr_5_3] @[word_5_3] ~[and_or_clause_el_5?] ~[order_by_clause?]
+    ~[find] @[el_5] @[attr_5_4] @[word_5_4] ~[and_or_clause_el_5?] ~[order_by_clause?]
+    ~[find] @[el_5] @[attr_5_5] @[word_5_5] ~[and_or_clause_el_5?] ~[order_by_clause?]
+    ~[find] @[el_6] @[word_6_1] ~[and_or_clause_el_6?] ~[order_by_clause?]
+
+~[and_or_clause_el_1]
+    @[and] @[word_1_1]
+    @[or] @[word_1_1]
+    @[and] @[attr_1_2] @[word_1_2]
+    @[or] @[attr_1_2] @[word_1_2]
+    @[and] @[attr_1_3] @[word_1_3]
+    @[or] @[attr_1_3] @[word_1_3]
+    @[and] @[attr_1_4] @[word_1_4]
+    @[or] @[attr_1_4] @[word_1_4]
+    @[and] @[attr_1_5] @[word_1_5]
+    @[or] @[attr_1_5] @[word_1_5]
+    @[and] @[attr_1_6] @[word_1_6]
+    @[or] @[attr_1_6] @[word_1_6]
+
+~[and_or_clause_el_2]
+    @[and] @[word_2_1]
+    @[or] @[word_2_1]
+    @[and] @[attr_2_2] @[word_2_2]
+    @[or] @[attr_2_2] @[word_2_2]
+
+~[and_or_clause_el_3]
+    @[and] @[word_3_1]
+    @[or] @[word_3_1]
+    @[and] @[attr_3_2] @[word_3_2]
+    @[or] @[attr_3_2] @[word_3_2]
+    @[and] @[attr_3_3] @[word_3_3]
+    @[or] @[attr_3_3] @[word_3_3]
+    @[and] @[attr_3_4] @[word_3_4]
+    @[or] @[attr_3_4] @[word_3_4]
+
+~[and_or_clause_el_4]
+    @[and] @[word_4_1]
+    @[or] @[word_4_1]
+    @[and] @[attr_4_2] @[word_4_2]
+    @[or] @[attr_4_2] @[word_4_2]
+    @[and] @[attr_4_3] @[word_4_3]
+    @[or] @[attr_4_3] @[word_4_3]
+    @[and] @[attr_4_4] @[word_4_4]
+    @[or] @[attr_4_4] @[word_4_4]
+
+~[and_or_clause_el_5]
+    @[and] @[word_5_1]
+    @[or] @[word_5_1]
+    @[and] @[attr_5_2] @[word_5_2]
+    @[or] @[attr_5_2] @[word_5_2]
+    @[and] @[attr_5_3] @[word_5_3]
+    @[or] @[attr_5_3] @[word_5_3]
+    @[and] @[attr_5_4] @[word_5_4]
+    @[or] @[attr_5_4] @[word_5_4]
+    @[and] @[attr_5_5] @[word_5_5]
+    @[or] @[attr_5_5] @[word_5_5]
+
+~[and_or_clause_el_6]
+    @[and] @[word_6_1]
+    @[or] @[word_6_1]
+
+@[and]
+    and
+
+@[or]
+    or
+
+%[filter_el_by_attr]('training': '815', 'testing': '203')
+    ~[filter] ~[those?] @[word_1_1]
+    ~[filter] ~[those?] @[attr_1_2] @[word_1_2]
+    ~[filter] ~[those?] @[attr_1_3] @[word_1_3]
+    ~[filter] ~[those?] @[attr_1_4] @[word_1_4]
+    ~[filter] ~[those?] @[attr_1_5] @[word_1_5]
+    ~[filter] ~[those?] @[attr_1_6] @[word_1_6]
+    ~[filter] ~[those?] @[word_2_1]
+    ~[filter] ~[those?] @[attr_2_2] @[word_2_2]
+    ~[filter] ~[those?] @[word_3_1]
+    ~[filter] ~[those?] @[attr_3_2] @[word_3_2]
+    ~[filter] ~[those?] @[attr_3_3] @[word_3_3]
+    ~[filter] ~[those?] @[attr_3_4] @[word_3_4]
+    ~[filter] ~[those?] @[word_4_1]
+    ~[filter] ~[those?] @[attr_4_2] @[word_4_2]
+    ~[filter] ~[those?] @[attr_4_3] @[word_4_3]
+    ~[filter] ~[those?] @[attr_4_4] @[word_4_4]
+    ~[filter] ~[those?] @[word_5_1]
+    ~[filter] ~[those?] @[attr_5_2] @[word_5_2]
+    ~[filter] ~[those?] @[attr_5_3] @[word_5_3]
+    ~[filter] ~[those?] @[attr_5_4] @[word_5_4]
+    ~[filter] ~[those?] @[attr_5_5] @[word_5_5]
+    ~[filter] ~[those?] @[word_6_1]
+
+%[more_info_find]('training': '160', 'testing': '40')
+    ~[show?] ~[more_info_find] @[el_1]
+    ~[show?] ~[more_info_find] @[el_2]
+    ~[show?] ~[more_info_find] @[el_3]
+    ~[show?] ~[more_info_find] @[el_4]
+    ~[show?] ~[more_info_find] @[el_5]
+    ~[show?] ~[more_info_find] @[el_6]
+
+%[more_info_filter]('training': '160', 'testing': '40')
+    ~[show?] ~[more_info_filter] @[el_1]
+    ~[show?] ~[more_info_filter] @[el_2]
+    ~[show?] ~[more_info_filter] @[el_3]
+    ~[show?] ~[more_info_filter] @[el_4]
+    ~[show?] ~[more_info_filter] @[el_5]
+    ~[show?] ~[more_info_filter] @[el_6]
+
+%[ambiguity_solver_intent]('training': '815', 'testing': '203')
+    ~[w_question?] @[el_1] @[word_1_1]
+    ~[w_question?] @[el_1] @[attr_1_2] @[word_1_2]
+    ~[w_question?] @[el_1] @[attr_1_3] @[word_1_3]
+    ~[w_question?] @[el_1] @[attr_1_4] @[word_1_4]
+    ~[w_question?] @[el_1] @[attr_1_5] @[word_1_5]
+    ~[w_question?] @[el_1] @[attr_1_6] @[word_1_6]
+    ~[w_question?] @[el_2] @[word_2_1]
+    ~[w_question?] @[el_2] @[attr_2_2] @[word_2_2]
+    ~[w_question?] @[el_3] @[word_3_1]
+    ~[w_question?] @[el_3] @[attr_3_2] @[word_3_2]
+    ~[w_question?] @[el_3] @[attr_3_3] @[word_3_3]
+    ~[w_question?] @[el_3] @[attr_3_4] @[word_3_4]
+    ~[w_question?] @[el_4] @[word_4_1]
+    ~[w_question?] @[el_4] @[attr_4_2] @[word_4_2]
+    ~[w_question?] @[el_4] @[attr_4_3] @[word_4_3]
+    ~[w_question?] @[el_4] @[attr_4_4] @[word_4_4]
+    ~[w_question?] @[el_5] @[word_5_1]
+    ~[w_question?] @[el_5] @[attr_5_2] @[word_5_2]
+    ~[w_question?] @[el_5] @[attr_5_3] @[word_5_3]
+    ~[w_question?] @[el_5] @[attr_5_4] @[word_5_4]
+    ~[w_question?] @[el_5] @[attr_5_5] @[word_5_5]
+    ~[w_question?] @[el_6] @[word_6_1]
+    ~[w_question?] @[word_1_1]
+    ~[w_question?] @[attr_1_2] @[word_1_2]
+    ~[w_question?] @[attr_1_3] @[word_1_3]
+    ~[w_question?] @[attr_1_4] @[word_1_4]
+    ~[w_question?] @[attr_1_5] @[word_1_5]
+    ~[w_question?] @[attr_1_6] @[word_1_6]
+    ~[w_question?] @[word_2_1]
+    ~[w_question?] @[attr_2_2] @[word_2_2]
+    ~[w_question?] @[word_3_1]
+    ~[w_question?] @[attr_3_2] @[word_3_2]
+    ~[w_question?] @[attr_3_3] @[word_3_3]
+    ~[w_question?] @[attr_3_4] @[word_3_4]
+    ~[w_question?] @[word_4_1]
+    ~[w_question?] @[attr_4_2] @[word_4_2]
+    ~[w_question?] @[attr_4_3] @[word_4_3]
+    ~[w_question?] @[attr_4_4] @[word_4_4]
+    ~[w_question?] @[word_5_1]
+    ~[w_question?] @[attr_5_2] @[word_5_2]
+    ~[w_question?] @[attr_5_3] @[word_5_3]
+    ~[w_question?] @[attr_5_4] @[word_5_4]
+    ~[w_question?] @[attr_5_5] @[word_5_5]
+    ~[w_question?] @[word_6_1]
+    @[word_1_1]
+    @[word_1_2]
+    @[word_1_3]
+    @[word_1_4]
+    @[word_1_5]
+    @[word_1_6]
+    @[word_2_1]
+    @[word_2_2]
+    @[word_3_1]
+    @[word_3_2]
+    @[word_3_3]
+    @[word_3_4]
+    @[word_4_1]
+    @[word_4_2]
+    @[word_4_3]
+    @[word_4_4]
+    @[word_5_1]
+    @[word_5_2]
+    @[word_5_3]
+    @[word_5_4]
+    @[word_5_5]
+    @[word_6_1]

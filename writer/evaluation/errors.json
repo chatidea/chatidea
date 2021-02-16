@@ -1,0 +1,10 @@
+[
+    {
+        "text": "show filter news",
+        "intent": "more_info_filter",
+        "intent_prediction": {
+            "name": "filter_el_by_attr",
+            "confidence": 0.8589212894439697
+        }
+    }
+]

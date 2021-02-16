@@ -1,0 +1,1073 @@
+{
+        "location_edifici": {
+                "column_list": [
+                        "id_edificio",
+                        "old_idsede",
+                        "nome_edificio",
+                        "codicepatrimonio_edificio",
+                        "ordine_edificio"
+                ],
+                "column_alias_list": {
+                        "id_edificio": "building id",
+                        "old_idsede": "building old id",
+                        "nome_edificio": "building name",
+                        "codicepatrimonio_edificio": "codice patrimonio",
+                        "ordine_edificio": "order"
+                },
+                "primary_key_list": [
+                        "id_edificio"
+                ],
+                "references": []
+        },
+        "location_locali": {
+                "column_list": [
+                        "id_locale",
+                        "old_idlocale",
+                        "nomelocale",
+                        "descrizione",
+                        "id_edificio",
+                        "id_piano",
+                        "old_id_edificio",
+                        "old_id_piano",
+                        "passpartout",
+                        "is_laboratorio",
+                        "is_radl_richiesto",
+                        "is_user_richiedibile",
+                        "note_locale"
+                ],
+                "column_alias_list": {
+                        "id_locale": "room id",
+                        "old_idlocale": "room old id",
+                        "nomelocale": "room name",
+                        "descrizione": "description",
+                        "id_edificio": "building id",
+                        "id_piano": "floor id",
+                        "old_id_edificio": "building old id",
+                        "old_id_piano": "floor old id",
+                        "passpartout": "passpartout",
+                        "is_laboratorio": "is laboratorio",
+                        "is_radl_richiesto": "is richiesto",
+                        "is_user_richiedibile": "is richiedibile",
+                        "note_locale": "notes"
+                },
+                "primary_key_list": [
+                        "id_locale"
+                ],
+                "references": [
+                        {
+                                "to_table": "location_edifici",
+                                "from_attribute": "id_edificio",
+                                "to_attribute": "id_edificio",
+                                "show_attribute": "nome_edificio"
+                        },
+                        {
+                                "to_table": "location_piani",
+                                "from_attribute": "id_piano",
+                                "to_attribute": "id_piano",
+                                "show_attribute": "descrizione_short"
+                        }
+                ]
+        },
+        "location_piani": {
+                "column_list": [
+                        "id_piano",
+                        "old_id_piano",
+                        "descrizione_short",
+                        "descrizione_piano",
+                        "codicepatrimonio_piano",
+                        "ordine"
+                ],
+                "column_alias_list": {
+                        "id_piano": "floor id",
+                        "old_id_piano": "floor old id",
+                        "descrizione_short": "short description",
+                        "descrizione_piano": "description",
+                        "codicepatrimonio_piano": "codice patrimonio",
+                        "ordine": "order"
+                },
+                "primary_key_list": [
+                        "id_piano"
+                ],
+                "references": []
+        },
+        "personale_deib_recapiti": {
+                "column_list": [
+                        "id_recapito",
+                        "id_persona",
+                        "id_edificio",
+                        "id_piano",
+                        "id_locale",
+                        "id_telefono",
+                        "id_fax"
+                ],
+                "column_alias_list": {
+                        "id_recapito": "contact",
+                        "id_persona": "person",
+                        "id_edificio": "building",
+                        "id_piano": "floor",
+                        "id_locale": "room",
+                        "id_telefono": "phone",
+                        "id_fax": "fax"
+                },
+                "primary_key_list": [
+                        "id_recapito"
+                ],
+                "references": [
+                        {
+                                "to_table": "aunica_people_dettagli",
+                                "from_attribute": "id_persona",
+                                "to_attribute": "id_persona",
+                                "show_attribute": "cognome"
+                        },
+                        {
+                                "to_table": "location_edifici",
+                                "from_attribute": "id_edificio",
+                                "to_attribute": "id_edificio",
+                                "show_attribute": "nome_edificio"
+                        },
+                        {
+                                "to_table": "location_piani",
+                                "from_attribute": "id_piano",
+                                "to_attribute": "id_piano",
+                                "show_attribute": "descrizione_short"
+                        },
+                        {
+                                "to_table": "location_locali",
+                                "from_attribute": "id_locale",
+                                "to_attribute": "id_locale",
+                                "show_attribute": "nomelocale"
+                        },
+                        {
+                                "to_table": "telefoni",
+                                "from_attribute": "id_telefono",
+                                "to_attribute": "id_telefono",
+                                "show_attribute": "numero"
+                        }
+                ]
+        },
+        "telefoni": {
+                "column_list": [
+                        "id_telefono",
+                        "numero",
+                        "riservato",
+                        "chiave",
+                        "abilitazione",
+                        "email",
+                        "sede",
+                        "piano",
+                        "stanza",
+                        "id_locale",
+                        "presa",
+                        "data_attivazione",
+                        "tipo",
+                        "descrizione",
+                        "is_fax",
+                        "is_user_richiedibile",
+                        "note"
+                ],
+                "column_alias_list": {
+                        "id_telefono": "phone id",
+                        "numero": "phone number",
+                        "riservato": "reserved",
+                        "chiave": "key",
+                        "abilitazione": "abilitation",
+                        "email": "email",
+                        "sede": "building",
+                        "piano": "floor",
+                        "stanza": "room",
+                        "id_locale": "room id",
+                        "presa": "outlet",
+                        "data_attivazione": "activation date",
+                        "tipo": "type",
+                        "descrizione": "description",
+                        "is_fax": "is fax",
+                        "is_user_richiedibile": "is richiedibile",
+                        "note": "note"
+                },
+                "primary_key_list": [
+                        "id_telefono"
+                ],
+                "references": [
+                        {
+                                "to_table": "location_locali",
+                                "from_attribute": "id_locale",
+                                "to_attribute": "id_locale",
+                                "show_attribute": "nomelocale"
+                        }
+                ]
+        },
+        "aunica_categorie": {
+                "column_list": [
+                        "id_categoria",
+                        "id_categoria_aunica",
+                        "chiave_categoria",
+                        "nome_ita_categoria",
+                        "nome_eng_categoria",
+                        "dei_visibile",
+                        "richiede_subcat",
+                        "richiede_sezione",
+                        "is_docente",
+                        "is_strutturato",
+                        "is_esplicito",
+                        "is_prof",
+                        "ordine",
+                        "sovrapponibile_con"
+                ],
+                "column_alias_list": {
+                        "id_categoria": "category id",
+                        "id_categoria_aunica": "aunica category id",
+                        "chiave_categoria": "category key",
+                        "nome_ita_categoria": "category name (ita)",
+                        "nome_eng_categoria": "category name",
+                        "dei_visibile": "dei visible",
+                        "richiede_subcat": "needs subcategory",
+                        "richiede_sezione": "needs section",
+                        "is_docente": "is teacher",
+                        "is_strutturato": "is structured",
+                        "is_esplicito": "is explicit",
+                        "is_prof": "is professor",
+                        "ordine": "order",
+                        "sovrapponibile_con": "overlapping with"
+                },
+                "primary_key_list": [
+                        "id_categoria"
+                ],
+                "references": []
+        },
+        "aunica_gruppi_espliciti": {
+                "column_list": [
+                        "id_gruppo",
+                        "id_categoria_associata",
+                        "nome_ita",
+                        "nome_eng",
+                        "note"
+                ],
+                "column_alias_list": {
+                        "id_gruppo": "group id",
+                        "id_categoria_associata": "associated category id",
+                        "nome_ita": "group name (ita)",
+                        "nome_eng": "group name",
+                        "note": "notes"
+                },
+                "primary_key_list": [
+                        "id_gruppo"
+                ],
+                "references": [
+                        {
+                                "to_table": "aunica_categorie",
+                                "from_attribute": "id_categoria_associata",
+                                "to_attribute": "id_categoria",
+                                "show_attribute": "nome_eng_categoria"
+                        }
+                ]
+        },
+        "aunica_people_categorie": {
+                "column_list": [
+                        "id_categoria",
+                        "id_persona"
+                ],
+                "column_alias_list": {
+                        "id_categoria": "category id",
+                        "id_persona": "person id"
+                },
+                "primary_key_list": [
+                        "id_categoria",
+                        "id_persona"
+                ],
+                "references": [
+                        {
+                                "to_table": "aunica_categorie",
+                                "from_attribute": "id_categoria",
+                                "to_attribute": "id_categoria",
+                                "show_attribute": "nome_eng_categoria"
+                        },
+                        {
+                                "to_table": "aunica_people_dettagli",
+                                "from_attribute": "id_persona",
+                                "to_attribute": "id_persona",
+                                "show_attribute": "cognome"
+                        }
+                ]
+        },
+        "aunica_people_dettagli": {
+                "column_list": [
+                        "id_persona",
+                        "codice_persona",
+                        "cognome",
+                        "nome",
+                        "email",
+                        "id_sezione",
+                        "old_deib_k_docente",
+                        "old_deib_id_docente",
+                        "old_deib_id_persona",
+                        "old_stl_login",
+                        "old_stl_id",
+                        "scheda_ita",
+                        "scheda_eng",
+                        "contatti_ita",
+                        "contatti_eng",
+                        "note_ita",
+                        "note_eng",
+                        "id_gruppo_esplicito",
+                        "id_ciclocorso",
+                        "foto",
+                        "file1",
+                        "file2",
+                        "visibile",
+                        "annotazioni",
+                        "pagina_personale_ita",
+                        "pagina_personale_eng"
+                ],
+                "column_alias_list": {
+                        "id_persona": "person id",
+                        "codice_persona": "person code",
+                        "cognome": "surname",
+                        "nome": "name",
+                        "email": "email",
+                        "id_sezione": "section id",
+                        "old_deib_k_docente": "old deib key",
+                        "old_deib_id_docente": "old deib teacher id",
+                        "old_deib_id_persona": "old deib person id",
+                        "old_stl_login": "old stl login",
+                        "old_stl_id": "old stl id",
+                        "scheda_ita": "about (ita)",
+                        "scheda_eng": "about",
+                        "contatti_ita": "contacts (ita)",
+                        "contatti_eng": "contacts",
+                        "note_ita": "notes (ita)",
+                        "note_eng": "notes",
+                        "id_gruppo_esplicito": "group",
+                        "id_ciclocorso": "course id",
+                        "foto": "photo",
+                        "file1": "file 1",
+                        "file2": "file 2",
+                        "visibile": "visible",
+                        "annotazioni": "annotations",
+                        "pagina_personale_ita": "personal page (ita)",
+                        "pagina_personale_eng": "personal page"
+                },
+                "primary_key_list": [
+                        "id_persona"
+                ],
+                "references": [
+                        {
+                                "to_table": "sezioni",
+                                "from_attribute": "id_sezione",
+                                "to_attribute": "id_sezione",
+                                "show_attribute": "nome_sezione_eng"
+                        }
+                ]
+        },
+        "aunica_people_laboratorio": {
+                "column_list": [
+                        "id_persona",
+                        "id_laboratorio"
+                ],
+                "column_alias_list": {
+                        "id_persona": "person id",
+                        "id_laboratorio": "laboratory id"
+                },
+                "primary_key_list": [
+                        "id_persona",
+                        "id_laboratorio"
+                ],
+                "references": [
+                        {
+                                "to_table": "aunica_people_dettagli",
+                                "from_attribute": "id_persona",
+                                "to_attribute": "id_persona",
+                                "show_attribute": "cognome"
+                        },
+                        {
+                                "to_table": "laboratorio",
+                                "from_attribute": "id_laboratorio",
+                                "to_attribute": "id_lab",
+                                "show_attribute": "nome_lab_eng"
+                        }
+                ]
+        },
+        "aunica_people_libri": {
+                "column_list": [
+                        "id_persona",
+                        "id_libro",
+                        "ruolo"
+                ],
+                "column_alias_list": {
+                        "id_persona": "person id",
+                        "id_libro": "book id",
+                        "ruolo": "role"
+                },
+                "primary_key_list": [
+                        "id_persona",
+                        "id_libro"
+                ],
+                "references": [
+                        {
+                                "to_table": "aunica_people_dettagli",
+                                "from_attribute": "id_persona",
+                                "to_attribute": "id_persona",
+                                "show_attribute": "cognome"
+                        },
+                        {
+                                "to_table": "libri_internazionali",
+                                "from_attribute": "id_libro",
+                                "to_attribute": "id_libro",
+                                "show_attribute": "titolo"
+                        }
+                ]
+        },
+        "aunica_people_progetti": {
+                "column_list": [
+                        "id_persona",
+                        "id_progetto",
+                        "ruolo"
+                ],
+                "column_alias_list": {
+                        "id_persona": "person id",
+                        "id_progetto": "project id",
+                        "ruolo": "role"
+                },
+                "primary_key_list": [
+                        "id_persona",
+                        "id_progetto"
+                ],
+                "references": [
+                        {
+                                "to_table": "aunica_people_dettagli",
+                                "from_attribute": "id_persona",
+                                "to_attribute": "id_persona",
+                                "show_attribute": "cognome"
+                        },
+                        {
+                                "to_table": "progetto",
+                                "from_attribute": "id_progetto",
+                                "to_attribute": "id_progetto",
+                                "show_attribute": "nome_prog_eng"
+                        }
+                ]
+        },
+        "aunica_people_riconoscimenti": {
+                "column_list": [
+                        "id_persona",
+                        "id_riconoscimento",
+                        "ruolo"
+                ],
+                "column_alias_list": {
+                        "id_persona": "person id",
+                        "id_riconoscimento": "award id",
+                        "ruolo": "role"
+                },
+                "primary_key_list": [
+                        "id_persona",
+                        "id_riconoscimento"
+                ],
+                "references": [
+                        {
+                                "to_table": "aunica_people_dettagli",
+                                "from_attribute": "id_persona",
+                                "to_attribute": "id_persona",
+                                "show_attribute": "cognome"
+                        },
+                        {
+                                "to_table": "riconoscimento",
+                                "from_attribute": "id_riconoscimento",
+                                "to_attribute": "id_riconoscimento",
+                                "show_attribute": "nome_ric_eng"
+                        }
+                ]
+        },
+        "aunica_people_sezioni": {
+                "column_list": [
+                        "id_persona",
+                        "id_sezione"
+                ],
+                "column_alias_list": {
+                        "id_persona": "person id",
+                        "id_sezione": "section id"
+                },
+                "primary_key_list": [
+                        "id_persona",
+                        "id_sezione"
+                ],
+                "references": [
+                        {
+                                "to_table": "aunica_people_dettagli",
+                                "from_attribute": "id_persona",
+                                "to_attribute": "id_persona",
+                                "show_attribute": "cognome"
+                        },
+                        {
+                                "to_table": "sezioni",
+                                "from_attribute": "id_sezione",
+                                "to_attribute": "id_sezione",
+                                "show_attribute": "nome_sezione_eng"
+                        }
+                ]
+        },
+        "eventi": {
+                "column_list": [
+                        "id_elemento",
+                        "stato",
+                        "inhome",
+                        "ordine",
+                        "titolo_ita",
+                        "titolo_eng",
+                        "descrizione_ita",
+                        "descrizione_eng",
+                        "short_bio_ita",
+                        "contatti_ita",
+                        "contatti_eng",
+                        "short_bio_eng",
+                        "link",
+                        "nome_link",
+                        "data_ins_old",
+                        "data_scad",
+                        "data_modifica",
+                        "id_tipo_evento",
+                        "data_ora_ics",
+                        "data_orafine_ics",
+                        "location_ics",
+                        "data_ins",
+                        "id_sezione"
+                ],
+                "column_alias_list": {
+                        "id_elemento": "event id",
+                        "stato": "state",
+                        "inhome": "in home",
+                        "ordine": "order",
+                        "titolo_ita": "event title (ita)",
+                        "titolo_eng": "event title",
+                        "descrizione_ita": "description (ita)",
+                        "descrizione_eng": "description",
+                        "short_bio_ita": "short bio (ita)",
+                        "contatti_ita": "contacts (ita)",
+                        "contatti_eng": "contacts",
+                        "short_bio_eng": "short bio",
+                        "link": "link",
+                        "nome_link": "link name",
+                        "data_ins_old": "old insertion date",
+                        "data_scad": "expiration date",
+                        "data_modifica": "edit date",
+                        "id_tipo_evento": "event type id",
+                        "data_ora_ics": "start time",
+                        "data_orafine_ics": "end time",
+                        "location_ics": "location",
+                        "data_ins": "insertion date",
+                        "id_sezione": "section id"
+                },
+                "primary_key_list": [
+                        "id_elemento"
+                ],
+                "references": [
+                        {
+                                "to_table": "tipo_evento",
+                                "from_attribute": "id_tipo_evento",
+                                "to_attribute": "id_tipo_evento",
+                                "show_attribute": "nome_tipo_evento_eng"
+                        }
+                ]
+        },
+        "laboratorio": {
+                "column_list": [
+                        "id_lab",
+                        "id_tipo_lab",
+                        "id_sede",
+                        "nome_lab",
+                        "nome_lab_eng",
+                        "email_lab",
+                        "sito_lab",
+                        "desc_lab",
+                        "desc_lab_eng",
+                        "orari_accesso_lab",
+                        "orari_accesso_lab_eng",
+                        "regole_accesso_lab",
+                        "regole_accesso_lab_eng",
+                        "contatto_lab",
+                        "contatto_lab_eng",
+                        "stato",
+                        "didascalia1_ita",
+                        "didascalia1_eng",
+                        "didascalia2_ita",
+                        "didascalia2_eng"
+                ],
+                "column_alias_list": {
+                        "id_lab": "laboratory id",
+                        "id_tipo_lab": "laboratory type id",
+                        "id_sede": "building id",
+                        "nome_lab": "laboratory name (ita)",
+                        "nome_lab_eng": "laboratory name",
+                        "email_lab": "email",
+                        "sito_lab": "website",
+                        "desc_lab": "description (ita)",
+                        "desc_lab_eng": "description",
+                        "orari_accesso_lab": "access hours (ita)",
+                        "orari_accesso_lab_eng": "access hours",
+                        "regole_accesso_lab": "access rules (ita)",
+                        "regole_accesso_lab_eng": "access rules",
+                        "contatto_lab": "contacts (ita)",
+                        "contatto_lab_eng": "contacts",
+                        "stato": "state",
+                        "didascalia1_ita": "caption 1 (ita)",
+                        "didascalia1_eng": "caption 1",
+                        "didascalia2_ita": "caption 2 (ita)",
+                        "didascalia2_eng": "caption 2"
+                },
+                "primary_key_list": [
+                        "id_lab"
+                ],
+                "references": [
+                        {
+                                "to_table": "tipo_laboratorio",
+                                "from_attribute": "id_tipo_lab",
+                                "to_attribute": "id_tipo_lab",
+                                "show_attribute": "tipo_lab"
+                        }
+                ]
+        },
+        "libri_internazionali": {
+                "column_list": [
+                        "id_libro",
+                        "titolo",
+                        "altri_autori",
+                        "casa_editrice",
+                        "anno_pubblicazione",
+                        "sitoweb_libro",
+                        "ordine",
+                        "id_sezione"
+                ],
+                "column_alias_list": {
+                        "id_libro": "book id",
+                        "titolo": "book title",
+                        "altri_autori": "other authors",
+                        "casa_editrice": "publishing house",
+                        "anno_pubblicazione": "publication year",
+                        "sitoweb_libro": "website",
+                        "ordine": "order",
+                        "id_sezione": "section id"
+                },
+                "primary_key_list": [
+                        "id_libro"
+                ],
+                "references": [
+                        {
+                                "to_table": "sezioni",
+                                "from_attribute": "id_sezione",
+                                "to_attribute": "id_sezione",
+                                "show_attribute": "nome_sezione_eng"
+                        }
+                ]
+        },
+        "progetto": {
+                "column_list": [
+                        "id_progetto",
+                        "id_sezione",
+                        "id_tipo_prog",
+                        "nome_prog_ita",
+                        "nome_prog_eng",
+                        "email_prog",
+                        "sito_prog",
+                        "siti_coll_prog",
+                        "acronimo_prog",
+                        "committente_prog",
+                        "data_inizio_prog",
+                        "data_fine_prog",
+                        "ruolo_DEI_prog",
+                        "abstract_prog_ita",
+                        "abstract_prog_eng",
+                        "keyword_prog_ita",
+                        "keyword_prog_eng",
+                        "avanzamento_prog_ita",
+                        "avanzamento_prog_eng",
+                        "stato",
+                        "didascalia_prog_ita",
+                        "didascalia_prog_eng",
+                        "featured",
+                        "in_home"
+                ],
+                "column_alias_list": {
+                        "id_progetto": "project id",
+                        "id_sezione": "section id",
+                        "id_tipo_prog": "project type id",
+                        "nome_prog_ita": "project name (ita)",
+                        "nome_prog_eng": "project name",
+                        "email_prog": "email",
+                        "sito_prog": "website",
+                        "siti_coll_prog": "related sites",
+                        "acronimo_prog": "acronym",
+                        "committente_prog": "client",
+                        "data_inizio_prog": "start date",
+                        "data_fine_prog": "end time",
+                        "ruolo_DEI_prog": "DEI role",
+                        "abstract_prog_ita": "abstract (ita)",
+                        "abstract_prog_eng": "abstract",
+                        "keyword_prog_ita": "keyword (ita)",
+                        "keyword_prog_eng": "keyword",
+                        "avanzamento_prog_ita": "progress (ita)",
+                        "avanzamento_prog_eng": "progress",
+                        "stato": "state",
+                        "didascalia_prog_ita": "about (ita)",
+                        "didascalia_prog_eng": "about",
+                        "featured": "featured",
+                        "in_home": "in home"
+                },
+                "primary_key_list": [
+                        "id_progetto"
+                ],
+                "references": [
+                        {
+                                "to_table": "tipo_progetto",
+                                "from_attribute": "id_tipo_prog",
+                                "to_attribute": "id_tipo_prog",
+                                "show_attribute": "tipo_prog"
+                        }
+                ]
+        },
+        "progetto_docente": {
+                "column_list": [
+                        "id_progetto",
+                        "id_docente",
+                        "ruolo_doc"
+                ],
+                "column_alias_list": {
+                        "id_progetto": "project id",
+                        "id_docente": "teacher id",
+                        "ruolo_doc": "role"
+                },
+                "primary_key_list": [
+                        "id_progetto",
+                        "id_docente"
+                ],
+                "references": [
+                        {
+                                "to_table": "progetto",
+                                "from_attribute": "id_progetto",
+                                "to_attribute": "id_progetto",
+                                "show_attribute": "nome_prog_eng"
+                        },
+                        {
+                                "to_table": "aunica_people_dettagli",
+                                "from_attribute": "id_docente",
+                                "to_attribute": "old_deib_id_docente",
+                                "show_attribute": "cognome"
+                        }
+                ]
+        },
+        "progetto_settore_sottoaree": {
+                "column_list": [
+                        "id_progetto",
+                        "id_settore",
+                        "id_sottoarea"
+                ],
+                "column_alias_list": {
+                        "id_progetto": "project id",
+                        "id_settore": "sector id",
+                        "id_sottoarea": "area id"
+                },
+                "primary_key_list": [
+                        "id_progetto",
+                        "id_settore",
+                        "id_sottoarea"
+                ],
+                "references": [
+                        {
+                                "to_table": "progetto",
+                                "from_attribute": "id_progetto",
+                                "to_attribute": "id_progetto",
+                                "show_attribute": "nome_prog_eng"
+                        },
+                        {
+                                "to_table": "sottoaree",
+                                "from_attribute": "id_sottoarea",
+                                "to_attribute": "id_sottoarea",
+                                "show_attribute": "nome_sottoarea_eng"
+                        }
+                ]
+        },
+        "progetto_sezione": {
+                "column_list": [
+                        "id_progetto",
+                        "id_sezione"
+                ],
+                "column_alias_list": {
+                        "id_progetto": "project id",
+                        "id_sezione": "section id"
+                },
+                "primary_key_list": [
+                        "id_progetto",
+                        "id_sezione"
+                ],
+                "references": [
+                        {
+                                "to_table": "progetto",
+                                "from_attribute": "id_progetto",
+                                "to_attribute": "id_progetto",
+                                "show_attribute": "nome_prog_eng"
+                        },
+                        {
+                                "to_table": "sezioni",
+                                "from_attribute": "id_sezione",
+                                "to_attribute": "id_sezione",
+                                "show_attribute": "nome_sezione_eng"
+                        }
+                ]
+        },
+        "riconoscimento": {
+                "column_list": [
+                        "id_riconoscimento",
+                        "id_tipo_ric",
+                        "nome_ric_ita",
+                        "data_premiazione",
+                        "descrizione_ric",
+                        "premiante_ric",
+                        "nome_ric_eng",
+                        "descrizione_ric_eng",
+                        "stato"
+                ],
+                "column_alias_list": {
+                        "id_riconoscimento": "award id",
+                        "id_tipo_ric": "award type id",
+                        "nome_ric_ita": "award name (ita)",
+                        "data_premiazione": "date",
+                        "descrizione_ric": "description (ita)",
+                        "premiante_ric": "awarded by",
+                        "nome_ric_eng": "award name",
+                        "descrizione_ric_eng": "description",
+                        "stato": "state"
+                },
+                "primary_key_list": [
+                        "id_riconoscimento"
+                ],
+                "references": [
+                        {
+                                "to_table": "tipo_riconoscimento",
+                                "from_attribute": "id_tipo_ric",
+                                "to_attribute": "id_tipo_ric",
+                                "show_attribute": "nome_tipo_ric_eng"
+                        }
+                ]
+        },
+        "riconoscimento_settore_sottoarea": {
+                "column_list": [
+                        "id_riconoscimento",
+                        "id_settore",
+                        "id_sottoarea"
+                ],
+                "column_alias_list": {
+                        "id_riconoscimento": "award id",
+                        "id_settore": "sector id",
+                        "id_sottoarea": "area id"
+                },
+                "primary_key_list": [
+                        "id_riconoscimento",
+                        "id_settore",
+                        "id_sottoarea"
+                ],
+                "references": [
+                        {
+                                "to_table": "riconoscimento",
+                                "from_attribute": "id_riconoscimento",
+                                "to_attribute": "id_riconoscimento",
+                                "show_attribute": "nome_ric_eng"
+                        },
+                        {
+                                "to_table": "sottoaree",
+                                "from_attribute": "id_sottoarea",
+                                "to_attribute": "id_sottoarea",
+                                "show_attribute": "nome_sottoarea_eng"
+                        }
+                ]
+        },
+        "riconoscimento_sezione": {
+                "column_list": [
+                        "id_riconoscimento",
+                        "id_sezione"
+                ],
+                "column_alias_list": {
+                        "id_riconoscimento": "award id",
+                        "id_sezione": "section id"
+                },
+                "primary_key_list": [
+                        "id_riconoscimento",
+                        "id_sezione"
+                ],
+                "references": [
+                        {
+                                "to_table": "riconoscimento",
+                                "from_attribute": "id_riconoscimento",
+                                "to_attribute": "id_riconoscimento",
+                                "show_attribute": "nome_ric_eng"
+                        },
+                        {
+                                "to_table": "sezioni",
+                                "from_attribute": "id_sezione",
+                                "to_attribute": "id_sezione",
+                                "show_attribute": "nome_sezione_eng"
+                        }
+                ]
+        },
+        "sezione_sottoarea_settore": {
+                "column_list": [
+                        "id_sezione",
+                        "id_sottoarea",
+                        "id_settore"
+                ],
+                "column_alias_list": {
+                        "id_sezione": "section id",
+                        "id_sottoarea": "area id",
+                        "id_settore": "sector id"
+                },
+                "primary_key_list": [
+                        "id_sezione",
+                        "id_sottoarea",
+                        "id_settore"
+                ],
+                "references": [
+                        {
+                                "to_table": "sezioni",
+                                "from_attribute": "id_sezione",
+                                "to_attribute": "id_sezione",
+                                "show_attribute": "nome_sezione_eng"
+                        },
+                        {
+                                "to_table": "sottoaree",
+                                "from_attribute": "id_sottoarea",
+                                "to_attribute": "id_sottoarea",
+                                "show_attribute": "nome_sottoarea_eng"
+                        }
+                ]
+        },
+        "sezioni": {
+                "column_list": [
+                        "id_sezione",
+                        "id_link_menu_ita",
+                        "id_link_menu_eng",
+                        "nome_sezione_ita",
+                        "nome_sezione_eng",
+                        "descrizione_sezione_ita",
+                        "descrizione_sezione_eng",
+                        "nome_corso_ita",
+                        "nome_corso_eng",
+                        "progetti_sezione_ita",
+                        "progetti_sezione_eng",
+                        "personale_sezione_ita",
+                        "personale_sezione_eng",
+                        "laboratori_sezione_ita",
+                        "laboratori_sezione_eng",
+                        "ordine"
+                ],
+                "column_alias_list": {
+                        "id_sezione": "section id",
+                        "id_link_menu_ita": "link menu (ita)",
+                        "id_link_menu_eng": "link menu",
+                        "nome_sezione_ita": "research area name (ita)",
+                        "nome_sezione_eng": "research area name",
+                        "descrizione_sezione_ita": "description (ita)",
+                        "descrizione_sezione_eng": "description",
+                        "nome_corso_ita": "course name (ita)",
+                        "nome_corso_eng": "course name",
+                        "progetti_sezione_ita": "prejects (ita)",
+                        "progetti_sezione_eng": "projects",
+                        "personale_sezione_ita": "staff (ita)",
+                        "personale_sezione_eng": "staff",
+                        "laboratori_sezione_ita": "laboratories (ita)",
+                        "laboratori_sezione_eng": "laboratories",
+                        "ordine": "order"
+                },
+                "primary_key_list": [
+                        "id_sezione"
+                ],
+                "references": []
+        },
+        "sottoaree": {
+                "column_list": [
+                        "id_sottoarea",
+                        "nome_sottoarea_ita",
+                        "nome_sottoarea_eng",
+                        "descrizione_sottoarea_ita",
+                        "descrizione_sottoarea_eng",
+                        "ordine"
+                ],
+                "column_alias_list": {
+                        "id_sottoarea": "area id",
+                        "nome_sottoarea_ita": "research line name (ita)",
+                        "nome_sottoarea_eng": "research line name",
+                        "descrizione_sottoarea_ita": "description (ita)",
+                        "descrizione_sottoarea_eng": "description",
+                        "ordine": "order"
+                },
+                "primary_key_list": [
+                        "id_sottoarea"
+                ],
+                "references": []
+        },
+        "tipo_evento": {
+                "column_list": [
+                        "id_tipo_evento",
+                        "nome_tipo_evento_ita",
+                        "nome_tipo_evento_eng",
+                        "ordine"
+                ],
+                "column_alias_list": {
+                        "id_tipo_evento": "event type id",
+                        "nome_tipo_evento_ita": "event type name (ita)",
+                        "nome_tipo_evento_eng": "event type name",
+                        "ordine": "order"
+                },
+                "primary_key_list": [
+                        "id_tipo_evento"
+                ],
+                "references": []
+        },
+        "tipo_laboratorio": {
+                "column_list": [
+                        "id_tipo_lab",
+                        "tipo_lab",
+                        "desc_lab",
+                        "ordine"
+                ],
+                "column_alias_list": {
+                        "id_tipo_lab": "laboratory type id",
+                        "tipo_lab": "laboratory type name",
+                        "desc_lab": "description",
+                        "ordine": "order"
+                },
+                "primary_key_list": [
+                        "id_tipo_lab"
+                ],
+                "references": []
+        },
+        "tipo_progetto": {
+                "column_list": [
+                        "id_tipo_prog",
+                        "tipo_prog",
+                        "desc_tipo_prog"
+                ],
+                "column_alias_list": {
+                        "id_tipo_prog": "eproject type id",
+                        "tipo_prog": "project type name",
+                        "desc_tipo_prog": "description"
+                },
+                "primary_key_list": [
+                        "id_tipo_prog"
+                ],
+                "references": []
+        },
+        "tipo_riconoscimento": {
+                "column_list": [
+                        "id_tipo_ric",
+                        "nome_tipo_ric_ita",
+                        "nome_tipo_ric_eng",
+                        "ordine"
+                ],
+                "column_alias_list": {
+                        "id_tipo_ric": "award type id",
+                        "nome_tipo_ric_ita": "award type name (ita)",
+                        "nome_tipo_ric_eng": "award type name",
+                        "ordine": "order"
+                },
+                "primary_key_list": [
+                        "id_tipo_ric"
+                ],
+                "references": []
+        }
+}

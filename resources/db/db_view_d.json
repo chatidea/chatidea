@@ -1,0 +1,418 @@
+{
+        "location_edifici": {
+                "column_list": [
+                        {
+                                "attribute": "id_edificio",
+                                "display": "Building ID"
+                        },{
+                                "attribute": "nome_edificio",
+                                "display": "Name"
+                        }
+                ]
+        },
+        "location_locali": {
+                "column_list": [
+                        {
+                                "attribute": "descrizione",
+                                "display": "Name"
+                        },{
+                                "attribute": "id_edificio",
+                                "display": "Building"
+                        },{
+                                "attribute": "id_piano",
+                                "display": "Floor"
+                        },{
+                                "attribute": "note_locale",
+                                "display": "Notes"
+                        }
+                ]
+        },
+        "location_piani": {
+                "column_list": [
+                        {
+                                "attribute": "id_piano",
+                                "display": "Floor ID"
+                        },{
+                                "attribute": "descrizione_short",
+                                "display": "Short description"
+                        },{
+                                "attribute": "descrizione_piano",
+                                "display": "Description"
+                        }
+                ]
+        },
+        "personale_deib_recapiti": {
+                "column_list": [
+                        {
+                                "attribute": "id_edificio",
+                                "display": "Building"
+                        },{
+                                "attribute": "id_piano",
+                                "display": "Floor"
+                        },{
+                                "attribute": "id_locale",
+                                "display": "Room"
+                        },{
+                                "attribute": "id_telefono",
+                                "display": "Phone"
+                        },{
+                                "attribute": "id_fax",
+                                "display": "Fax"
+                        }
+                ]
+        },
+        "telefoni": {
+                "column_list": [
+                        {
+                                "attribute": "id_telefono",
+                                "display": "Phone ID"
+                        },{
+                                "attribute": "numero",
+                                "display": "Phone number"
+                        },
+                        {
+                                "attribute": "riservato",
+                                "display": "Reserved"
+                        },{
+                                "attribute": "email",
+                                "display": "Email"
+                        },
+                        {
+                                "attribute": "sede",
+                                "display": "Building"
+                        },
+                        {
+                                "attribute": "piano",
+                                "display": "Floor"
+                        },
+                        {
+                                "attribute": "stanza",
+                                "display": "Room (stanza)"
+                        },
+                        {
+                                "attribute": "id_locale",
+                                "display": "Room ID (locale)"
+                        },
+                        {
+                                "attribute": "presa",
+                                "display": "Outlet"
+                        },
+                        {
+                                "attribute": "data_attivazione",
+                                "display": "Activation date"
+                        },
+                        {
+                                "attribute": "tipo",
+                                "display": "Type"
+                        },
+                        {
+                                "attribute": "descrizione",
+                                "display": "Description"
+                        },
+                        {
+                                "attribute": "note",
+                                "display": "Notes"
+                        }
+                ]
+        },
+        "aunica_categorie": {
+                "column_list": [
+                        {
+                                "attribute": "id_categoria",
+                                "display": "Category ID"
+                        },
+                        {
+                                "attribute": "nome_eng_categoria",
+                                "display": "Name"
+                        }
+                ]
+        },
+        "aunica_gruppi_espliciti": {
+                "column_list": [
+                        {
+                                "attribute": "id_categoria_associata",
+                                "display": "Associated category"
+                        },
+                        {
+                                "attribute": "nome_eng",
+                                "display": "Name"
+                        },
+                        {
+                                "attribute": "note",
+                                "display": "Notes"
+                        }
+                ]
+        },
+        "aunica_people_dettagli": {
+                "column_list": [
+                        {
+                                "attribute": "cognome",
+                                "display": "Surname"
+                        },
+                        {
+                                "attribute": "nome",
+                                "display": "Name"
+                        },
+                        {
+                                "attribute": "email",
+                                "display": "Email"
+                        },
+                        {
+                                "attribute": "id_sezione",
+                                "display": "Research area"
+                        },
+                        {
+                                "attribute": "contatti_eng",
+                                "display": "Contacts"
+                        },
+                        {
+                                "attribute": "note_eng",
+                                "display": "Notes"
+                        },
+                        {
+                                "attribute": "pagina_personale_eng",
+                                "display": "Personal page"
+                        }
+                ]
+        },
+        "eventi": {
+                "column_list": [
+                        {
+                                "attribute": "titolo_eng",
+                                "display": "Title"
+                        },
+                        {
+                                "attribute": "descrizione_eng",
+                                "display": "Description"
+                        },
+                        {
+                                "attribute": "contatti_eng",
+                                "display": "Contacts"
+                        },
+                        {
+                                "attribute": "short_bio_eng",
+                                "display": "Short bio"
+                        },
+                        {
+                                "attribute": "link",
+                                "display": "Link"
+                        },
+                        {
+                                "attribute": "id_tipo_evento",
+                                "display": "Event type"
+                        },
+                        {
+                                "attribute": "data_ora_ics",
+                                "display": "Start time"
+                        },
+                        {
+                                "attribute": "data_orafine_ics",
+                                "display": "End time"
+                        },
+                        {
+                                "attribute": "location_ics",
+                                "display": "Location"
+                        },
+                        {
+                                "attribute": "data_ins",
+                                "display": "Insertion date"
+                        }
+                ]
+        },
+        "laboratorio": {
+                "column_list": [
+                        {
+                                "attribute": "id_tipo_lab",
+                                "display": "Laboratory type"
+                        },
+                        {
+                                "attribute": "id_sede",
+                                "display": "Building"
+                        },
+                        {
+                                "attribute": "nome_lab_eng",
+                                "display": "Name"
+                        },
+                        {
+                                "attribute": "email_lab",
+                                "display": "Email"
+                        },
+                        {
+                                "attribute": "sito_lab",
+                                "display": "Website"
+                        },
+                        {
+                                "attribute": "orari_accesso_lab_eng",
+                                "display": "Access hours"
+                        },
+                        {
+                                "attribute": "regole_accesso_lab_eng",
+                                "display": "Access rules"
+                        },
+                        {
+                                "attribute": "contatto_lab_eng",
+                                "display": "Contacts"
+                        }
+                ]
+        },
+        "libri_internazionali": {
+                "column_list": [
+                        {
+                                "attribute": "titolo",
+                                "display": "Title"
+                        },
+                        {
+                                "attribute": "casa_editrice",
+                                "display": "Publishing house"
+                        },
+                        {
+                                "attribute": "anno_pubblicazione",
+                                "display": "Pubblication year"
+                        },
+                        {
+                                "attribute": "sitoweb_libro",
+                                "display": "Website"
+                        },
+                        {
+                                "attribute": "id_sezione",
+                                "display": "Research area"
+                        }
+                ]
+        },
+        "progetto": {
+                "column_list": [
+                        {
+                                "attribute": "id_tipo_prog",
+                                "display": "Project type"
+                        },
+                        {
+                                "attribute": "nome_prog_eng",
+                                "display": "Name"
+                        },
+                        {
+                                "attribute": "email_prog",
+                                "display": "Email"
+                        },
+                        {
+                                "attribute": "sito_prog",
+                                "display": "Website"
+                        },
+                        {
+                                "attribute": "siti_coll_prog",
+                                "display": "Related sites"
+                        },
+                        {
+                                "attribute": "acronimo_prog",
+                                "display": "Acronym"
+                        },
+                        {
+                                "attribute": "committente_prog",
+                                "display": "Client"
+                        },
+                        {
+                                "attribute": "data_inizio_prog",
+                                "display": "Start date"
+                        },
+                        {
+                                "attribute": "data_fine_prog",
+                                "display": "End date"
+                        },
+                        {
+                                "attribute": "keyword_prog_eng",
+                                "display": "Keyword"
+                        },
+                        {
+                                "attribute": "avanzamento_prog_eng",
+                                "display": "Progress"
+                        }
+                ]
+        },
+        "riconoscimento": {
+                "column_list": [
+                        {
+                                "attribute": "id_tipo_ric",
+                                "display": "Award type"
+                        },
+                        {
+                                "attribute": "data_premiazione",
+                                "display": "Date"
+                        },
+                        {
+                                "attribute": "premiante_ric",
+                                "display": "Awarded by"
+                        },
+                        {
+                                "attribute": "nome_ric_eng",
+                                "display": "Name"
+                        },
+                        {
+                                "attribute": "descrizione_ric_eng",
+                                "display": "Description"
+                        }
+                ]
+        },
+        "sezioni": {
+                "column_list": [
+                        {
+                                "attribute": "nome_sezione_eng",
+                                "display": "Name"
+                        },
+                        {
+                                "attribute": "nome_corso_eng",
+                                "display": "Course name"
+                        }
+                ]
+        },
+        "sottoaree": {
+                "column_list": [
+                        {
+                                "attribute": "nome_sottoarea_eng",
+                                "display": "Name"
+                        },
+                        {
+                                "attribute": "descrizione_sottoarea_eng",
+                                "display": "Description"
+                        }
+                ]
+        },
+        "tipo_evento": {
+                "column_list": [
+                        {
+                                "attribute": "nome_tipo_ric_eng",
+                                "display": "Name"
+                        }
+                ]
+        },
+        "tipo_laboratorio": {
+                "column_list": [
+                        {
+                                "attribute": "tipo_lab",
+                                "display": "Type"
+                        },
+                        {
+                                "attribute": "desc_lab",
+                                "display": "Description"
+                        }
+                ]
+        },
+        "tipo_progetto": {
+                "column_list": [
+                        {
+                                "attribute": "tipo_prog",
+                                "display": "Type"
+                        },
+                        {
+                                "attribute": "desc_tipo_prog",
+                                "display": "Description"
+                        }
+                ]
+        },
+        "tipo_riconoscimento": {
+                "column_list": [
+                        {
+                                "attribute": "nome_tipo_ric_eng",
+                                "display": "Type"
+                        }
+                ]
+        }
+}

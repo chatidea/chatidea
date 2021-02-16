@@ -1,0 +1,20 @@
+#! /bin/bash
+cd .. && python3 -m rasa_nlu.evaluate \
+    --data writer/rasa_dataset_testing.json \
+    --model resources/nlu/models/default/nlu_model \
+    --histogram writer/evaluation/histogram.png \
+    --report writer/evaluation/report \
+    --confmat writer/evaluation/confusion_matrix.png \
+    --successes writer/evaluation/successes.json \
+    --errors writer/evaluation/errors.json
+
+
+python -m rasa_nlu.evaluate 
+    --data writer/rasa_dataset_testing.json 
+    --model resources/nlu/models/default/nlu_model 
+    --histogram writer/evaluation/histogram.png 
+    --report writer/evaluation/report 
+    --confmat writer/evaluation/confusion_matrix.png 
+    --successes writer/evaluation/successes.json 
+    --errors writer/evaluation/errors.json
+

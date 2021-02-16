@@ -1,0 +1,567 @@
+[
+  {
+    "element_name":"customer",
+    "aliases": ["customers", "client", "clients"],
+    "type": "primary",
+    "table_name": "customers",
+    "show_columns":[
+      {
+        "keyword": "",
+        "columns": ["customerName"]
+      }
+    ],
+    "category": "country",
+    "attributes": [
+      {
+        "keyword": "",
+        "type": "word",
+        "columns": ["customerName"]
+      },
+      {
+        "keyword": "with contact",
+        "type": "word",
+        "columns": ["contactLastName", "contactFirstName"]
+      },
+      {
+        "keyword": "located in",
+        "type": "word",
+        "columns": ["city", "state", "country"]
+      },
+      {
+        "keyword": "that paid",
+        "type": "num",
+        "columns": ["amount"],
+        "by": [
+          {
+            "from_table_name": "customers",
+            "from_columns": ["customerNumber"],
+            "to_table_name": "payments",
+            "to_columns": ["customerNumber"]
+          }
+        ]
+      },
+      {
+        "keyword": "that bought",
+        "type": "word",
+        "columns": ["productName"],
+        "by": [
+          {
+            "from_table_name": "customers",
+            "from_columns": ["customerNumber"],
+            "to_table_name": "orders",
+            "to_columns": ["customerNumber"]
+          },
+          {
+            "from_table_name": "orders",
+            "from_columns": ["orderNumber"],
+            "to_table_name": "orderdetails",
+            "to_columns": ["orderNumber"]
+          },
+          {
+            "from_table_name": "orderdetails",
+            "from_columns": ["productCode"],
+            "to_table_name": "products",
+            "to_columns": ["productCode"]
+          }
+        ]
+      },
+      {
+        "keyword": "that reported to",
+        "type": "word",
+        "columns": ["lastName", "firstName"],
+        "by": [
+          {
+            "from_table_name": "customers",
+            "from_columns": ["salesRepEmployeeNumber"],
+            "to_table_name": "employees",
+            "to_columns": ["employeeNumber"]
+          }
+        ]
+      }
+    ],
+    "relations": [
+      {
+        "keyword": "payments made",
+        "element_name": "payment",
+        "by": [
+          {
+            "from_table_name": "customers",
+            "from_columns": ["customerNumber"],
+            "to_table_name": "payments",
+            "to_columns": ["customerNumber"]
+          }
+        ]
+      },
+      {
+        "keyword": "related sales representative",
+        "element_name": "employee",
+        "by": [
+          {
+            "from_table_name": "customers",
+            "from_columns": ["salesRepEmployeeNumber"],
+            "to_table_name": "employees",
+            "to_columns": ["employeeNumber"]
+          }
+        ]
+      },
+      {
+        "keyword": "orders made",
+        "element_name": "order",
+        "by": [
+          {
+            "from_table_name": "customers",
+            "from_columns": ["customerNumber"],
+            "to_table_name": "orders",
+            "to_columns": ["customerNumber"]
+          }
+        ]
+      },
+      {
+        "keyword": "products bought",
+        "element_name": "product",
+        "by": [
+          {
+            "from_table_name": "customers",
+            "from_columns": ["customerNumber"],
+            "to_table_name": "orders",
+            "to_columns": ["customerNumber"]
+          },
+          {
+            "from_table_name": "orders",
+            "from_columns": ["orderNumber"],
+            "to_table_name": "orderdetails",
+            "to_columns": ["orderNumber"]
+          },
+          {
+            "from_table_name": "orderdetails",
+            "from_columns": ["productCode"],
+            "to_table_name": "products",
+            "to_columns": ["productCode"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "element_name":"employee",
+    "aliases": ["employees", "worker", "workers"],
+    "type": "primary",
+    "table_name": "employees",
+    "show_columns":[
+      {
+        "keyword": "",
+        "columns": ["lastName", "firstName"]
+      }
+    ],
+    "category": "jobTitle",
+    "attributes": [
+      {
+        "keyword": "",
+        "type": "word",
+        "columns": ["lastName", "firstName"]
+      },
+      {
+        "keyword": "with first name",
+        "type": "word",
+        "columns": ["firstName"]
+      },
+      {
+        "keyword": "with last name",
+        "type": "word",
+        "columns": ["lastName"]
+      },
+      {
+        "keyword": "that work in",
+        "type": "word",
+        "columns": ["city", "country"],
+        "by": [
+          {
+            "from_table_name": "employees",
+            "from_columns": ["officeCode"],
+            "to_table_name": "offices",
+            "to_columns": ["officeCode"]
+          }
+        ]
+      }
+    ],
+   "relations": [
+      {
+        "keyword": "works in office",
+        "element_name": "office",
+        "by": [
+          {
+            "from_table_name": "employees",
+            "from_columns": ["officeCode"],
+            "to_table_name": "offices",
+            "to_columns": ["officeCode"]
+          }
+        ]
+      },
+      {
+        "keyword": "related customers",
+        "element_name": "customer",
+        "by": [
+          {
+            "from_table_name": "employees",
+            "from_columns": ["employeeNumber"],
+            "to_table_name": "customers",
+            "to_columns": ["salesRepEmployeeNumber"]
+          }
+        ]
+      },
+      {
+        "keyword": "reports to",
+        "element_name": "employee",
+        "by": [
+          {
+            "from_table_name": "employees",
+            "from_columns": ["reportsTo"],
+            "to_table_name": "employees",
+            "to_columns": ["employeeNumber"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "element_name":"office",
+    "aliases": ["offices"],
+    "type": "primary",
+    "table_name": "offices",
+    "show_columns":[
+      {
+        "keyword": "address",
+        "columns": ["city", "addressLine1"]
+      }
+    ],
+    "category": "country",
+    "attributes": [
+      {
+        "keyword": "with address",
+        "type": "word",
+        "columns": ["city", "addressLine1"]
+      },
+      {
+        "keyword": "located in",
+        "type": "word",
+        "columns": ["city", "country"]
+      },
+      {
+        "keyword": "of",
+        "type": "word",
+        "columns": ["lastName", "firstName"],
+        "by": [
+          {
+            "from_table_name": "offices",
+            "from_columns": ["officeCode"],
+            "to_table_name": "employees",
+            "to_columns": ["officeCode"]
+          }
+        ]
+      }
+
+    ],
+    "relations": [
+      {
+        "keyword": "employees working here",
+        "element_name": "employee",
+        "by": [
+          {
+            "from_table_name": "offices",
+            "from_columns": ["officeCode"],
+            "to_table_name": "employees",
+            "to_columns": ["officeCode"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "element_name":"order",
+    "aliases": ["orders"],
+    "type": "primary",
+    "table_name": "orders",
+    "show_columns":[
+      {
+        "keyword": "ordered",
+        "columns": ["orderDate"]
+      },
+      {
+        "keyword": "shipped",
+        "columns": ["shippedDate"]
+      }
+    ],
+    "category": "",
+    "attributes": [
+      {
+        "keyword": "made by",
+        "type": "word",
+        "columns": ["customerName"],
+        "by": [
+          {
+            "from_table_name": "orders",
+            "from_columns": ["customerNumber"],
+            "to_table_name": "customers",
+            "to_columns": ["customerNumber"]
+          }
+        ]
+      },
+      {
+        "keyword": "with product",
+        "type": "word",
+        "columns": ["productName"],
+        "by": [
+          {
+            "from_table_name": "orders",
+            "from_columns": ["orderNumber"],
+            "to_table_name": "orderdetails",
+            "to_columns": ["orderNumber"]
+          },
+          {
+            "from_table_name": "orderdetails",
+            "from_columns": ["productCode"],
+            "to_table_name": "products",
+            "to_columns": ["productCode"]
+          }
+        ]
+      }
+    ],
+    "relations": [
+      {
+        "keyword": "made by",
+        "element_name": "customer",
+        "by": [
+          {
+            "from_table_name": "orders",
+            "from_columns": ["customerNumber"],
+            "to_table_name": "customers",
+            "to_columns": ["customerNumber"]
+          }
+        ]
+      },
+      {
+        "keyword": "contained products",
+        "element_name": "product",
+        "by": [
+          {
+            "from_table_name": "orders",
+            "from_columns": ["orderNumber"],
+            "to_table_name": "orderdetails",
+            "to_columns": ["orderNumber"]
+          },
+          {
+            "from_table_name": "orderdetails",
+            "from_columns": ["productCode"],
+            "to_table_name": "products",
+            "to_columns": ["productCode"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "element_name":"payment",
+    "aliases": ["payments"],
+    "type": "secondary",
+    "table_name": "payments",
+    "show_columns":[
+      {
+        "keyword": "quantity",
+        "columns": ["amount"]
+      },
+      {
+        "keyword": "date",
+        "columns": ["paymentDate"]
+      }
+    ],
+    "attributes": [
+
+    ],
+    "relations": [
+      {
+        "keyword": "made by",
+        "element_name": "customer",
+        "by": [
+          {
+            "from_table_name": "payments",
+            "from_columns": ["customerNumber"],
+            "to_table_name": "customers",
+            "to_columns": ["customerNumber"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "element_name": "product line",
+    "aliases": ["brand", "brands"],
+    "type": "primary",
+    "table_name": "productlines",
+    "show_columns":[
+      {
+        "keyword": "",
+        "columns": ["productLine"]
+      }
+    ],
+    "category": "productLine",
+    "attributes": [
+      {
+        "keyword": "",
+        "type": "word",
+        "columns": ["productLine"]
+      },
+      {
+        "keyword": "of product",
+        "type": "word",
+        "columns": ["productName"],
+        "by": [
+          {
+            "from_table_name": "productlines",
+            "from_columns": ["productLine"],
+            "to_table_name": "products",
+            "to_columns": ["productLine"]
+          }
+        ]
+      }
+
+    ],
+    "relations": [
+      {
+        "keyword": "related products",
+        "element_name": "product",
+        "by": [
+          {
+            "from_table_name": "productlines",
+            "from_columns": ["productLine"],
+            "to_table_name": "products",
+            "to_columns": ["productLine"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "element_name": "product",
+    "aliases": ["products"],
+    "type": "primary",
+    "table_name": "products",
+    "show_columns":[
+      {
+        "keyword": "",
+        "columns": ["productName"]
+      },
+      {
+        "keyword": "of product line",
+        "columns": ["productLine"]
+      }
+    ],
+    "category": "productLine",
+    "attributes": [
+      {
+        "keyword": "",
+        "type": "word",
+        "columns": ["productName"]
+      },
+      {
+        "keyword": "of product line",
+        "type": "word",
+        "columns": ["productLine"],
+        "by": [
+          {
+            "from_table_name": "products",
+            "from_columns": ["productLine"],
+            "to_table_name": "productlines",
+            "to_columns": ["productLine"]
+          }
+        ]
+      },
+      {
+        "keyword": "bought by",
+        "type": "word",
+        "columns": ["customerName"],
+        "by": [
+          {
+            "from_table_name": "products",
+            "from_columns": ["productCode"],
+            "to_table_name": "orderdetails",
+            "to_columns": ["productCode"]
+          },
+          {
+            "from_table_name": "orderdetails",
+            "from_columns": ["orderNumber"],
+            "to_table_name": "orders",
+            "to_columns": ["orderNumber"]
+          },
+          {
+            "from_table_name": "orders",
+            "from_columns": ["customerNumber"],
+            "to_table_name": "customers",
+            "to_columns": ["customerNumber"]
+          }
+        ]
+      }
+
+    ],
+    "relations": [
+      {
+        "keyword": "related product line",
+        "element_name": "product line",
+        "by": [
+          {
+            "from_table_name": "products",
+            "from_columns": ["productLine"],
+            "to_table_name": "productlines",
+            "to_columns": ["productLine"]
+          }
+        ]
+      },
+      {
+        "keyword": "in orders",
+        "element_name": "order",
+        "by": [
+          {
+            "from_table_name": "products",
+            "from_columns": ["productCode"],
+            "to_table_name": "orderdetails",
+            "to_columns": ["productCode"]
+          },
+          {
+            "from_table_name": "orderdetails",
+            "from_columns": ["orderNumber"],
+            "to_table_name": "orders",
+            "to_columns": ["orderNumber"]
+          }
+        ]
+      },
+      {
+        "keyword": "bought by",
+        "element_name": "customer",
+        "by": [
+          {
+            "from_table_name": "products",
+            "from_columns": ["productCode"],
+            "to_table_name": "orderdetails",
+            "to_columns": ["productCode"]
+          },
+          {
+            "from_table_name": "orderdetails",
+            "from_columns": ["orderNumber"],
+            "to_table_name": "orders",
+            "to_columns": ["orderNumber"]
+          },
+          {
+            "from_table_name": "orders",
+            "from_columns": ["customerNumber"],
+            "to_table_name": "customers",
+            "to_columns": ["customerNumber"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "element_name": "orderdetails",
+    "type": "crossable",
+    "table_name": "orderdetails"
+  }
+]

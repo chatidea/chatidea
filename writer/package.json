@@ -1,0 +1,17 @@
+{
+  "name": "writer",
+  "version": "1.0.0",
+  "description": "Generator of phrases for the chatbot to train",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "chatito"
+  ],
+  "author": "Nicola Castaldo",
+  "license": "ISC",
+  "dependencies": {
+    "chatito": "^2.1.5"
+  }
+}

@@ -1,0 +1,10 @@
+.DS_Store
+__pycache__
+pie.png
+log/sherbot.log
+
+
+somefolder/
+!somefolder/.keep
+
+logs/

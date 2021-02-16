@@ -1,0 +1,18 @@
+[
+    {
+        "name": "num",
+        "pattern": "[1-9][0-9]*"
+    },
+    {
+        "name": "el",
+        "pattern": "(?i)(\\bcustomer\\b|\\bemployee\\b|\\boffice\\b|\\bproduct\\b|\\bproduct\\ line\\b|\\bpayment\\b|\\border\\b)"
+    },
+    {
+        "name": "rel",
+        "pattern": "(?i)(\\bsomething\\b)"
+    },
+    {
+        "name": "word",
+        "pattern": "(?i)(\\bNicola\\b|\\bGiorgio\\b|\\bVittorio\\b|\\bAlbert\\b|\\b1923\\ Moto\\ Guzzi\\b|\\bCar\\ Models\\b|\\bFlorian\\b|\\bCar\\b|\\bFerrari\\b|\\bMoto\\ Guzzi\\b|\\bMario\\b)"
+    }
+]

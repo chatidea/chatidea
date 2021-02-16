@@ -1,0 +1,166 @@
+// CONTEXT
+
+%[show_context]('training': '20', 'testing': '20')
+    ~[show?] ~[the?] ~[context]
+
+~[show]
+    show
+    view
+    show me
+    tell
+    tell me
+    display
+
+~[the]
+    the
+
+~[context]
+    on history
+    conversation history
+    history
+    context
+    past selections
+
+%[go_back_to_context_pos]('training': '6', 'testing': '2')
+    ~[please?] ~[back]
+    ~[please?] ~[return]
+
+~[back]
+    go back
+    going back
+    on going back
+    on go back
+    back
+    return
+    backward
+
+~[return]
+    return
+    undo
+
+~[please]
+    please
+
+
+// START
+
+%[start]('training': '40', 'testing': '10')
+    ~[hello]
+    ~[hello?] ~[_start]
+
+%[help]('training':'40', 'testing':'10')
+    ~[help]
+
+%[help_elements]('training':'40', 'testing':'10')
+    ~[help] ~[elements]
+
+%[help_history]('training':'40', 'testing':'10')
+    ~[help] ~[history]
+
+%[help_go_back]('training':'40', 'testing':'10')
+    ~[help] ~[back]
+
+~[hello]
+    hi
+    Hi
+    HI
+    hI
+    hello there
+    hello
+    Hello
+    hey there
+    hey
+
+~[help]
+    i need help
+    help me
+    help
+
+~[elements]
+    on elements
+    elements
+    on concepts
+    concepts
+
+~[_start]
+    start now
+    start
+    do something
+
+
+// HELPER
+
+~[find]
+    find
+    are there
+    search
+    look for
+
+~[filter]
+    filter
+    show only
+    give me only
+    only
+
+~[those]
+    those
+    the ones
+
+~[w_question]
+    which
+    which is
+    which are
+    who
+    who is
+    who are
+    when is
+    what
+    what is 
+    what are
+    how 
+    how many
+    how much
+
+//~[that]
+//    that
+//    that have
+//    which
+
+@[op_num]
+    less than
+    more than
+
+//@[op_word]
+//    ~[op_word_ne]
+//    ~[op_word_lk]
+
+//~[op_word_lk] # for the moment not used
+//    like
+//    similar to
+
+//~[op_word_ne]
+//    unlike
+//    different from
+//    distinct
+
+~[more_info_find]
+    more info about
+    about
+    info about
+    more info about
+
+~[more_info_filter]
+    how can I filter
+    how to filter
+    more info on filtering
+    filter
+    to filter
+
+@[order_by]
+    order by
+    ordered by
+    sort by
+    sorted by
+
+~[order_by_clause]
+    @[order_by] @[el_columns]

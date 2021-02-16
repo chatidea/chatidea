@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sherbot</title>
+  <style>
+    .conversation-container .replies {
+      display:block
+      }
+  </style>
+</head>
+<body>
+
+<div id="webchat"/>
+<script src="https://storage.googleapis.com/mrbot-cdn/webchat-0.5.3.js"></script>
+<script>
+  localStorage.clear()
+  WebChat.default.init({
+    embedded: true,
+    selector: "#webchat",
+    initPayload: "/start",
+    interval: 1000, // 1000 ms between each message
+    //customData: {"userId": "123"}, // arbitrary custom data. Stay minimal as this will be added to the socket
+    socketUrl: "https://localhost:5080",
+    clearCache: true,
+    socketPath: "/socket.io/",
+    title: "Sherbot",
+    subtitle: "Data exploration chatbot",
+    inputTextFieldHint: "Type a message...",
+    connectingText: "Waiting for server...",
+    hideWhenNotConnected: false,
+    fullScreenMode: true,
+//    profileAvatar: "http://to.avat.ar",
+//    openLauncherImage: 'myCustomOpenImage.png',
+//    closeLauncherImage: 'myCustomCloseImage.png',
+    params: {
+      images: {
+        dims: {
+          width: 400,
+          height: 420,
+        }
+      },
+      storage: "local"
+    }
+  })
+</script>
+
+
+<script type="text/javascript">
+
+
+var db_concept
+var primary_elements
+var all_keyword = []
+fetch("static/db_concept.json")
+  .then(response => response.json())
+  .then(
+    json => {
+      db_concept = json
+      primary_elements = get_all_primary_element_names()
+    }
+    
+    );
+
+window.setInterval(function(){
+  format_buttons()
+  format_tell_me_more()
+}, 200);
+
+
+
+  function get_all_primary_element_names(){
+    var results = [];
+    for (var i = 0; i < db_concept.length; i++){
+      var obj = db_concept[i];
+      if (obj['type'] == 'primary')
+        results.push(obj['element_name']);
+      if (typeof obj['attributes'] != 'undefined' && obj['attributes'].length > 0){
+        for (var j = 0; j < obj['attributes'].length; j++){
+          var attr = obj['attributes'][j];
+          if (attr['keyword'])
+            if (all_keyword.indexOf(attr['keyword']) === -1 ) 
+              all_keyword.push(attr['keyword']);
+        }
+      }
+      }
+      return results
+  }
+
+  function format_tell_me_more(){
+    var exampleList = document.getElementsByTagName("li")
+    var pattern1 = ("Find (" + primary_elements.join("|") + ") " + "(" + all_keyword.join("|") + ")?" + " (.*) (or) (" + all_keyword.join("|") +")? (.*)")
+    var pattern2 = ("Find (" + primary_elements.join("|") + ") " + "(" + all_keyword.join("|") + ")?" + " (.*) (" + all_keyword.join("|") +")? (.*) (" + all_keyword.join("|") +")? (.*)")
+    var pattern3 = ("Find (" + primary_elements.join("|") + ") " + "(" + all_keyword.join("|") + ")?" + " (.*) (" + all_keyword.join("|") +")? (.*)")
+    var pattern4 = ("Find (" + primary_elements.join("|") + ") " + "(" + all_keyword.join("|") + ")?" + " (.*)")
+    var pattern5 = ("Find (" + primary_elements.join("|") + ")" + " (.*) or (.*)")
+    var pattern6 = ("Find (" + primary_elements.join("|") + ")" + " (.*)")
+    var regExp1 = new RegExp(pattern1)
+    var regExp2 = new RegExp(pattern2)
+    var regExp3 = new RegExp(pattern3)
+    var regExp4 = new RegExp(pattern4)
+    var regExp5 = new RegExp(pattern5)
+    var regExp6 = new RegExp(pattern6)
+    for (var i=0; i<exampleList.length; i++){
+      str = exampleList[i].innerText
+      if (regExp1.test(str)){
+        res = str.replace(regExp1, "Find $1 $2 <i>$3</i> $4 $5 <i>$6</i>")
+        exampleList[i].innerHTML = res;
+      }
+      else if (regExp2.test(str)){
+        res = str.replace(regExp2, "Find $1 $2 <i>$3</i>  $4 <i>$5</i> $6 <i>$7</i>")
+        exampleList[i].innerHTML = res;
+      }
+      else if (regExp3.test(str)){
+        res = str.replace(regExp3, "Find $1 $2 <i>$3</i>  $4 <i>$5</i>")
+        exampleList[i].innerHTML = res;
+      }
+      else if (regExp4.test(str)){
+        res = str.replace(regExp4, "Find $1 $2 <i>$3</i>")
+        exampleList[i].innerHTML = res;
+      }
+      else if(regExp5.test(str)){
+        res = str.replace(regExp5, "Find $1 <i>$2</i> or <i>$3</i>")
+        exampleList[i].innerHTML = res;
+      }
+      else if(regExp6.test(str)){
+        res = str.replace(regExp6, "Find $1 <i>$2</i>")
+        exampleList[i].innerHTML = res;
+      }
+    }
+  }
+
+
+  function format_buttons(){
+    var reply = document.getElementsByClassName("reply");
+    var state = 0;
+    var num_service_button = 0;
+    var num_funct_button = 0;
+
+    for ( var i=0; i<reply.length; i++ ) {
+      if(state == 0){
+        if (!reply[i].innerText.startsWith("-")){
+                   state = 1;
+        }
+      }
+      else if(state == 1){
+        if (reply[i].innerText.startsWith("-")){
+          reply[i].classList.add("service_button");//color green all the service buttons
+          if (num_service_button==0){//create a margin top on the first service button
+            reply[i].setAttribute("style","margin-top:20px");
+            num_service_button++;
+            if (reply[i].previousSibling.innerHTML != "Service buttons"){	
+            	var newItem = document.createElement("div");
+                newItem .setAttribute('class', 'service_label');
+           	var textnode = document.createTextNode("Service buttons");
+            	newItem.appendChild(textnode);
+            	reply[i].parentNode.insertBefore(newItem, reply[i]);
+            }
+          }
+        }
+
+       if (reply[i].innerText.startsWith("+")){
+          reply[i].classList.add("function_button");//color orange all the service buttons
+          if (num_funct_button==0){//create a margin top on the first service button
+            reply[i].setAttribute("style","margin-top:20px");
+            num_funct_button++;
+            if (reply[i].previousSibling.innerHTML != "Functional buttons"){	
+            	var newItem = document.createElement("div");
+                newItem .setAttribute('class', 'service_label');
+           	var textnode = document.createTextNode("Functional buttons");
+            	newItem.appendChild(textnode);
+            	reply[i].parentNode.insertBefore(newItem, reply[i]);
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  </script>
+  <style> 
+      .function_button{border-color: orange;color: orange;}
+      .service_label{margin-top:20px;margin-bottom:-20px; max-width: 215px;}
+      .reply.service_button:first-of-type {margin-top:20px;}
+      .service_button{border-color: #198c33;color: #198c33;}
+      .response {max-width: 500px;background-color: #f2f2f2;border-radius: 30px;}
+      .client {background-color: #2476ff; border-radius: 30px;}
+      .widget-embedded{margin: auto; max-width: 800px;height: 100%;text-align:center;}
+      body, p, ul, li, div, html, .reply {font: 13px/18px Tahoma,sans-serif,Arial,Helvetica;; line-height: 150%;}
+      #webchat{text-align:center; }
+      
+  </style>
+
+</body>
+
+</html>

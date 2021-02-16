@@ -1,0 +1,2 @@
+#! /bin/bash
+cd .. && python3 -m modules.trainer
