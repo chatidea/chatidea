@@ -22,7 +22,8 @@ Chatidea è un framework che permette di generare chatbot partendo dallo schema 
 **NB:** In Windows potrebbero verificarsi problemi nell’installazione della dipendenza ujson. Per risolvere tale problema bisogna installare gli strumenti per VC++ del sistema operativo. Per fare questo, scaricare [*Microsoft Build Tools 2015](https://visualstudio.microsoft.com/it/thank-you-downloading-visual-studio/?sku=BuildTools&rel=16)*
 Far partire l'installazione, al termine spuntare la casella "Strumenti di compilazione C++" e selezionare i seguenti strumenti:
 
-![](Aspose.Words.f23d8044-f5b5-4422-83f7-d7efd661b613.001.png)
+[![Aspose-Words-f23d8044-f5b5-4422-83f7-d7efd661b613-001.png](https://i.postimg.cc/0jLjf6ZR/Aspose-Words-f23d8044-f5b5-4422-83f7-d7efd661b613-001.png)](https://postimg.cc/T5JT23ZC)
+
 
 Dopo aver selezionato tutti questi componenti procedere con l’installazione. A installazione terminata, tornare nel prompt dei comandi e lanciare:
 
