@@ -1,376 +1,374 @@
-# **Chatidea**
+**Chatidea**
 
-Chatidea è un framework che permette di generare chatbot partendo dallo schema di una base di dati.
+Chatidea è un framework che permette di generare chatbot partendo dallo schema di una base di dati. 
 
 **Requisiti ed esecuzione chatbot**
 
-- [Python 3.7.6](https://www.python.org/downloads/release/python-376/)
-- [Node.js](https://nodejs.org/it/)
-- Installare chatito mediante il comando: _ **npm i chatito –save** _
-- Installare il gestore delle dipendenze PIP: se non si ha nessuna versione di pip installata bisogna prima scaricare il file [get-pip.py](https://bootstrap.pypa.io/get-pip.py) e lanciare il seguente comando dalla cartella dove avete scaricato il file:
-_ **python get-pip.py** _
-- Gestore delle dipendenze e ambienti virtuali installabile con comando
-_ **py -3.7 -m pip install pipenv** _(in ambiente UNIX il comando _ **py** _ viene sostituito dal comando _ **python3** __;_ se su windows non dovesse funzionare il comando _ **py** _ provare con _ **python** _)
-- Per installare tutte le dipendenze necessarie è sufficiente posizionarsi nella cartella Chatidea e lanciare i seguenti comandi in sequenza:
-_**SET PIPENV\_VENV\_IN\_PROJECT=1
- pipenv install**_
-- Prima di lanciare il chatbot ricordare di avere sul proprio sistema attivo MySql e di aver installato il database di riferimento del chatbot ( **deib** nel caso corrente il cui dump è disponibile nella cartella _Chatidea\resources\db_). Seguire gli step della configurazione per collegare il chatbot al database
-- Per lanciare la chatbot dalla cartella Chatidea eseguire il comando
-_ **pipenv run python run.py** _
-- Dal browser ora il chabot è raggiungibile all&#39;indirizzo _ **localhost:5080** _
+- [Python 3.7.6](https://www.python.org/downloads/release/python-376/ "Python 3.7.6")
+- [Node.js](https://nodejs.org/it/ "Node.js")
+- Installare chatito mediante il comando: ***npm i chatito –save***
+- Installare il gestore delle dipendenze PIP: se non si ha nessuna versione di pip installata bisogna prima scaricare il file [get-pip.py](https://bootstrap.pypa.io/get-pip.py "get-pip.py") e lanciare il seguente comando dalla cartella dove avete scaricato il file: 
+  ***python get-pip.py***
+- Gestore delle dipendenze e ambienti virtuali installabile con comando 
+  ***py -3.7 -m pip install pipenv*** (in ambiente UNIX il comando ***py*** viene sostituito dal comando ***python3**;* se su windows non dovesse funzionare il comando ***py*** provare con ***python***)
+- Per installare tutte le dipendenze necessarie è sufficiente posizionarsi nella cartella Chatidea e lanciare i seguenti comandi in sequenza: 
+  ***SET PIPENV\_VENV\_IN\_PROJECT=1 
+  pipenv install*** 
+- Prima di lanciare il chatbot ricordare di avere sul proprio sistema attivo MySql e di aver installato il database di riferimento del chatbot (**deib** nel caso corrente il cui dump è disponibile nella cartella *Chatidea\resources\db*). Seguire gli step della configurazione per collegare il chatbot al database 
+- Per lanciare la chatbot dalla cartella Chatidea eseguire il comando 
+  ***pipenv run python run.py***
+- Dal browser ora il chabot è raggiungibile all’indirizzo ***localhost:5080***
 
-**NB:** In Windows potrebbero verificarsi problemi nell&#39;installazione della dipendenza ujson. Per risolvere tale problema bisogna installare gli strumenti per VC++ del sistema operativo. Per fare questo, scaricare [_Microsoft Build Tools 2015_](https://visualstudio.microsoft.com/it/thank-you-downloading-visual-studio/?sku=BuildTools&amp;rel=16)
-Far partire l&#39;installazione, al termine spuntare la casella &quot;Strumenti di compilazione C++&quot; e selezionare i seguenti strumenti:
+**NB:** In Windows potrebbero verificarsi problemi nell’installazione della dipendenza ujson. Per risolvere tale problema bisogna installare gli strumenti per VC++ del sistema operativo. Per fare questo, scaricare [*Microsoft Build Tools 2015](https://visualstudio.microsoft.com/it/thank-you-downloading-visual-studio/?sku=BuildTools&rel=16)*
+Far partire l'installazione, al termine spuntare la casella "Strumenti di compilazione C++" e selezionare i seguenti strumenti:
 
-![](RackMultipart20210216-4-vyf99n_html_88c8875048150d7a.png)
+![](Aspose.Words.f23d8044-f5b5-4422-83f7-d7efd661b613.001.png)
 
-Dopo aver selezionato tutti questi componenti procedere con l&#39;installazione. A installazione terminata, tornare nel prompt dei comandi e lanciare:
+Dopo aver selezionato tutti questi componenti procedere con l’installazione. A installazione terminata, tornare nel prompt dei comandi e lanciare:
 
-  1. SET PIPENV\_VENV\_IN\_PROJECT=1
-  2. pipenv install
+1. SET PIPENV\_VENV\_IN\_PROJECT=1 
+1. pipenv install  
 
 **Configurazione**
 
-Le variabili di configurazione sono all&#39;interno di _ **Chatidea/settings.py** _
+Le variabili di configurazione sono all'interno di ***Chatidea/settings.py***
 
-![](RackMultipart20210216-4-vyf99n_html_b8caa7ae3882eec.gif)
-
-select =&#39;deib&#39;
+-----
+select = 'deib'
 
 select\_dict = {
 
-&#39;teachers&#39;: [&#39;b&#39;, &#39;teachers&#39;, &#39;797397572:AAEV1MfR28lTzPsom\_2qO2-goJSCKzQZ5d0&#39;],
+`    `'teachers': ['b', 'teachers', '797397572:AAEV1MfR28lTzPsom\_2qO2-goJSCKzQZ5d0'],
 
-&#39;classicmodels&#39;: [&#39;c&#39;, &#39;classicmodels&#39;, &#39;710759393:AAGcrq2gkBd84qa-apwS9quMd5QK0knfWTM&#39;],
+`    `'classicmodels': ['c', 'classicmodels', '710759393:AAGcrq2gkBd84qa-apwS9quMd5QK0knfWTM'],
 
-&#39;deib&#39;: [&#39;d&#39;, &#39;deib&#39;, &#39;1046778538:AAF2CKzjxwzCu9fiDLgadBujYKuBKhgKmdE&#39;]
+`    `'deib': ['d', 'deib', '1046778538:AAF2CKzjxwzCu9fiDLgadBujYKuBKhgKmdE']
 
 }
 
-_ **select\_dict** _ contiene una lista di database, è composto da: un carattere identificativo, il nome dello schema, l&#39;API Key del bot telegram. _ **select** _ contiene il nome del database attualmente in uso.
+***select\_dict*** contiene una lista di database, è composto da: un carattere identificativo, il nome dello schema, l'API Key del bot telegram. ***select*** contiene il nome del database attualmente in uso.
 
-![](RackMultipart20210216-4-vyf99n_html_b8caa7ae3882eec.gif)
+-----
+remote = True if os.environ.get('PYTHONANYWHERE\_SITE') else False
 
-remote =Trueif os.environ.get(&#39;PYTHONANYWHERE\_SITE&#39;) elseFalse
+DATABASE\_USER = 'nicolacastaldo' if remote else 'root'
 
-DATABASE\_USER=&#39;nicolacastaldo&#39;if remote else&#39;root&#39;
+DATABASE\_PASSWORD = 'dataexplorerbot' if remote else ''
 
-DATABASE\_PASSWORD=&#39;dataexplorerbot&#39;if remote else&#39;&#39;
+DATABASE\_HOST = 'nicolacastaldo.mysql.pythonanywhere-services.com' if remote else 'localhost'
 
-DATABASE\_HOST=&#39;nicolacastaldo.mysql.pythonanywhere-services.com&#39;if remote else&#39;localhost&#39;
+DATABASE\_NAME = 'nicolacastaldo$classicmodels' if remote else db\_name
 
-DATABASE\_NAME=&#39;nicolacastaldo$classicmodels&#39;if remote else db\_name
-
-Cambiare user e password locali con i propri dati e, nel caso si voglia utilizzare un host remoto, modificare opportunamente la variabile d&#39;ambiente e i dati restanti.
+Cambiare user e password locali con i propri dati e, nel caso si voglia utilizzare un host remoto, modificare opportunamente la variabile d'ambiente e i dati restanti.
 
 **Configurazione Webchat**
 
-In caso di utilizzo di  **https**  usare la parte di codice commentata e inserire certificato e private key in _ **Chatidea/modules/connectors** _.
+In caso di utilizzo di **https** usare la parte di codice commentata e inserire certificato e private key in ***Chatidea/modules/connectors***.
 
 #sio = socketio.AsyncServer(cors\_allowed\_origins=[]) #Only for SSL workaround so that socketio works with requests from other origins.
 
 sio = socketio.AsyncServer()
 
-defstart():
+def start():
 
-#cert\_path = os.path.dirname(os.path.realpath(\_\_file\_\_))
+`    `#cert\_path = os.path.dirname(os.path.realpath(\_\_file\_\_))
 
-#context = ssl.create\_default\_context(purpose=ssl.Purpose.CLIENT\_AUTH)
+`    `#context = ssl.create\_default\_context(purpose=ssl.Purpose.CLIENT\_AUTH)
 
-#context.load\_cert\_chain(certfile=cert\_path+ &quot;/certificate.crt&quot;, keyfile= cert\_path+&quot;/private.key&quot;)
+`    `#context.load\_cert\_chain(certfile=cert\_path+ "/certificate.crt", keyfile= cert\_path+"/private.key")
 
-#web.run\_app(app, port=5080,ssl\_context=context)
+`    `#web.run\_app(app, port=5080,ssl\_context=context)
 
-web.run\_app(app, port=5080)
+`    `web.run\_app(app, port=5080)
 
-Ricordare di cambiare il  **socketUrl**  dentro _ **Chatidea/modules/connectors/index.html** _ inserendo http o https e la porta giusta.
+Ricordare di cambiare il **socketUrl** dentro ***Chatidea/modules/connectors/index.html*** inserendo http o https e la porta giusta.
 
-![](RackMultipart20210216-4-vyf99n_html_b8caa7ae3882eec.gif)
-
+-----
 La libreria utilizzata per gestire la webchat non sembra più raggiungibile. In alternativa potete usare:
 
-\&lt;scriptsrc=&quot;https://cdn.jsdelivr.net/npm/rasa-webchat/lib/index.min.js&quot;\&gt;\&lt;/script\&gt;
+<script src="https://cdn.jsdelivr.net/npm/rasa-webchat/lib/index.min.js"></script>
 
 Al posto di:
 
-\&lt;scriptsrc=&quot;https://storage.googleapis.com/mrbot-cdn/webchat-0.5.3.js&quot;\&gt;\&lt;/script\&gt;
+<script src="https://storage.googleapis.com/mrbot-cdn/webchat-0.5.3.js"></script>
 
-è necessario però modificare le personalizzazioni effettuate precedentemente in  **index.html**  adattandole alla nuova libreria.
+è necessario però modificare le personalizzazioni effettuate precedentemente in **index.html** adattandole alla nuova libreria.
 
 **Come far partire il chatbot**
 
-Dentro  **Chatidea/run.py**  decommentare in base all&#39;ambiente in cui si vuole eseguire il chatbot.
+Dentro **Chatidea/run.py** decommentare in base all'ambiente in cui si vuole eseguire il chatbot.
 
-webchat.start()
+`    `webchat.start()
 
-#telegram.start()
+`    `#telegram.start()
 
-#console\_input()
+`    `#console\_input()
 
-In  **locale**  posizionatevi dentro _ **Chatidea** _ e eseguite il comando python run.py
+In **locale** posizionatevi dentro ***Chatidea*** e eseguite il comando python run.py
 
-Per farlo partire in  **remoto**  sul server uniba utilizzare  **tmux**  per non far terminare l&#39;esecuzione dello script a sessione finita tmux new -s \&lt;nome-sessione\&gt; python run.py
+Per farlo partire su server Linux come servizio in background utilizzare **tmux** per non far terminare l'esecuzione dello script a sessione finita tmux new -s <nome-sessione> python run.py
 
-Per riprendere il controllo della console dopo che si è usciti: tmux attach -t \&lt;nome-sessione\&gt;
+Per riprendere il controllo della console dopo che si è usciti: tmux attach -t <nome-sessione>
 
 **Fasi per la generazione di un chatbot**
 
-Il processo di creazione di un nuovo chatbot può essere visto come una procedura semi-automatica, essendo costituita da azioni automatiche e manuali. Le azioni manuali sono quelle che dovranno essere svolte dal progettista e sono quelle che interessano l&#39;annotazione dei dati.
+Il processo di creazione di un nuovo chatbot può essere visto come una procedura semi-automatica, essendo costituita da azioni automatiche e manuali. Le azioni manuali sono quelle che dovranno essere svolte dal progettista e sono quelle che interessano l’annotazione dei dati.
 
 **Database schema**
 
-Creare un file JSON chiamato db\_schema\_\&lt;carattere\_identificativo\&gt;.json all&#39;interno di _ **Chatidea/resources/db** _. Il file contiene una descrizione semplificata del database, evidenziandone la struttura in termini di attributi e relazioni.
+Creare un file JSON chiamato db\_schema\_<carattere\_identificativo>.json all'interno di ***Chatidea/resources/db***. Il file contiene una descrizione semplificata del database, evidenziandone la struttura in termini di attributi e relazioni.
 
 Esempio di come descrivere una tabella:
 
-&quot;location\_locali&quot;: {
+`        `"location\_locali": {
 
-&quot;column\_list&quot;: [
+`                `"column\_list": [
 
-&quot;id\_locale&quot;,
+`                        `"id\_locale",
 
-&quot;old\_idlocale&quot;,
+`                        `"old\_idlocale",
 
-&quot;nomelocale&quot;,
+`                        `"nomelocale",
 
-&quot;descrizione&quot;,
+`                        `"descrizione",
 
-&quot;id\_edificio&quot;,
+`                        `"id\_edificio",
 
-&quot;id\_piano&quot;,
+`                        `"id\_piano",
 
-&quot;old\_id\_edificio&quot;,
+`                        `"old\_id\_edificio",
 
-&quot;old\_id\_piano&quot;,
+`                        `"old\_id\_piano",
 
-&quot;passpartout&quot;,
+`                        `"passpartout",
 
-&quot;is\_laboratorio&quot;,
+`                        `"is\_laboratorio",
 
-&quot;is\_radl\_richiesto&quot;,
+`                        `"is\_radl\_richiesto",
 
-&quot;is\_user\_richiedibile&quot;,
+`                        `"is\_user\_richiedibile",
 
-&quot;note\_locale&quot;
+`                        `"note\_locale"
 
-],
+`                `],
 
-&quot;primary\_key\_list&quot;: [
+`                `"primary\_key\_list": [
 
-&quot;id\_locale&quot;
+`                        `"id\_locale"
 
-],
+`                `],
 
-&quot;references&quot;: [
+`                `"references": [
 
-{
+`                        `{
 
-&quot;to\_table&quot;: &quot;location\_edifici&quot;,
+`                                `"to\_table": "location\_edifici",
 
-&quot;from\_attribute&quot;: &quot;id\_edificio&quot;,
+`                                `"from\_attribute": "id\_edificio",
 
-&quot;to\_attribute&quot;: &quot;id\_edificio&quot;,
+`                                `"to\_attribute": "id\_edificio",
 
-&quot;show\_attribute&quot;: &quot;nome\_edificio&quot;
+`                                `"show\_attribute": "nome\_edificio"
 
-},
+`                        `},
 
-{
+`                        `{
 
-&quot;to\_table&quot;: &quot;location\_piani&quot;,
+`                                `"to\_table": "location\_piani",
 
-&quot;from\_attribute&quot;: &quot;id\_piano&quot;,
+`                                `"from\_attribute": "id\_piano",
 
-&quot;to\_attribute&quot;: &quot;id\_piano&quot;,
+`                                `"to\_attribute": "id\_piano",
 
-&quot;show\_attribute&quot;: &quot;descrizione\_short&quot;
+`                                `"show\_attribute": "descrizione\_short"
 
-}
+`                        `}
 
-]
+`                `]
 
-}
+`        `}
 
-In _ **references** _ si effettua il mapping della chiave esterna indicando la tabella e l&#39;attributo a cui è collegata. In _show\_attribute_ si indica un attributo da mostrare al posto della chiave, che può risultare a volte poco significativa.
+In ***references*** si effettua il mapping della chiave esterna indicando la tabella e l'attributo a cui è collegata. In *show\_attribute* si indica un attributo da mostrare al posto della chiave, che può risultare a volte poco significativa.
 
 **Database concept**
 
-Creare un file JSON chiamato db\_concept\_\&lt;carattere\_identificativo\&gt;.json all&#39;interno di _ **Chatidea/resources/db** _ e inserire una copia chiamata db\_concept.json all&#39;interno di _ **Chatidea/static** _ (serve per la webchat)
+Creare un file JSON chiamato db\_concept\_<carattere\_identificativo>.json all'interno di ***Chatidea/resources/db*** e inserire una copia chiamata db\_concept.json all'interno di ***Chatidea/static*** (serve per la webchat)
 
 Il file di concept rappresenta un punto cardine della progettazione, poiché viene utilizzato sia per gestire la conversazione sia per generare le query.
 
-{
+`        `{
 
-&quot;element\_name&quot;: &quot;room&quot;,
+`                `"element\_name": "room",
 
-&quot;aliases&quot;: [&quot;rooms&quot;],
+`                `"aliases": ["rooms"],
 
-&quot;type&quot;: &quot;secondary&quot;,
+`                `"type": "secondary",
 
-&quot;table\_name&quot;: &quot;location\_locali&quot;,
+`                `"table\_name": "location\_locali",
 
-&quot;show\_columns&quot;: [
+`                `"show\_columns": [
 
-{
+`                        `{
 
-&quot;keyword&quot;: &quot;&quot;,
+`                                `"keyword": "",
 
-&quot;columns&quot;: [&quot;descrizione&quot;]
+`                                `"columns": ["descrizione"]
 
-}
+`                        `}
 
-],
+`                `],
 
-&quot;category&quot;:[],
+`                `"category":[],
 
-&quot;attributes&quot;: [
+`                `"attributes": [
 
-{
+`                        `{
 
-&quot;keyword&quot;: &quot;&quot;,
+`                                `"keyword": "",
 
-&quot;type&quot;: &quot;word&quot;,
+`                                `"type": "word",
 
-&quot;columns&quot;: [&quot;descrizione&quot;]
+`                                `"columns": ["descrizione"]
 
-},
+`                        `},
 
-{
+`                        `{
 
-&quot;keyword&quot;: &quot;in building&quot;,
+`                                `"keyword": "in building",
 
-&quot;type&quot;: &quot;word&quot;,
+`                                `"type": "word",
 
-&quot;columns&quot;: [&quot;nome\_edificio&quot;],
+`                                `"columns": ["nome\_edificio"],
 
-&quot;by&quot;: [
+`                                `"by": [
 
-{
+`                                        `{
 
-&quot;from\_table\_name&quot;: &quot;location\_locali&quot;,
+`                                                `"from\_table\_name": "location\_locali",
 
-&quot;from\_columns&quot;: [&quot;id\_edificio&quot;],
+`                                                `"from\_columns": ["id\_edificio"],
 
-&quot;to\_table\_name&quot;: &quot;location\_edifici&quot;,
+`                                                `"to\_table\_name": "location\_edifici",
 
-&quot;to\_columns&quot;: [&quot;id\_edificio&quot;]
+`                                                `"to\_columns": ["id\_edificio"]
 
-}
+`                                        `}
 
-]
+`                                `]
 
-},
+`                        `},
 
-{
+`                        `{
 
-&quot;keyword&quot;: &quot;on floor&quot;,
+`                                `"keyword": "on floor",
 
-&quot;type&quot;: &quot;word&quot;,
+`                                `"type": "word",
 
-&quot;columns&quot;: [&quot;descrizione\_short&quot;],
+`                                `"columns": ["descrizione\_short"],
 
-&quot;by&quot;: [
+`                                `"by": [
 
-{
+`                                        `{
 
-&quot;from\_table\_name&quot;: &quot;location\_locali&quot;,
+`                                                `"from\_table\_name": "location\_locali",
 
-&quot;from\_columns&quot;: [&quot;id\_piano&quot;],
+`                                                `"from\_columns": ["id\_piano"],
 
-&quot;to\_table\_name&quot;: &quot;location\_piani&quot;,
+`                                                `"to\_table\_name": "location\_piani",
 
-&quot;to\_columns&quot;: [&quot;id\_piano&quot;]
+`                                                `"to\_columns": ["id\_piano"]
 
-}
+`                                        `}
 
-]
+`                                `]
 
-}
+`                        `}
 
-],
+`                `],
 
-&quot;relations&quot;: []
+`                `"relations": []
 
-}
+`        `}
 
-**element\_name**  indica come ci si deve riferire a una tabella durante la conversazione.
+**element\_name** indica come ci si deve riferire a una tabella durante la conversazione.
 
-**aliases**  indica una serie di alternative che si possono utilizzare al posto dell&#39;element\_name all&#39;interno della conversazione.
+**aliases** indica una serie di alternative che si possono utilizzare al posto dell'element\_name all'interno della conversazione.
 
-**type**  definisce il ruolo degli elementi nella conversazione. Una tabella contrassegnata come primary rappresenta un&#39;informazione utile e indipendente dal contesto. Secondary identifica le tabelle i cui dati presi singolarmente non forniscono alcuna informazione, e pertanto per poter accedere ai loro dati si dovrà necessariamente passare da un&#39;altra tabella. Crossable relations serve per contrassegnare le tabelle la cui relazione è molti-a-molti, questo tipo di tabelle infatti di solito presentano solo chiavi di altre tabelle, e senza un opportuno join le informazioni che contiene sarebbero prive di significato.
+**type** definisce il ruolo degli elementi nella conversazione. Una tabella contrassegnata come primary rappresenta un’informazione utile e indipendente dal contesto. Secondary identifica le tabelle i cui dati presi singolarmente non forniscono alcuna informazione, e pertanto per poter accedere ai loro dati si dovrà necessariamente passare da un’altra tabella. Crossable relations serve per contrassegnare le tabelle la cui relazione è molti-a-molti, questo tipo di tabelle infatti di solito presentano solo chiavi di altre tabelle, e senza un opportuno join le informazioni che contiene sarebbero prive di significato.
 
 **show\_columns**. Quando il risultato di una query restituisce più di un risultato il chatbot li mostra in un listato di bottoni. Non essendo fattibile mostrare tutti gli attributi e non essendo la chiave primaria sempre identificativa in linguaggio naturale, bisogna indicare uno o più attributi che andranno mostrati in questa lista e che hanno il compito di rendere chiaro il contenuto del singolo risultato. Questa annotazione va effettuata solo per le tabelle identificate come primary e secondary.
 
-**category**. Per facilitare la navigazione dell&#39;utente si può scegliere di categorizzare in base a una colonna una o più tabelle. Se una tabella primaria ha un attributo il cui valore può essere considerato una categoria da parte del progettista, questo attributo verrà utilizzato per mostrare alcune informazioni di riepilogo sulla tabella.
+**category**. Per facilitare la navigazione dell'utente si può scegliere di categorizzare in base a una colonna una o più tabelle. Se una tabella primaria ha un attributo il cui valore può essere considerato una categoria da parte del progettista, questo attributo verrà utilizzato per mostrare alcune informazioni di riepilogo sulla tabella.
 
-**attributes**. Permette di definire i qualificatori conversazionali che l&#39;utente può usare durante la conversazione. Il tipo di un qualificatore conversazionale può essere: WORD, NUM o DATE.
+**attributes**. Permette di definire i qualificatori conversazionali che l'utente può usare durante la conversazione. Il tipo di un qualificatore conversazionale può essere: WORD, NUM o DATE.
 
 **Database view**
 
-Creare un file JSON chiamato db\_view\_\&lt;carattere\_identificativo\&gt;.json all&#39;interno di _ **Chatidea/resources/db** _.
+Creare un file JSON chiamato db\_view\_<carattere\_identificativo>.json all'interno di ***Chatidea/resources/db***.
 
-&quot;location\_locali&quot;: {
+`        `"location\_locali": {
 
-&quot;column\_list&quot;: [
+`                `"column\_list": [
 
-{
+`                        `{
 
-&quot;attribute&quot;: &quot;descrizione&quot;,
+`                                `"attribute": "descrizione",
 
-&quot;display&quot;: &quot;Name&quot;
+`                                `"display": "Name"
 
-},{
+`                        `},{
 
-&quot;attribute&quot;: &quot;id\_edificio&quot;,
+`                                `"attribute": "id\_edificio",
 
-&quot;display&quot;: &quot;Building&quot;
+`                                `"display": "Building"
 
-},{
+`                        `},{
 
-&quot;attribute&quot;: &quot;id\_piano&quot;,
+`                                `"attribute": "id\_piano",
 
-&quot;display&quot;: &quot;Floor&quot;
+`                                `"display": "Floor"
 
-},{
+`                        `},{
 
-&quot;attribute&quot;: &quot;note\_locale&quot;,
+`                                `"attribute": "note\_locale",
 
-&quot;display&quot;: &quot;Notes&quot;
+`                                `"display": "Notes"
 
-}
+`                        `}
 
-]
+`                `]
 
-}
+`        `}
 
 Permette al progettista di indicare quali colonne mostrare di una specifica tabella e di assegnare un alias da mostrare al posto del nome della colonna che spesso risulta non essere significativa in linguaggio naturale.
 
 **Generazione del modello**
 
-Generare il modello chatito con python -m modules.translator. Creare il file db\_concept\_s\_\&lt;carattere\_identificativo\&gt; che permette di effettuare l&#39;autocompletamento in caso in cui l&#39;utente non specifichi l&#39;elemento di una query. Il progettista, prendendo in riferimento gli attributi generati da chatito, deve classificare le colonne delle tabelle in base a attributi simili. Per esempio, gli attributi che fanno riferimento a un nome di persona fanno parte della stessa categoria, gli attributi che fanno riferimento a un luogo fanno parte di un&#39;altra categoria e così via. Se una colonna non ha similarità con altre colonne non va inserita nella tabella.
+Generare il modello chatito con python -m modules.translator. Creare il file db\_concept\_s\_<carattere\_identificativo> che permette di effettuare l'autocompletamento in caso in cui l'utente non specifichi l'elemento di una query. Il progettista, prendendo in riferimento gli attributi generati da chatito, deve classificare le colonne delle tabelle in base a attributi simili. Per esempio, gli attributi che fanno riferimento a un nome di persona fanno parte della stessa categoria, gli attributi che fanno riferimento a un luogo fanno parte di un'altra categoria e così via. Se una colonna non ha similarità con altre colonne non va inserita nella tabella.
 
 [
 
-{
+`    `{
 
-&quot;similars&quot; : [
+`        `"similars" :    [
 
-[&quot;1\_1&quot;,&quot;3\_3&quot;,&quot;5\_3&quot;],
+`                        `["1\_1","3\_3","5\_3"],
 
-[&quot;1\_2&quot;,&quot;3\_4&quot;,&quot;4\_2&quot;,&quot;5\_4&quot;],
+`                        `["1\_2","3\_4","4\_2","5\_4"],
 
-[&quot;1\_3&quot;,&quot;1\_4&quot;],
+`                        `["1\_3","1\_4"],
 
-[&quot;1\_5&quot;, &quot;3\_1&quot;],
+`                        `["1\_5", "3\_1"],
 
-[&quot;1\_6&quot;, &quot;5\_1&quot;],
+`                        `["1\_6", "5\_1"],
 
-[&quot;4\_3&quot;, &quot;5\_5&quot;]
+`                        `["4\_3", "5\_5"]
+
+`                        `]
+
+`    `}
 
 ]
 
-}
+Generare il training set con: cd writer && npx chatito chatito\_model.chatito --format=rasa --defaultDistribution=even Infine addestrare il modello: python -m modules.trainer
 
-]
-
-Generare il training set con: cd writer &amp;&amp; npx chatito chatito\_model.chatito --format=rasa --defaultDistribution=even Infine addestrare il modello: python -m modules.trainer
